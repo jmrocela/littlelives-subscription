@@ -107,3 +107,6 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+CakePlugin::load('Subscription', array('bootstrap' => true, 'routes' => true));
+CakePlugin::load('PaypalIpn', array('bootstrap' => array('paypal_ipn_config'), 'routes' => true));
