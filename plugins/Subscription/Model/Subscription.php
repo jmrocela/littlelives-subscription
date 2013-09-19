@@ -13,6 +13,8 @@ class Subscription extends AppModel {
  */
 	public $displayField = 'id';
 
+	public $belongsTo = 'Organization';
+
 /**
  * Validation rules
  *

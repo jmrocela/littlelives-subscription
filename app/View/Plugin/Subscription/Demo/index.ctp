@@ -21,6 +21,23 @@
 <main id="main" role="main">
 <div class="container" style="margin:20px auto;">
 
+    <div id="checkout" class="reveal-modal small">
+        <h4>Subscribe to <span class="name"></span></h4>
+        <form method="post" action="/mock/pass">
+            <div>
+                <h5>Price: $<span class="price">0.00</span></h5>
+                <h5>Description: ...</h5>
+            </div>
+            <input type="hidden" name="store_id" value="" />
+            <input type="hidden" name="store_type" value="" />
+            <input type="hidden" name="price" value="" />
+            <input type="hidden" name="return_url" value="http://local.littlelives.com/mock/ask" />
+            <input type="hidden" name="_token" value="THISISACSRFTOKEN" />
+            <button class="button radius success" type="submit">Confirm</button>
+            <p>this will redirect you to your paypal account and let you pay from there.</p>
+        </form>
+    </div>
+
     <div class="row">
         <div class="small-3 columns">
             <div class="panel">
@@ -45,7 +62,7 @@
                 <li>Add product information associated to a Package</li>
             </ul>
         </div>
-        <div class="small-6 columns">
+        <div class="small-6 columns" id="items">
             <h1 style="margin:0;">Subscriptions</h1>
             <p>Select which products and services you'd like to subscribe to.</p>
             <hr>
@@ -67,8 +84,8 @@
                                 Available for $<?php echo number_format($object['price']); ?>
                             </div>
                             <div style="padding:10px 0 0;">
-                                <?php if (@$object['subscribed']) { ?>
-                                <button class="button radius success">Subscribe</button>
+                                <?php if (!isset($object['subscribed'])) { ?>
+                                <button class="button radius success subscribe" data-id="<?php echo $object['id']; ?>" data-type="package" data-price="<?php echo $object['price']; ?>">Subscribe</button>
                                 <?php } else { ?>
                                 <button class="button radius secondary" disabled>Subscribed</button>
                                 <?php } ?>
@@ -94,8 +111,8 @@
                                 Available for $<?php echo number_format($object['price']); ?>
                             </div>
                             <div style="padding:10px 0 0;">
-                                <?php if (@$object['subscribed']) { ?>
-                                <button class="button radius success">Subscribe</button>
+                                <?php if (!isset($object['subscribed'])) { ?>
+                                <button class="button radius success subscribe" data-id="<?php echo $object['id']; ?>" data-type="package" data-price="<?php echo $object['price']; ?>">Subscribe</button>
                                 <?php } else { ?>
                                 <button class="button radius secondary" disabled>Subscribed</button>
                                 <?php } ?>

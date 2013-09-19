@@ -23,7 +23,7 @@ Router::connect('/mock/confirm', array('plugin' => 'Subscription', 'controller' 
 // final step
 Router::connect('/mock/accept', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'accept', '[method]' => 'GET'));
 
-Router::connect('/organization/:id/subscriptions', array('plugin' => 'Subscription', 'controller' => 'organization', 'action' => 'subscriptions', '[method]' => 'GET'), array('pass' => array('id')));
+Router::connect('/organization/:id/subscriptions', array('plugin' => 'Subscription', 'controller' => 'organizations', 'action' => 'subscriptions', '[method]' => 'GET'), array('pass' => array('id')));
 
 Router::connect('/products', array('plugin' => 'Subscription', 'controller' => 'products', 'action' => 'index', '[method]' => 'GET'));
 Router::connect('/products/add', array('plugin' => 'Subscription', 'controller' => 'products', 'action' => 'add', '[method]' => 'POST'));
