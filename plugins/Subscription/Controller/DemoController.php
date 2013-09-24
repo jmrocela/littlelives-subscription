@@ -25,7 +25,15 @@ class DemoController extends SubscriptionAppController {
 		$package = $this->MarketingPackage->find('all');
         $package = Set::extract('/MarketingPackage/.', $package);
 
-		$this->set(compact('catalog', 'package'));
+		// join
+		$options = array('fields' => array('Subscription.catalog_id'), 'conditions' => array('Subscription.organization_id' => $this->loggedInAs));
+		$subscriptions = $this->Subscription->find('list', $options);
+
+		$options = array('conditions' => array('Catalog.id' => array_values($subscriptions)));
+		$subscriptions = $this->Catalog->find('all', $options);
+        $subscriptions = Set::extract('/Catalog/.', $subscriptions);
+
+		$this->set(compact('catalog', 'package', 'subscriptions'));
 
 		$this->render('Demo/index');
 	}

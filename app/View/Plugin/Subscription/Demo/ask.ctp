@@ -24,8 +24,8 @@
 
     <form action="http://local.littlelives.com/mock/confirm" method="post">
         <input type="hidden" value="<?php echo $_token; ?>" name="_token">
-        <input type="hidden" value="<?php echo $store_id; ?>" name="id">
-        <input type="hidden" value="<?php echo $store_type; ?>" name="type">
+        <input type="hidden" value="<?php echo $store_id; ?>" name="store_id">
+        <input type="hidden" value="<?php echo $store_type; ?>" name="store_type">
         <input type="hidden" value="<?php echo $price; ?>" name="price">
         <button type="submit">Confirm Subscription</button>
     </form>

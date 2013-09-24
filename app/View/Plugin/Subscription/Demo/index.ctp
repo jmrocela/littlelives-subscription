@@ -26,7 +26,7 @@
         <form method="post" action="/mock/pass">
             <div>
                 <h5>Price: $<span class="price">0.00</span></h5>
-                <h5>Description: ...</h5>
+                <h5>Description: <span class="description">...</span></h5>
             </div>
             <input type="hidden" name="store_id" value="" />
             <input type="hidden" name="store_type" value="" />
@@ -45,10 +45,12 @@
                 <hr>
                 <div id="subscriptions" style="min-height:200px;">
                     <?php
-                        $subscriptions = array();
-
                         if ($subscriptions) {
-
+                                foreach ($subscriptions as $object) {
+                            ?>
+                            <p><span class="glyphicon glyphicon-ok-circle"></span> <?php echo $object['name']; ?></p>
+                            <?php
+                                }
                         } else {
                             ?>
                             <p class="text-center">No Subscriptions Yet</p>
@@ -112,7 +114,7 @@
                             </div>
                             <div style="padding:10px 0 0;">
                                 <?php if (!isset($object['subscribed'])) { ?>
-                                <button class="button radius success subscribe" data-id="<?php echo $object['id']; ?>" data-type="package" data-price="<?php echo $object['price']; ?>">Subscribe</button>
+                                <button class="button radius success subscribe" data-id="<?php echo $object['id']; ?>" data-type="catalog" data-price="<?php echo $object['price']; ?>">Subscribe</button>
                                 <?php } else { ?>
                                 <button class="button radius secondary" disabled>Subscribed</button>
                                 <?php } ?>
