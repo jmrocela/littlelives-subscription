@@ -39,24 +39,27 @@
     </div>
 
     <div class="row">
+        <div class="small-2 columns">&nbsp;</div>
         <div class="small-3 columns">
             <div class="panel">
                 <h4 style="margin:0;"><?php echo $organization[0]['name']; ?></h4>
                 <hr>
                 <div id="subscriptions" style="min-height:200px;">
+                    <ul style="margin-left:20px">
                     <?php
                         if ($subscriptions) {
                                 foreach ($subscriptions as $object) {
                             ?>
-                            <p><span class="glyphicon glyphicon-ok-circle"></span> <?php echo $object['name']; ?></p>
+                            <li><span class="glyphicon glyphicon-ok-circle"></span> <?php echo $object['name']; ?></li>
                             <?php
                                 }
                         } else {
                             ?>
-                            <p class="text-center">No Subscriptions Yet</p>
+                            <li class="text-center">No Subscriptions Yet</li>
                             <?php
                         }
                     ?>
+                    </ul>
                 </div>
             </div>
             <ul style="margin-left:20px;font-size:12px;">
@@ -64,7 +67,7 @@
                 <li>Add product information associated to a Package</li>
             </ul>
         </div>
-        <div class="small-6 columns" id="items">
+        <div class="small-5 columns" id="items">
             <h1 style="margin:0;">Subscriptions</h1>
             <p>Select which products and services you'd like to subscribe to.</p>
             <hr>
@@ -86,11 +89,7 @@
                                 Available for $<?php echo number_format($object['price']); ?>
                             </div>
                             <div style="padding:10px 0 0;">
-                                <?php if (!isset($object['subscribed'])) { ?>
                                 <button class="button radius success subscribe" data-id="<?php echo $object['id']; ?>" data-type="package" data-price="<?php echo $object['price']; ?>">Subscribe</button>
-                                <?php } else { ?>
-                                <button class="button radius secondary" disabled>Subscribed</button>
-                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -113,7 +112,7 @@
                                 Available for $<?php echo number_format($object['price']); ?>
                             </div>
                             <div style="padding:10px 0 0;">
-                                <?php if (!isset($object['subscribed'])) { ?>
+                                <?php if ($object['subscribed'] != 1) { ?>
                                 <button class="button radius success subscribe" data-id="<?php echo $object['id']; ?>" data-type="catalog" data-price="<?php echo $object['price']; ?>">Subscribe</button>
                                 <?php } else { ?>
                                 <button class="button radius secondary" disabled>Subscribed</button>
@@ -127,15 +126,7 @@
             </div>
 
         </div>
-        <div class="small-3 columns">
-            <div class="panel text-center">
-                <div id="subscribed" style="min-height:200px;">
-
-                </div>
-                <h5>Total $<span>0.00</span></h5>
-                <button class="button radius">Finalize Subscriptions</button>
-            </div>
-        </div>
+        <div class="small-2 columns"></div>
     </div>
 
 </div>

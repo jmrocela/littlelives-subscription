@@ -33,6 +33,15 @@ class DemoController extends SubscriptionAppController {
 		$subscriptions = $this->Catalog->find('all', $options);
         $subscriptions = Set::extract('/Catalog/.', $subscriptions);
 
+        $p = array();
+        foreach($subscriptions as $subs) {
+        	$p[] = $subs['id'];
+        }
+
+        foreach($catalog as $key => $value) {
+        	$catalog[$key]['subscribed'] = (in_array($value['id'], $p)) ? true: false;
+        }
+
 		$this->set(compact('catalog', 'package', 'subscriptions'));
 
 		$this->render('Demo/index');
@@ -69,41 +78,42 @@ class DemoController extends SubscriptionAppController {
 		$data = $_POST;
 
 		// if payment is okay; confirm subscription and add to database
-		if (true) {
-			$catalogs = array();
-			if ($data['store_type'] == 'package') {
-				// get catalogs from post
-				$options = array('conditions' => array('MarketingPackageItem.marketing_package_id' => $data['store_id']));
-				$package = $this->MarketingPackageItem->find('all', $options);
-
-				foreach ($package as $pack) {
-					$catalogs[] = $pack['MarketingPackageItem']['catalog_id'];
-				}
-			} else {
-				$catalogs[] = $data['store_id'];
-			}
-
-			if ($catalogs) {
-				$datas = array();
-				foreach ($catalogs as $catalog) {
-					$datas[] = array(
-						'catalog_id' => $catalog,
-						'organization_id' => $this->loggedInAs,
-						'effective_date' => time(),
-						'comments' => ''
-					);
-				}
-				$this->Subscription->saveMany($datas);
-			}
-
+		if ($this->accept($data)) { // <-- supposed to be a curl call
 			$this->render('Demo/confirm');
 		} else {
 			$this->render('Demo/error');
 		}
 	}
 
-	public function accept() {
-		echo 1;
+	public function accept($data) {
+		$catalogs = array();
+		if ($data['store_type'] == 'package') {
+			// get catalogs from post
+			$options = array('conditions' => array('MarketingPackageItem.marketing_package_id' => $data['store_id']));
+			$package = $this->MarketingPackageItem->find('all', $options);
+
+			foreach ($package as $pack) {
+				$catalogs[] = $pack['MarketingPackageItem']['catalog_id'];
+			}
+		} else {
+			$catalogs[] = $data['store_id'];
+		}
+
+		if ($catalogs) {
+			$datas = array();
+			foreach ($catalogs as $catalog) {
+				$datas[] = array(
+					'catalog_id' => $catalog,
+					'organization_id' => $this->loggedInAs,
+					'effective_date' => time(),
+					'comments' => ''
+				);
+			}
+			$this->Subscription->saveMany($datas);
+
+			return true;
+		}
+
 		return false;
 	}
 
