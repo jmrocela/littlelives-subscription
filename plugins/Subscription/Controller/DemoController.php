@@ -1,33 +1,76 @@
 <?php
 
+/*
+CREATE VIEW organisation_subscriptions
+AS
+  SELECT O.id, O.name, S.effective_date, S.comments, S.catalogs_id
+  FROM organisations as O, subscriptions as S
+  WHERE O.id=S.organisations_id
+
+DELIMITER $$
+DROP FUNCTION IF EXISTS `GetAncestry` $$
+CREATE FUNCTION `GetAncestry` (GivenID INT) RETURNS VARCHAR(1024)
+DETERMINISTIC
+BEGIN
+    DECLARE rv VARCHAR(1024);
+    DECLARE cm CHAR(1);
+    DECLARE ch INT;
+
+    SET rv = '';
+    SET cm = '';
+    SET ch = GivenID;
+    WHILE ch > 0 DO
+        SELECT IFNULL(`organisations_id`,-1) INTO ch FROM
+        (SELECT `organisations_id` FROM organisations WHERE id = ch) A;
+        IF ch > 0 THEN
+            SET rv = CONCAT(rv,cm,ch);
+            SET cm = ',';
+        END IF;
+    END WHILE;
+    RETURN rv;
+
+END $$
+DELIMITER ;
+
+
+// the subscription from the parent cannot be unsubscribed from the child.
+*/
+
 App::uses('AppController', 'SubscriptionAppController');
 
 class DemoController extends SubscriptionAppController {
 
-	public $uses = array('Product', 'Catalog', 'MarketingPackage', 'MarketingPackageItem', 'Organization', 'Subscription');
+	public $uses = array('Subscription.Catalog', 'Subscription.MarketingPackage', 'Subscription.MarketingPackageItem', 'Subscription.Organisation', 'Subscription.Subscription');
 
-	public $loggedInAs = 1;
+	public $loggedInAs = 2;
 
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->autoRender = false;
 		$this->layout = '';
 
-		$organization = $this->Organization->find('first', array('conditions' => array('Organization.id' => $this->loggedInAs)));
-		$this->set('organization', Set::extract('/Organization/.', $organization));
+		$organisation = $this->Organisation->find('first', array('conditions' => array('Organisation.id' => $this->loggedInAs)));
+		$this->set('organisation', Set::extract('/Organisation/.', $organisation));
 
 	}
 
 	public function index() {
-		$catalog = $this->Catalog->find('all');
+		$catalog = $this->Catalog->find('all', array('recursive' => 1));
         $catalog = Set::extract('/Catalog/.', $catalog);
 
 		$package = $this->MarketingPackage->find('all');
         $package = Set::extract('/MarketingPackage/.', $package);
 
 		// join
-		$options = array('fields' => array('Subscription.catalog_id'), 'conditions' => array('Subscription.organization_id' => $this->loggedInAs));
+		$options = array('fields' => array('Subscription.catalogs_id'), 'conditions' => array('Subscription.organisations_id' => $this->loggedInAs));
 		$subscriptions = $this->Subscription->find('list', $options);
+
+		$parents = $this->Organisation->query('SELECT id, GetAncestry(id) as parents from organisations where id = ' . $this->loggedInAs);
+		$parents = ($parents[0][0]['parents']) ? explode(',', $parents[0][0]['parents']): array();
+		$parents[] = $this->loggedInAs;
+
+		$organisations = $this->Organisation->query('SELECT * FROM littlelives.organisation_subscriptions WHERE id in (' . implode(',', $parents) . ')');
+        $subscriptions = Set::extract('/organisation_subscriptions/catalogs_id/.', $organisations);
 
 		$options = array('conditions' => array('Catalog.id' => array_values($subscriptions)));
 		$subscriptions = $this->Catalog->find('all', $options);
@@ -89,11 +132,11 @@ class DemoController extends SubscriptionAppController {
 		$catalogs = array();
 		if ($data['store_type'] == 'package') {
 			// get catalogs from post
-			$options = array('conditions' => array('MarketingPackageItem.marketing_package_id' => $data['store_id']));
+			$options = array('recursive' => -1, 'conditions' => array('MarketingPackageItem.marketing_packages_id' => $data['store_id']));
 			$package = $this->MarketingPackageItem->find('all', $options);
 
 			foreach ($package as $pack) {
-				$catalogs[] = $pack['MarketingPackageItem']['catalog_id'];
+				$catalogs[] = $pack['MarketingPackageItem']['catalogs_id'];
 			}
 		} else {
 			$catalogs[] = $data['store_id'];
@@ -103,8 +146,8 @@ class DemoController extends SubscriptionAppController {
 			$datas = array();
 			foreach ($catalogs as $catalog) {
 				$datas[] = array(
-					'catalog_id' => $catalog,
-					'organization_id' => $this->loggedInAs,
+					'catalogs_id' => $catalog,
+					'organisations_id' => $this->loggedInAs,
 					'effective_date' => time(),
 					'comments' => ''
 				);

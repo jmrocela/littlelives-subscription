@@ -42,7 +42,7 @@
         <div class="small-2 columns">&nbsp;</div>
         <div class="small-3 columns">
             <div class="panel">
-                <h4 style="margin:0;"><?php echo $organization[0]['name']; ?></h4>
+                <h4 style="margin:0;"><?php echo $organisation[0]['name']; ?></h4>
                 <hr>
                 <div id="subscriptions" style="min-height:200px;">
                     <ul style="margin-left:20px">

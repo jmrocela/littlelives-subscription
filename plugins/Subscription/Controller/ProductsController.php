@@ -1,7 +1,9 @@
 <?php
 App::uses('AppController', 'Controller');
 
-class ProductsController extends AppController {
+class ProductsController extends SubscriptionAppController {
+
+	public $uses = array('Subscription.Product');
 
 	public function beforeFilter() {
 		$this->response->type('json');
@@ -11,7 +13,7 @@ class ProductsController extends AppController {
 	public function index() {
 		$this->Product->recursive = 0;
     	$result = $this->Product->find('all');
-        echo json_encode(Set::extract('/Product/.', $result));
+        echo json_encode($result);
 	}
 
 	public function view($id = null) {
@@ -19,8 +21,8 @@ class ProductsController extends AppController {
 			echo json_encode(array('status' => 'Product with id:' . $id . ' does not exist.'));
 		} else {
 			$options = array('conditions' => array('Product.' . $this->Product->primaryKey => $id));
-			$result = $this->Product->find('first', $options);
-	        echo json_encode($result['Product']);
+			$result = $this->Product->find('all', $options);
+	        echo json_encode($result);
         }
 	}
 
@@ -33,11 +35,6 @@ class ProductsController extends AppController {
         		$status = array('status' => 'OK');
 			}
 		}
-		echo json_encode($status);
-	}
-
-	public function addToCatalog() {
-		$status = array('status' => 'OK');
 		echo json_encode($status);
 	}
 

@@ -1,17 +1,25 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Catalog Model
+ * Organisation Model
  *
- * @property MarketingPackageItem $MarketingPackageItem
- * @property Product $Product
+ * @property Organisations $Organisations
+ * @property Subscription $Subscription
  */
-class Catalog extends AppModel {
+class Organisation extends AppModel {
 
-    public $actsAs = array('Containable');
-
+/**
+ * Display field
+ *
+ * @var string
+ */
 	public $displayField = 'name';
 
+/**
+ * Validation rules
+ *
+ * @var array
+ */
 	public $validate = array(
 		'id' => array(
 			'numeric' => array(
@@ -23,9 +31,9 @@ class Catalog extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'type' => array(
-			'alphanumeric' => array(
-				'rule' => array('alphanumeric'),
+		'organisations_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -34,26 +42,8 @@ class Catalog extends AppModel {
 			),
 		),
 		'name' => array(
-			'1n' => array(
-				'rule' => array('1n'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
 			'alphanumeric' => array(
 				'rule' => array('alphanumeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'price' => array(
-			'money' => array(
-				'rule' => array('money'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -63,10 +53,32 @@ class Catalog extends AppModel {
 		),
 	);
 
+	//The Associations below have been created with all possible keys, those that are not needed can be removed
+
+/**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'Organisations' => array(
+			'className' => 'Organisations',
+			'foreignKey' => 'organisations_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
 	public $hasMany = array(
-		'Product' => array(
-			'className' => 'Product',
-			'foreignKey' => 'catalogs_id',
+		'Subscription' => array(
+			'className' => 'Subscription',
+			'foreignKey' => 'organisations_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

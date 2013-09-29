@@ -1,7 +1,9 @@
 <?php
 App::uses('AppController', 'Controller');
 
-class MarketingPackagesController extends AppController {
+class MarketingPackagesController extends SubscriptionAppController {
+
+	public $uses = array('Subscription.MarketingPackage');
 
 	public function beforeFilter() {
 		$this->response->type('json');
@@ -9,18 +11,18 @@ class MarketingPackagesController extends AppController {
 	}
 
 	public function index() {
-		$this->MarketingPackage->recursive = 0;
     	$result = $this->MarketingPackage->find('all');
-        echo json_encode(Set::extract('/MarketingPackage/.', $result));
+        echo json_encode($result);
+        //echo json_encode(Set::extract('/MarketingPackage/.', $result));
 	}
 
 	public function view($id = null) {
 		if (!$this->MarketingPackage->exists($id)) {
 			echo json_encode(array('status' => 'MarketingPackage with id:' . $id . ' does not exist.'));
 		} else {
-			$options = array('conditions' => array('MarketingPackage.' . $this->MarketingPackage->primaryKey => $id));
-			$result = $this->MarketingPackage->find('first', $options);
-	        echo json_encode($result['MarketingPackage']);
+			$options = array('recursive' => 1, 'conditions' => array('MarketingPackage.' . $this->MarketingPackage->primaryKey => $id));
+			$result = $this->MarketingPackage->find('all', $options);
+	        echo json_encode($result);
         }
 	}
 
