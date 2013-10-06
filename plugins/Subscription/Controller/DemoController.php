@@ -83,7 +83,7 @@ class DemoController extends SubscriptionAppController {
 
 		$this->set(compact('catalog', 'package', 'subscriptions'));
 
-		$this->render('Demo/index');
+		$this->render('Subscription.Demo/index');
 	}
 
 	public function pass() {
