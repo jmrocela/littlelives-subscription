@@ -12,16 +12,16 @@
 
 Router::connect('/subscriptions', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'index', 'home'));
 
+// payments
+Router::connect('/payment/form', array('plugin' => 'Subscription', 'controller' => 'payment', 'action' => 'form', '[method]' => 'POST'));
+Router::connect('/payment/confirm', array('plugin' => 'Subscription', 'controller' => 'payment', 'action' => 'confirm', '[method]' => 'POST'));
+Router::connect('/payment/do', array('plugin' => 'Subscription', 'controller' => 'payment', 'action' => 'do', '[method]' => 'POST'));
+
 /**
  * Paypal IPN Flow mock for local testing
  */
 // log in with initial payment detail
 Router::connect('/mock/pass', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'pass', '[method]' => 'POST'));
-// confirm your order with user detail and token
-Router::connect('/mock/ask', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'ask', '[method]' => 'GET'));
-Router::connect('/mock/confirm', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'confirm', '[method]' => 'POST'));
-// final step
-Router::connect('/mock/accept', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'accept', '[method]' => 'GET'));
 
 Router::connect('/organisations/:id/subscriptions', array('plugin' => 'Subscription', 'controller' => 'organisations', 'action' => 'subscriptions', '[method]' => 'GET'), array('pass' => array('id')));
 

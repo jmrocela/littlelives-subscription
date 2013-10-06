@@ -20,13 +20,31 @@
 <body>
 <main id="main" role="main">
 
-<div class="container" style="margin:20px auto;">
+<div class="container" style="margin:20px auto;width:600px;">
 
-    <form action="http://local.littlelives.com/mock/confirm" method="post">
+    <form action="http://local.littlelives.com/payment/confirm" method="post">
         <input type="hidden" value="<?php echo $_token; ?>" name="_token">
+
+        <select name="payment-info">
+            <option>-</option>
+        </select>
+
+        <input type="text" name="Sale[first_name]" value="Jamoy" />
+        <input type="text" name="Sale[last_name]" value="Rocela" />
+        <input type="text" name="Sale[card_type]" value="Visa" />
+        <input type="text" name="Sale[exp][month]" value="10" />
+        <input type="text" name="Sale[exp][year]" value="2018" />
+        <input type="text" name="Sale[cvv2]" value="" />
+        <input type="text" name="Sale[amount]" value="<?php echo $price; ?>" />
+        <input type="text" name="Sale[card_number]" value="4813058277337777" />
+
+        <input type="text" name="return_url" value="<?php echo $return_url; ?>" />
+
+
         <input type="hidden" value="<?php echo $store_id; ?>" name="store_id">
         <input type="hidden" value="<?php echo $store_type; ?>" name="store_type">
         <input type="hidden" value="<?php echo $price; ?>" name="price">
+        <button type="submit" name="saveCard">Save Payment Information</button>
         <button type="submit">Confirm Subscription</button>
     </form>
 

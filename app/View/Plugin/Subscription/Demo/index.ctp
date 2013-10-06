@@ -23,7 +23,7 @@
 
     <div id="checkout" class="reveal-modal small">
         <h4>Subscribe to <span class="name"></span></h4>
-        <form method="post" action="/mock/pass">
+        <form method="post" action="/payment/form">
             <div>
                 <h5>Price: $<span class="price">0.00</span></h5>
                 <h5>Description: <span class="description">...</span></h5>
@@ -31,7 +31,8 @@
             <input type="hidden" name="store_id" value="" />
             <input type="hidden" name="store_type" value="" />
             <input type="hidden" name="price" value="" />
-            <input type="hidden" name="return_url" value="http://local.littlelives.com/mock/ask" />
+            <input type="hidden" name="return_url" value="http://local.littlelives.com/subscriptions?payment_success" />
+            <input type="hidden" name="error_url" value="http://local.littlelives.com/subscriptions?payment_failed" />
             <input type="hidden" name="_token" value="THISISACSRFTOKEN" />
             <button class="button radius success" type="submit">Confirm</button>
             <p>this will redirect you to your paypal account and let you pay from there.</p>

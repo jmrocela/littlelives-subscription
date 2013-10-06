@@ -19,6 +19,7 @@ class OrganisationsController extends SubscriptionAppController {
 
 			$parents = $this->Organisation->query('SELECT id, GetAncestry(id) as parents from organisations where id = ' . $id);
 			$parents = ($parents[0][0]['parents']) ? explode(',', $parents[0][0]['parents']): array();
+			$parents[] = $id;
 
 			$organisations = $this->Organisation->query('SELECT * FROM littlelives.organisation_subscriptions WHERE id in (' . implode(',', $parents) . ')');
 	        $subscriptions = Set::extract('/organisation_subscriptions/catalogs_id/.', $organisations);

@@ -51,7 +51,6 @@ class DemoController extends SubscriptionAppController {
 
 		$organisation = $this->Organisation->find('first', array('conditions' => array('Organisation.id' => $this->loggedInAs)));
 		$this->set('organisation', Set::extract('/Organisation/.', $organisation));
-
 	}
 
 	public function index() {
@@ -62,9 +61,6 @@ class DemoController extends SubscriptionAppController {
         $package = Set::extract('/MarketingPackage/.', $package);
 
 		// join
-		$options = array('fields' => array('Subscription.catalogs_id'), 'conditions' => array('Subscription.organisations_id' => $this->loggedInAs));
-		$subscriptions = $this->Subscription->find('list', $options);
-
 		$parents = $this->Organisation->query('SELECT id, GetAncestry(id) as parents from organisations where id = ' . $this->loggedInAs);
 		$parents = ($parents[0][0]['parents']) ? explode(',', $parents[0][0]['parents']): array();
 		$parents[] = $this->loggedInAs;
@@ -105,59 +101,6 @@ class DemoController extends SubscriptionAppController {
 		}
 
 		$this->redirect($data['return_url'] . '?' . join('&', $post));
-	}
-
-	public function ask() {
-		// return a UI post to confirm
-		$data = $_GET;
-		$this->set($data);
-		$this->render('Demo/ask');
-		return false;
-	}
-
-	public function confirm() {
-		// post to accept and return UI
-		// call accept by curl and return payment status
-		$data = $_POST;
-
-		// if payment is okay; confirm subscription and add to database
-		if ($this->accept($data)) { // <-- supposed to be a curl call
-			$this->render('Demo/confirm');
-		} else {
-			$this->render('Demo/error');
-		}
-	}
-
-	public function accept($data) {
-		$catalogs = array();
-		if ($data['store_type'] == 'package') {
-			// get catalogs from post
-			$options = array('recursive' => -1, 'conditions' => array('MarketingPackageItem.marketing_packages_id' => $data['store_id']));
-			$package = $this->MarketingPackageItem->find('all', $options);
-
-			foreach ($package as $pack) {
-				$catalogs[] = $pack['MarketingPackageItem']['catalogs_id'];
-			}
-		} else {
-			$catalogs[] = $data['store_id'];
-		}
-
-		if ($catalogs) {
-			$datas = array();
-			foreach ($catalogs as $catalog) {
-				$datas[] = array(
-					'catalogs_id' => $catalog,
-					'organisations_id' => $this->loggedInAs,
-					'effective_date' => time(),
-					'comments' => ''
-				);
-			}
-			$this->Subscription->saveMany($datas);
-
-			return true;
-		}
-
-		return false;
 	}
 
 }
