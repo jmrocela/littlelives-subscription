@@ -1,14 +1,6 @@
 <?php
 
-/**
-* PUT     /organizations/{id}/subscribe?id={catalog_id|mp_id|product_id}&category={catalog|marketing_package|product}&subscribe_token={token}
-* GET     /organizations/{id}/subscriptions
-* 
-* PUT     /organization/subscribe?id={catalog_id|mp_id|product_id}&category={catalog|marketing_package|product}&subscribe_token={token}
-* GET     /organization/subscriptions
-* 
-* PUT     /organization/
-*/
+Router::connect('/mock/pass', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'pass', '[method]' => 'POST'));
 
 Router::connect('/subscriptions', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'index', 'home'));
 
@@ -16,12 +8,6 @@ Router::connect('/subscriptions', array('plugin' => 'Subscription', 'controller'
 Router::connect('/payment/form', array('plugin' => 'Subscription', 'controller' => 'payment', 'action' => 'form', '[method]' => 'POST'));
 Router::connect('/payment/confirm', array('plugin' => 'Subscription', 'controller' => 'payment', 'action' => 'confirm', '[method]' => 'POST'));
 Router::connect('/payment/do', array('plugin' => 'Subscription', 'controller' => 'payment', 'action' => 'do', '[method]' => 'POST'));
-
-/**
- * Paypal IPN Flow mock for local testing
- */
-// log in with initial payment detail
-Router::connect('/mock/pass', array('plugin' => 'Subscription', 'controller' => 'demo', 'action' => 'pass', '[method]' => 'POST'));
 
 Router::connect('/organisations/:id/subscriptions', array('plugin' => 'Subscription', 'controller' => 'organisations', 'action' => 'subscriptions', '[method]' => 'GET'), array('pass' => array('id')));
 
@@ -49,15 +35,5 @@ Router::connect('/package/add', array('plugin' => 'Subscription', 'controller' =
 Router::connect('/package/:id', array('plugin' => 'Subscription', 'controller' => 'marketingpackageitems', 'action' => 'view', '[method]' => 'GET'), array('pass' => array('id')));
 Router::connect('/package/:id/edit', array('plugin' => 'Subscription', 'controller' => 'marketingpackageitems', 'action' => 'edit', '[method]' => 'PUT'), array('pass' => array('id')));
 Router::connect('/package/:id/delete', array('plugin' => 'Subscription', 'controller' => 'marketingpackageitems', 'action' => 'delete', '[method]' => 'DELETE'), array('pass' => array('id')));
-
-
-/*Router::resourceMap(array(
-    array('action' => 'index', '[method]' => 'GET', 'id' => false),
-    array('action' => 'view', '[method]' => 'GET', 'id' => true),
-    array('action' => 'add', '[method]' => 'POST', 'id' => false),
-    array('action' => 'edit', '[method]' => 'PUT', 'id' => true),
-    array('action' => 'delete', '[method]' => 'DELETE', 'id' => true),
-    array('action' => 'update', '[method]' => 'POST', 'id' => true)
-));*/
 
 Router::parseExtensions('json');

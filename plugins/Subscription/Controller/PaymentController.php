@@ -61,6 +61,9 @@ class PaymentController extends SubscriptionAppController {
 			        $nvp .= '&COUNTRYCODE=SG&CURRENCYCODE=USD';
 
 			        $response = $this->PaypalWPP->wpp_hash('DoDirectPayment', $nvp);
+
+			        // need to log $response somewhere
+
 			        if ($response['ACK'] == 'Success') {
 
 						$datas[] = array(

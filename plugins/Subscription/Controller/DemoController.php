@@ -3,7 +3,7 @@
 /*
 CREATE VIEW organisation_subscriptions
 AS
-  SELECT O.id, O.name, S.effective_date, S.comments, S.catalogs_id
+  SELECT O.id, O.name, S.effective_date, S.catalogs_id
   FROM organisations as O, subscriptions as S
   WHERE O.id=S.organisations_id
 

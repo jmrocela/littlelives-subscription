@@ -64,7 +64,6 @@
                 </div>
             </div>
             <ul style="margin-left:20px;font-size:12px;">
-                <li>Figure out Model Association</li>
                 <li>Add product information associated to a Package</li>
             </ul>
         </div>
