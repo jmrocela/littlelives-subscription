@@ -1,0 +1,57 @@
+/*---------------------------------------------------------------- */
+/* @Variables: Colors
+/*---------------------------------------------------------------- */
+$brand-light-blue: #5fc4e1;
+
+
+$primary-color: #21b6eA !default;
+$secondary-color: #fbba00 !default;
+$success-color: #c8d400 !default;
+$alert-color: #f08372 !default;
+$disabled-color: #cccccc !default;
+$canvas-color: #f7f7f7 !default;
+$sidebar-color: #91989c !default;
+
+/*---------------------------------------------------------------- */
+/* @Global: Colors
+/*---------------------------------------------------------------- */ 
+/*
+Colors
+
+Brand Colors.
+
+Markup:
+<div class="primary_color">#21b6ea Primary</div>
+<div class="secondary_color">#fbba00 Secondary</div>
+<div class="success_color">#c8d400 Success</div>
+<div class="alert_color">#f08372 Alert</div>
+<div class="disabled_color">#cccccc Disabled</div>
+<div class="canvas_color">#f7f7f7 Canvas</div>
+
+Default      - Colors used in LittleLives.
+
+Styleguide 1
+*/
+.primary_color {
+    background-color: $primary-color;
+}
+
+.secondary_color {
+    background-color: $secondary-color;
+}
+
+.success_color {
+    background-color: $success-color;
+}
+
+.alert_color {
+    background-color: $alert-color;
+}
+
+.disabled_color {
+    background-color: $disabled-color;
+}
+
+.canvas_color {
+    background-color: $canvas-color;
+}

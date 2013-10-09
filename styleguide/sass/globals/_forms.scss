@@ -1,0 +1,514 @@
+/*---------------------------------------------------------------- */
+/* @Mixin: Forms
+/*---------------------------------------------------------------- */
+/*
+ * Change the form input color based on the it's status
+ * 
+ * TODO: Pass the new color object
+ * @param {Color} $color  - Color to change.
+ */
+@mixin form-input-status-color($color:$input-border-color) {
+    background-color: rgba($color, 0.1);
+    border-color: $color;
+}
+
+/*
+ * Change the form label color based on the input status
+ * 
+ * TODO: Pass the color object;
+ * @param {Object} $color  - Color to change.
+ */
+@mixin form-label-status-color($color:$input-border-color) {
+    color: $color;
+}
+
+/*---------------------------------------------------------------- */
+/* @Variables: Forms
+/*---------------------------------------------------------------- */
+
+$form-spacing: $base-margin-bottom - 0.3em !default;
+
+// Fieldset
+$fieldset-bg: $canvas-color !default; 
+$fieldset-border-style: none !default;
+$fieldset-border-radius: $base-radius !default;
+$fieldset-padding: emCalc(55, 0, 0) !default;
+$fieldset-padding-styled: emCalc(55, 20, 20)!default;
+$fieldset-margin: emCalc($base-margin-bottom, 0, $form-spacing) !default;
+$fieldset-margin-styled: emCalc($base-margin-bottom, 0, $form-spacing) !default;
+
+// Legend
+$legend-font-size: $h5-size !default;
+$legend-font-color: $base-font-color !default;
+$legend-margin-bottom: $base-margin-bottom - 0.8em !default;
+$legend-padding: emCalc(5, 0, 6) !default;
+// Styled
+$legend-bg: $secondary-color !default;
+$legend-font-styled-size: $base-font-size - emCalc(2) !default;
+$legend-padding-styled: emCalc(5, 15, 6) !default;
+$legend-border-radius: emCalc($base-radius) !default;
+$legend-box-shadow: 0 emCalc(2) 0 rgba(0, 0, 0, 0.1) !default;
+
+// Label
+$form-label-font-size: $base-font-size !default;
+$form-label-font-color: $base-font-color;
+$form-label-bottom-margin: $base-margin-bottom - 0.95em !default;
+$form-label-pointer: pointer !default;
+
+// Input
+$input-bg-color: #fff !default;
+$input-font-color: $base-font-color;
+$input-font-size: $base-font-size !default;
+$input-margin: 0 !default; 
+$input-padding: emCalc(7) !default;
+$input-border-style: solid !default;
+$input-border-width: emCalc(4) !default;
+$input-border-color: lighten(#000, 93%);
+$input-box-shadow: inset emCalc(1) emCalc(1) 0 rgba(0, 0, 0, 0.2) !default;
+$input-width: 100% !default;
+$input-focus-bg-color: darken(#fff, 2%) !default;
+$input-focus-border-color: rgba(81, 203, 238, 0.5) !default;
+$input-disabled-bg: $disabled-color !default;
+// Glowing effect for form elements when focused
+$glowing-fade-time: 0.25s !default;
+$glowing-color: $input-focus-border-color !default;
+
+// Textarea
+$textarea-height: emCalc(120) !default;
+
+// Checkbox
+$input-checkbox-font-size: $input-font-size + emCalc(2) !default;
+$input-checkbox-margin: 0 0.3em $paragraph-margin-bottom - 1em 0 !default;
+$input-checkbox-padding: 0.30em 0.03em 0.18em !default;
+$input-checkbox-border-width: emCalc(3) !default;
+$input-checkbox-box-shadow: inset emCalc(1) emCalc(1.5) 0 rgba(0, 0, 0, 0.2) !default;
+$input-checkbox-width: 1em !default;
+$input-checkbox-line-height: 0.55em !default;
+$input-checkbox-color: $primary-color !default;
+
+// Radio
+$input-radio-font-size: $input-font-size + emCalc(5) !default;
+$input-radio-margin: 0 0.3em 0 0 !default;
+$input-radio-padding: 0.15em 0 0.18em!default;
+$input-radio-width: 0.89em !default;
+$input-radio-line-height: $input-checkbox-line-height !default;
+$input-radio-color: $input-checkbox-color !default;
+$input-radio-radius: $base-rounded !default;
+
+// Notes
+$input-notes-color: lighten($base-font-color, 25%);
+
+/*---------------------------------------------------------------- */
+/* @Forms
+/*---------------------------------------------------------------- */
+/*
+Forms
+
+A typical form for user to send data to a server for processing.
+
+Markup:
+<form class="{$modifiers}">
+    <fieldset>
+        <legend>Form Title</legend>
+        <div class="form_group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter here" />
+        </div>
+        <div class="form_group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter here" />
+        </div>
+        <button type="submit">Submit</button>
+    </fieldset>
+</form>
+
+form        - A typical input form.
+.styled     - A styled input form.
+
+Styleguide 5
+*/
+form {
+    fieldset {
+        background-color: none;
+        margin: $fieldset-margin;
+        border: $fieldset-border-style;
+    }    
+    legend {
+        @extend .font_bold;
+        display: inline-block;
+        padding:  $legend-padding;
+        font-size: $legend-font-size;
+        color: $legend-font-color;        
+    }
+    &.styled {
+        fieldset {
+            background-color: $fieldset-bg;
+            margin: $fieldset-margin-styled;      
+            padding: $fieldset-padding-styled;
+            -webkit-border-radius: $fieldset-border-radius;
+            -moz-border-radius: $fieldset-border-radius;
+            border-radius: $fieldset-border-radius;    
+            position: relative;
+        }
+        legend {
+            @include border-radius($legend-border-radius);
+            @include box-shadow($legend-box-shadow);
+            background-color: $legend-bg;
+            padding:  $legend-padding-styled;
+            -webkit-border-bottom-left-radius: 0;
+            -moz-border-radius-bottomleft: 0;
+            border-bottom-left-radius: 0;
+            position: absolute;
+            top: 0.5em;
+            left: -0.5em;
+            z-index: 11;            
+            font-size: $legend-font-styled-size;
+            text-transform: uppercase;
+            @if lightness($legend-bg) > 50% {
+                color: #fff;
+            } @else {
+                color: $legend-font-color;
+            }
+            &:before {
+                background-color: $legend-bg;
+                display: block;
+                width: 0.5em;
+                height: 0.5em;
+                position: absolute;
+                left: 0;
+                bottom: -0.3em ;
+                content: " ";
+            }    
+            &:after {
+                @include border-radius(0.3em 0 0 0.3em);
+                background-color: darken($legend-bg, 25%);
+                display: block;
+                width: 0.5em;
+                height: 0.5em;
+                position: absolute;
+                bottom: -0.5em;
+                left: 0;
+                content: " ";
+            }
+        }
+    } 
+}
+
+label {
+    @extend .font_bold;
+    display: block;
+    margin-bottom: $form-label-bottom-margin;
+    font-size: $form-label-font-size;
+    color: $form-label-font-color;
+    cursor: $form-label-pointer;
+}
+
+.form_group {
+    margin-bottom: $form-spacing;
+    width: 100%;
+    small {
+       display: block;
+       margin-top: $form-label-bottom-margin;
+    }
+}
+
+/*
+Text Input
+
+Form inputs.
+
+Markup:
+<div class="form_group">
+    <label for="{$modifiers}">Label Text</label>
+    <input type="{$modifiers}" id="{$modifiers}" placeholder="Enter here" />
+</div>
+
+text             - Normal text input
+password         - Password input
+date             - Date input
+time             - Time input
+email            - Email input
+number           - Number input
+url              - URL input
+tel              - Tel input
+search           - Search input
+
+Styleguide 5.1
+*/
+input[type="text"], input[type="password"], input[type="date"],
+input[type="datetime"], input[type="datetime-local"], input[type="month"],
+input[type="week"], input[type="email"], input[type="number"],
+input[type="search"], input[type="tel"], input[type="time"],
+input[type="url"], input[type="file"],  textarea, select {
+    @extend .font_reg;
+    @include box-sizing(border-box);   
+    @include box-shadow($input-box-shadow);
+    @include block-glowing-effect(focus, $glowing-fade-time, $glowing-color);
+    background-color: $input-bg-color;
+    display: block;
+    margin: $input-margin;
+    padding: $input-padding;
+    border: $input-border-width $input-border-style $input-border-color;
+    width: $input-width;
+    font-size: $input-font-size;
+    color: $input-font-color;
+    &:focus {
+        background: $input-focus-bg-color;
+        border-color: $input-focus-border-color;
+        @include box-shadow($input-box-shadow);
+        outline: none;
+    }
+    &.disabled, &[disabled="disabled"], &:disabled {
+        background-color: $input-disabled-bg;
+    }
+}
+
+/*
+Text Area
+
+Multi-line text input for long description.
+
+Markup:
+<div class="form_group">
+    <label for="element_id">Label Text</label>
+    <textarea placeholder="Enter here" id="element_id" cols="150"></textarea>
+</div>
+
+textarea             - Multi-line text input
+
+Styleguide 5.2
+*/
+textarea {
+    height: auto;
+    min-height: $textarea-height;
+}
+
+/*
+Error Handling
+
+Input with error.
+
+Markup:
+<div class="form_group error">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" class="error" />
+    <small class="error">Error message to be shown here.</small>
+</div>
+
+.error      - You can attach a class of .error either to the elements (label, input, small) or their parent selector (form, fieldset, div).
+
+Styleguide 5.3
+*/
+.error label, label.error, small.error, .error small,
+input[type="checkbox"].error + label,
+input[type="radio"].error + label {
+    @include form-label-status-color($alert-color);
+}
+
+input.error, textarea.error, select.error,
+.error input, .error textarea, .error select,
+.error input[type="checkbox"] + label:before, input[type="checkbox"].error + label:before,
+.error input[type="radio"] + label:before, input[type="radio"].error + label:before {
+    @include form-input-status-color($alert-color);
+}
+
+/*
+AJAX Input
+
+Input that requires instant feedback such as autosave, AJAX loading, success states and errored states.
+
+Markup:
+<div class="form_group instant {$modifiers}">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" />
+</div>
+
+.success            - Return success.
+.failure            - Return error.
+.is_input_loading   - Sending a request, awaiting feedback.
+
+Styleguide 5.4
+*/
+.form_group.instant {
+    position: relative;
+    &:after {
+        display: block;
+        position: absolute;
+        top: 2em;
+        right: 0.5em;
+        font-size: $base-font-size + 0.2em;
+        font-weight: bold;
+    }
+    &.success {
+        input {
+            @include form-input-status-color($success-color);
+            cursor: default;
+        }
+        &:after {
+            color: $success-color;
+            content: "\2714";
+        }
+    }
+    &.failure {
+        label, small {
+            @include form-label-status-color($alert-color);
+        }
+        input {
+            @include form-input-status-color($alert-color);
+        }
+        &:after {
+            color: $alert-color;
+            content: "\2718";
+        }
+    }
+    &.is_input_loading {
+        input {
+            @include form-input-status-color($input-border-color);
+        }        
+        &:after {
+            background:  url('/img/global/spinner_small.gif') no-repeat left 0.4em;
+            content: "\00A0\00A0";
+        }
+    }
+}
+
+/*
+Input with Help Text
+
+A block of small text related to the input.
+
+Markup:
+<div class="form_group">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" placeholder="Enter here" />
+    <small class="notes">Enter some notes here</small>
+</div>
+
+.notes   - A block of text helper.
+
+Styleguide 5.5
+*/
+.form_group {
+    .notes {
+        display: block;
+        color: $input-notes-color;   
+    }
+}
+
+/*
+Select
+
+A typical drop-down list.
+
+Markup:
+<div class="form_group">
+    <label for="element_id">Label Text</label>
+    <select id="element_id">
+        <option value="val_1">Item 1</option>
+        <option value="val_2">Item 2</option>
+        <option value="val_3">Item 3</option>
+        <option value="val_4">Item 4</option>
+    </select>
+</div>
+
+select    - Drop-down list
+
+Styleguide 5.6
+*/
+select {
+    height: ($input-font-size + ($form-spacing * 1.8) - emCalc(1));   
+}
+
+
+/*
+Checkbox
+
+Checkboxes are used for selecting one or several options in a list. 
+
+Markup:
+<div class="form_group">
+    <input type="checkbox" id="checkbox_id_1" />
+    <label for="checkbox_id_1">Item 1</label>
+    <input type="checkbox" id="checkbox_id_2" />
+    <label for="checkbox_id_2">Item 2</label>
+    <input type="checkbox" id="checkbox_id_3" class="error" />
+    <label for="checkbox_id_3">Item 3</label>
+</div>
+
+checkbox    - Custom checkbox
+
+Styleguide 5.7
+*/
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label:before {
+    @extend .font_header;
+    @include box-shadow($input-checkbox-box-shadow);
+    background-color: $input-bg-color;
+    display: inline-block;
+    margin: $input-checkbox-margin;
+    padding: $input-checkbox-padding;
+    border: $input-checkbox-border-width $input-border-style $input-border-color;
+    width: $input-checkbox-width;
+    font-size: $input-checkbox-font-size;
+    line-height: $input-checkbox-line-height;
+    color: $input-checkbox-color;
+    text-indent: 0.11em;
+    vertical-align: middle;
+    content: "\00A0";
+}
+
+input[type="checkbox"]:checked + label:before {
+    content: "\2714";
+}
+            
+/*
+Radio
+
+Radio are used for selecting one option from many.
+
+Markup:
+<div class="form_group">
+    <input type="radio" id="radio_id_1" name="radio_group" />
+    <label for="radio_id_1">Item 1</label>
+    <input type="radio" id="radio_id_2" name="radio_group" />
+    <label for="radio_id_2">Item 2</label>
+    <input type="radio" id="radio_id_3" name="radio_group" />
+    <label for="radio_id_3">Item 3</label>    
+</div>
+
+radio    - Custom radios
+
+Styleguide 5.8
+*/
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label:before {
+    @extend .font_header;
+    @include box-shadow($input-checkbox-box-shadow);
+    background-color: $input-bg-color;
+    display: inline-block;
+    margin: $input-radio-margin;
+    padding: $input-radio-padding;
+    border: $input-checkbox-border-width $input-border-style $input-border-color;
+    -webkit-border-radius: $input-radio-radius; 
+    -moz-border-radius: $input-radio-radius; 
+    border-radius: $input-radio-radius;  
+    width: $input-radio-width; 
+    font-size: $input-radio-font-size;
+    line-height: $input-radio-line-height;
+    color: $input-radio-color;
+    text-indent: 0.18em;
+    vertical-align: middle;
+    content: "\00A0";
+}
+
+input[type="radio"]:checked + label:before {
+    content: "\25CF";
+}
+

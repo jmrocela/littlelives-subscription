@@ -1,0 +1,3602 @@
+@charset "UTF-8";
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 22, ../../sass/plugins/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+/* line 32, ../../sass/plugins/_normalize.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 41, ../../sass/plugins/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 52, ../../sass/plugins/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 66, ../../sass/plugins/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 76, ../../sass/plugins/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 88, ../../sass/plugins/_normalize.scss */
+a {
+  background: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 96, ../../sass/plugins/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 105, ../../sass/plugins/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 118, ../../sass/plugins/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 127, ../../sass/plugins/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 136, ../../sass/plugins/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 144, ../../sass/plugins/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 152, ../../sass/plugins/_normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 162, ../../sass/plugins/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+/* line 174, ../../sass/plugins/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+/* line 183, ../../sass/plugins/_normalize.scss */
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+/* line 191, ../../sass/plugins/_normalize.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 199, ../../sass/plugins/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 208, ../../sass/plugins/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 215, ../../sass/plugins/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 219, ../../sass/plugins/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 231, ../../sass/plugins/_normalize.scss */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 239, ../../sass/plugins/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 251, ../../sass/plugins/_normalize.scss */
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 263, ../../sass/plugins/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 274, ../../sass/plugins/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 288, ../../sass/plugins/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 300, ../../sass/plugins/_normalize.scss */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+/* line 312, ../../sass/plugins/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 327, ../../sass/plugins/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 337, ../../sass/plugins/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 347, ../../sass/plugins/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 358, ../../sass/plugins/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 371, ../../sass/plugins/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 380, ../../sass/plugins/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+/* line 390, ../../sass/plugins/_normalize.scss */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 403, ../../sass/plugins/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*---------------------------------------------------------------- */
+/* @Variables: Colors
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Global: Colors
+/*---------------------------------------------------------------- */
+/*
+Colors
+
+Brand Colors.
+
+Markup:
+<div class="primary_color">#21b6ea Primary</div>
+<div class="secondary_color">#fbba00 Secondary</div>
+<div class="success_color">#c8d400 Success</div>
+<div class="alert_color">#f08372 Alert</div>
+<div class="disabled_color">#cccccc Disabled</div>
+<div class="canvas_color">#f7f7f7 Canvas</div>
+
+Default      - Colors used in LittleLives.
+
+Styleguide 1
+*/
+/* line 35, ../../sass/globals/_colors.scss */
+.primary_color {
+  background-color: #21b6ea;
+}
+
+/* line 39, ../../sass/globals/_colors.scss */
+.secondary_color {
+  background-color: #fbba00;
+}
+
+/* line 43, ../../sass/globals/_colors.scss */
+.success_color {
+  background-color: #c8d400;
+}
+
+/* line 47, ../../sass/globals/_colors.scss */
+.alert_color {
+  background-color: #f08372;
+}
+
+/* line 51, ../../sass/globals/_colors.scss */
+.disabled_color {
+  background-color: #cccccc;
+}
+
+/* line 55, ../../sass/globals/_colors.scss */
+.canvas_color {
+  background-color: #f7f7f7;
+}
+
+/*---------------------------------------------------------------- */
+/* @Global: Fonts
+/*---------------------------------------------------------------- */
+/*
+Fonts
+
+A list of font types used in LittleLives.
+<ul>
+    <li><strong>VAGRundschriftD</strong></li>
+    <li><strong>Noto Sans</strong></li> 
+</ul>
+
+Markup:
+<pre class="{$modifiers}">
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+!@#$%^&*()_+-=,./?<>[]\{}|~`
+1234567890
+</pre>
+
+.font_header       - VAGRundschriftD
+.font_reg          - Noto Sans
+.font_italic       - Noto Sans Italic
+.font_bold         - Noto Sans Bold
+.font_bold_italic  - Noto Sans Bold Italic
+
+Styleguide 2
+*/
+@font-face {
+  font-family: 'VAGRundschriftD';
+  src: url("/fonts/VAGRundschriftD/vagrundschriftd.eot");
+  src: url("/fonts/VAGRundschriftD/vagrundschriftd.eot?#iefix") format("embedded-opentype"), url("/fonts/VAGRundschriftD/vagrundschriftd.woff") format("woff"), url("/fonts/VAGRundschriftD/vagrundschriftd.ttf") format("truetype"), url("/fonts/VAGRundschriftD/vagrundschriftd.svg#vagrundschriftd-reg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Noto-Sans';
+  src: url("/fonts/NotoSans/NotoSans-Regular.eot");
+  src: url("/fonts/NotoSans/NotoSans-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/NotoSans/NotoSans-Regular.woff") format("woff"), url("/fonts/NotoSans/NotoSans-Regular.ttf") format("truetype"), url("/fonts/NotoSans/NotoSans-Regular.svg#notosans-regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Noto-Sans-Italic';
+  src: url("/fonts/NotoSans/NotoSans-Italic.eot");
+  src: url("/fonts/NotoSans/NotoSans-Italic.eot?#iefix") format("embedded-opentype"), url("/fonts/NotoSans/NotoSans-Italic.woff") format("woff"), url("/fonts/NotoSans/NotoSans-Italic.ttf") format("truetype"), url("/fonts/NotoSans/NotoSans-Italic.svg#notosans-italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Noto-Sans-Bold';
+  src: url("/fonts/NotoSans/NotoSans-Bold.eot");
+  src: url("/fonts/NotoSans/NotoSans-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/NotoSans/NotoSans-Bold.woff") format("woff"), url("/fonts/NotoSans/NotoSans-Bold.ttf") format("truetype"), url("/fonts/NotoSans/NotoSans-Bold.svg#notosans-bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: 'Noto-Sans-Bold-Italic';
+  src: url("/fonts/NotoSans/NotoSans-BoldItalic.eot");
+  src: url("/fonts/NotoSans/NotoSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("/fonts/NotoSans/NotoSans-BoldItalic.woff") format("woff"), url("/fonts/NotoSans/NotoSans-BoldItalic.ttf") format("truetype"), url("/fonts/NotoSans/NotoSans-BoldItalic.svg#notosans-bolditalic") format("svg");
+  font-weight: 700;
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/* line 94, ../../sass/globals/_fonts.scss */
+.font_header, h1, h2, h3, h4, h5, h6, ol.styled li:before, .button, button, input[type="checkbox"] + label:before, input[type="radio"] + label:before {
+  font-family: 'VAGRundschriftD', verdana, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 100, ../../sass/globals/_fonts.scss */
+.font_reg, p, ul, ol, dl, blockquote a, input[type="text"], input[type="password"], input[type="date"],
+input[type="datetime"], input[type="datetime-local"], input[type="month"],
+input[type="week"], input[type="email"], input[type="number"],
+input[type="search"], input[type="tel"], input[type="time"],
+input[type="url"], input[type="file"], textarea, select {
+  font-family: 'Noto-Sans', verdana, arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 106, ../../sass/globals/_fonts.scss */
+.font_italic, i, em {
+  font-family: 'Noto-Sans-Italic', verdana, arial, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* line 112, ../../sass/globals/_fonts.scss */
+.font_bold, bold, strong, mark, blockquote cite, form legend, label {
+  font-family: 'Noto-Sans-Bold', verdana, arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* line 118, ../../sass/globals/_fonts.scss */
+.font_bold_italic {
+  font-family: 'Noto-Sans-Bold-Italic', verdana, arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/*---------------------------------------------------------------- */
+/* Reset: Base
+/*---------------------------------------------------------------- */
+/* line 6, ../../sass/globals/_base.scss */
+div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre,
+form, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/*---------------------------------------------------------------- */
+/* @Mixins: Base
+/*---------------------------------------------------------------- */
+/*
+ * Used to clear floats without structural markup.
+ */
+/*
+ * Add transitions effect to element.
+ * 
+ * @param {Object} $property      - element property to be animated.
+ * @param {String} $speed         - speed of transition.
+ * @param {String} $ease          - easing function to use for the transition.
+ */
+/*
+ * Add box-sizing across browser prefixes to fix border and padding issues in form elements
+ * 
+ * @param {Object} $type - element property to be size.
+ */
+/*
+ * Add glowing effect to block elements
+ * 
+ * @param {Object} $selector  - selector state to be animated.
+ * @param {Time}   $fade-time - duration of animation.
+ * @param {Color}  $type      - element property to be size.
+ */
+/*
+ * Add drop and/or inset shadow for box model.
+ * 
+ * @param {Object} $style  - drop/inset shadow for box model.
+ */
+/*
+ * Sprite images for high resolution devices
+ *
+ * TODO: Enter the filename and path to the sprite map.
+ * @param {String} $sprite      - the filename of the image to be converted to sprite.
+ * @param {Object} $file        - normal sprite propertes, pathname, spacing, layout etc.
+ * @param {Object} $file-2x     - HD sprite propertes, pathname, spacing, layout etc.
+ */
+/*---------------------------------------------------------------- */
+/* @Functions: Base
+/*---------------------------------------------------------------- */
+/*
+ * Calculate a list of em values.
+ * 
+ * TODO: Just enter the number, no need to mention "px".
+ * @param {Literal} $values..  - a list of pixel values.
+ * @return {Literal} $emValues - a list of converted ems value. 
+ */
+/*
+ * Converts "px" to "em" using the ($)em-base.
+ * 
+ * TODO: Just enter the number, no need to mention "px".
+ * @param {Number} $values - pixel value.
+ * @return {Number} $values - converted em value. 
+ */
+/*
+ * Strips the unit of measure and returns it.
+ * 
+ * TODO: Enter the unit of measure.
+ * @param {String} $num - unit of measure, e.g px, ems.
+ * @return {Number} $nums - number only.
+ */
+/*---------------------------------------------------------------- */
+/* @Variables: Base
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Media Enquiries: Base
+/*---------------------------------------------------------------- */
+@media only screen and (min-width: 768px) {
+  /* line 203, ../../sass/globals/_base.scss */
+  body {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  /* line 209, ../../sass/globals/_base.scss */
+  body {
+    font-size: 17px;
+  }
+}
+/*---------------------------------------------------------------- */
+/* @Media: Base
+/*---------------------------------------------------------------- */
+/* line 218, ../../sass/globals/_base.scss */
+html, body {
+  height: 100%;
+}
+
+/*---------------------------------------------------------------- */
+/* @Variables: Headers
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Typography
+/*---------------------------------------------------------------- */
+/*
+Typography
+
+Headers to show the document structure. Don't use headings to make text <strong>BIG</strong> or <strong>bold</strong>.
+
+Markup:
+<h1>h1. This is a very large header.</h1>
+<h2>h2. This is a large header.</h2>
+<h3>h3. This is a medium header.</h3>
+<h4>h4. This is a moderate header.</h4>
+<h5>h5. This is a small header.</h5>
+<h6>h6. This is a tiny header.</h6>
+
+h1-h6   - Used for title or document header. h1 defines the most important heading. h6 defines the least important heading.
+
+Styleguide 3
+*/
+/* line 84, ../../sass/globals/_text.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0.2em;
+  margin-bottom: 0.53333em;
+  color: #222222;
+  line-height: 1.15em;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 93, ../../sass/globals/_text.scss */
+h1 {
+  font-size: 2.66667em;
+}
+
+/* line 94, ../../sass/globals/_text.scss */
+h2 {
+  font-size: 2.4em;
+}
+
+/* line 95, ../../sass/globals/_text.scss */
+h3 {
+  font-size: 2em;
+}
+
+/* line 96, ../../sass/globals/_text.scss */
+h4 {
+  font-size: 1.73333em;
+}
+
+/* line 97, ../../sass/globals/_text.scss */
+h5 {
+  font-size: 1.46667em;
+}
+
+/* line 98, ../../sass/globals/_text.scss */
+h6 {
+  font-size: 1.2em;
+}
+
+/*
+Paragraph
+
+Defines a paragraph of text
+
+Markup:
+<p>Happy teachers make happy students. Fun and simple to use technology that excites and delights users. Technology that is useful and efficient, it gets out of the way and puts the users first, every single time.</p>
+
+p   - Body text.
+
+Styleguide 3.1
+*/
+/* line 112, ../../sass/globals/_text.scss */
+p {
+  margin-bottom: 1.33333em;
+  font-size: 1.06667em;
+  color: #222222;
+  line-height: 1.5em;
+  text-rendering: optimizeLegibility;
+}
+/* line 119, ../../sass/globals/_text.scss */
+p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+Anchor
+
+A hyperlink, which is used to link from one page to another.
+
+Markup:
+<p><a href="#">This is a link.</a></p>
+
+a           - For text with naivgational purpose, do not use a text link as a button.
+
+Styleguide 3.2
+*/
+/* line 136, ../../sass/globals/_text.scss */
+a {
+  color: #21b6ea;
+  text-decoration: none;
+  line-height: inherit;
+}
+/* line 140, ../../sass/globals/_text.scss */
+a:visited {
+  color: #15a9dd;
+}
+/* line 143, ../../sass/globals/_text.scss */
+a:hover {
+  color: #15a9dd;
+  outline: 0;
+}
+/* line 147, ../../sass/globals/_text.scss */
+a:active {
+  color: #15a9dd;
+  outline: 0;
+}
+/* line 151, ../../sass/globals/_text.scss */
+a:focus {
+  color: #15a9dd;
+  outline: thin dotted;
+}
+/* line 156, ../../sass/globals/_text.scss */
+a img {
+  border: none;
+}
+
+/*
+Inline Elements
+
+Format text in a document.
+
+Markup:
+<p>This is a <{$modifiers}>line of text</{$modifiers}> with inline style set.</p>
+
+em                  - Emphasize text.
+strong              - Indicate strong importance.
+del                 - Delete text. New text can be inserted.
+ins                 - Insert new text, usually to replace deleted text.
+small               - For fine print.
+big                 - Large text
+mark                - Highlight text to indicate its relevance to the user.
+code                - For a piece of computer code.
+abbr                - Indicates an abbreviation.
+acronym             - Indicates an acronym.
+sup                 - Define superscript text often used in mathematical expressions or foreign languages
+sub                 - Define subscript text often used in mathematical expressions or foreign languages
+
+Styleguide 3.3
+*/
+/* line 182, ../../sass/globals/_text.scss */
+i, em {
+  line-height: inherit;
+}
+
+/* line 187, ../../sass/globals/_text.scss */
+bold, strong {
+  line-height: inherit;
+}
+
+/* line 192, ../../sass/globals/_text.scss */
+ins {
+  background-color: #fbba00;
+  padding: 0 0.1em 0.08em;
+  -webkit-border-radius: 0.26667em;
+  -moz-border-radius: 0.26667em;
+  border-radius: 0.26667em;
+}
+
+/* line 200, ../../sass/globals/_text.scss */
+small {
+  font-size: 0.8em;
+  line-height: inherit;
+}
+
+/* line 205, ../../sass/globals/_text.scss */
+big {
+  font-size: 1.33333em;
+  line-height: inherit;
+}
+
+/* line 210, ../../sass/globals/_text.scss */
+mark {
+  background-color: #21b6ea;
+  padding: 0 0.1em 0.08em;
+  -webkit-border-radius: 0.26667em;
+  -moz-border-radius: 0.26667em;
+  border-radius: 0.26667em;
+  color: #fff;
+}
+
+/* line 220, ../../sass/globals/_text.scss */
+code {
+  background: #f8f8f8;
+  padding: 0 0.1em 0.08em;
+  border: 1px solid #dddddd;
+  -webkit-border-radius: 0.26667em;
+  -moz-border-radius: 0.26667em;
+  border-radius: 0.26667em;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-weight: bold;
+}
+
+/* line 231, ../../sass/globals/_text.scss */
+abbr, acronym {
+  border-bottom: 1px dotted #dddddd;
+  text-transform: uppercase;
+  cursor: help;
+}
+
+/* line 237, ../../sass/globals/_text.scss */
+abbr {
+  text-transform: none;
+}
+
+/*
+Lists
+
+A list of items. Lists may contain:
+<ul>
+    <li><strong>Unordered List</strong>- A list of related items, in which their order does not matter nor do they have a numbered or alphabetical list element.</li>
+    <li><strong>Ordered List</strong>- A list of related items, in which their order matter. Their order can be presented by letters, Roman numberals, etc.</li>
+</ul>
+
+Markup:
+<ul class="{$modifiers}">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
+<ol class="{$modifiers}">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ol>
+
+.styled     - Lists with styling
+.unstyled   - Lists with no styling
+
+Styleguide 3.4
+*/
+/* line 268, ../../sass/globals/_text.scss */
+ul, ol, dl {
+  font-size: 1.06667em;
+  line-height: 1.5em;
+  list-style-position: inside;
+  vertical-align: top;
+}
+/* line 274, ../../sass/globals/_text.scss */
+ul:last-child, ol:last-child, dl:last-child {
+  margin-bottom: 0;
+}
+
+/* line 280, ../../sass/globals/_text.scss */
+ul li, ol li {
+  margin-bottom: 0.23333em;
+}
+
+/* line 285, ../../sass/globals/_text.scss */
+ul.styled {
+  margin-left: 1.33333em;
+  margin-bottom: 1.33333em;
+  list-style-position: outside;
+}
+
+/* line 291, ../../sass/globals/_text.scss */
+ol.styled {
+  list-style-type: none;
+  margin-left: 0;
+  margin-bottom: 1.33333em;
+}
+/* line 295, ../../sass/globals/_text.scss */
+ol.styled li {
+  padding-left: 2.2em;
+  counter-increment: list;
+}
+/* line 299, ../../sass/globals/_text.scss */
+ol.styled li:before {
+  background: #21b6ea;
+  float: left;
+  margin-left: -2.2em;
+  padding: 0em 0.55em;
+  -webkit-border-radius: 20em;
+  -moz-border-radius: 20em;
+  border-radius: 20em;
+  font-size: 0.86667em;
+  color: #fff;
+  content: counter(list,decimal);
+}
+/* line 312, ../../sass/globals/_text.scss */
+ol.styled li:first-child:before {
+  padding: 0em 0.62em;
+}
+
+/* line 317, ../../sass/globals/_text.scss */
+ul.unstyled, ol.unstyled {
+  list-style-type: none;
+}
+
+/*
+Block Quote
+
+A section that is quoted from another source. The following selectors can be use within a blockquote:
+<ul>
+    <li><strong>p</strong>- For longer block quote</li>
+    <li><strong>cite</strong>- To identify the contained text as a reference to another source, be that a book, a play, a periodical publication, or even another web page or site.</li>
+    <li><strong>a</strong>- A link to the reference material or site.</li>
+</ul>
+
+Markup:
+<blockquote>
+    <p>LittleLives has won my confidence due to their continuous effort to research and upgrade with meaningful enhanced features and services.</p>
+    <cite>Mrs Serene Leong <a href="http://www.mmmw.com.sg/">My Montessori My World Kindergarten</a></cite>  
+</blockquote>
+
+blockquote     - Default blockquote.
+
+Styleguide 3.5
+*/
+/* line 341, ../../sass/globals/_text.scss */
+blockquote {
+  margin: 0 0 1.33333em;
+  padding: 0.66667em 0 0.66667em 4.33333em;
+  border-color: #f2f2f2;
+  border-width: 0;
+  border-style: dashed;
+  position: relative;
+  color: #555555;
+}
+/* line 349, ../../sass/globals/_text.scss */
+blockquote:after {
+  background: #21b6ea;
+  padding: 0.6em 0.285em 0.19em;
+  -webkit-border-radius: 20em;
+  -moz-border-radius: 20em;
+  border-radius: 20em;
+  position: absolute;
+  top: 0.33em;
+  left: 0;
+  font-family: "Georgia", verdana, arial, sans-serif;
+  font-size: 3.2em;
+  font-weight: bold;
+  line-height: 0.3em;
+  color: #fff;
+  content: "\201C";
+}
+/* line 365, ../../sass/globals/_text.scss */
+blockquote cite {
+  display: block;
+  margin-top: 1.5em;
+  font-size: 0.86667em;
+  color: #2f2f2f;
+  line-height: 1.5em;
+}
+/* line 373, ../../sass/globals/_text.scss */
+blockquote a {
+  display: block;
+}
+
+/*---------------------------------------------------------------- */
+/* @Variables: Buttons
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Mixin: Buttons
+/*---------------------------------------------------------------- */
+/*
+ * Add color styling to button.
+ * 
+ * @param {Object} $bg         - Color scheme to be use for the button.
+ * @param {Boolean} $disabled  - Disable the state of a button
+ */
+/*---------------------------------------------------------------- */
+/* @Buttons
+/*---------------------------------------------------------------- */
+/*
+Buttons
+
+Buttons are action items.
+
+Markup:
+<button class="button {$modifiers}">Button Element</button>
+
+.button         - Default button
+.small          - Small button
+.med            - Medium button
+.big            - Big button
+.action         - Button that indicates suggested course of action
+.disabled       - Button in disable mode
+
+Styleguide 4
+*/
+/* line 95, ../../sass/globals/_buttons.scss */
+.button, button {
+  background-color: #c8d400;
+  border-color: #b0bb00;
+  /* Experimental
+  &:active {
+      top: 0.05em;
+      border-bottom-width: $button-bottom-width - 0.05em;
+      margin-top: 0.05em;
+      margin-bottom: $button-margin-bottom + 0.05em;
+      line-height: $button-line-height - 0.03em;
+  }*/
+  color: white;
+  margin-bottom: 0.33333em;
+  padding-top: 0.46667em;
+  padding-left: 0.93333em;
+  padding-bottom: 0.46667em;
+  padding-right: 0.93333em;
+  border-width: 0;
+  border-bottom-width: 0.21em;
+  border-style: solid;
+  -webkit-border-radius: 0.24em;
+  -moz-border-radius: 0.24em;
+  border-radius: 0.24em;
+  position: relative;
+  top: 0;
+  font-size: 1.2em;
+  line-height: 0.9em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  outline: 0;
+  cursor: pointer;
+}
+/* line 45, ../../sass/globals/_buttons.scss */
+.button:hover, .button:focus, button:hover, button:focus {
+  background-color: #b0bb00;
+  border-bottom-color: #8e9700;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+/* line 66, ../../sass/globals/_buttons.scss */
+.button:hover, .button:focus, button:hover, button:focus {
+  color: white;
+}
+/* line 118, ../../sass/globals/_buttons.scss */
+.button.small, button.small {
+  font-size: 0.93333em;
+}
+/* line 121, ../../sass/globals/_buttons.scss */
+.button.med, button.med {
+  font-size: 1.33333em;
+}
+/* line 124, ../../sass/globals/_buttons.scss */
+.button.big, button.big {
+  font-size: 1.73333em;
+}
+/* line 127, ../../sass/globals/_buttons.scss */
+.button.action, button.action {
+  background-color: #fbba00;
+  border-color: #e2a700;
+  /* Experimental
+  &:active {
+      top: 0.05em;
+      border-bottom-width: $button-bottom-width - 0.05em;
+      margin-top: 0.05em;
+      margin-bottom: $button-margin-bottom + 0.05em;
+      line-height: $button-line-height - 0.03em;
+  }*/
+  color: white;
+}
+/* line 45, ../../sass/globals/_buttons.scss */
+.button.action:hover, .button.action:focus, button.action:hover, button.action:focus {
+  background-color: #e2a700;
+  border-bottom-color: #be8d00;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+/* line 66, ../../sass/globals/_buttons.scss */
+.button.action:hover, .button.action:focus, button.action:hover, button.action:focus {
+  color: white;
+}
+/* line 130, ../../sass/globals/_buttons.scss */
+.button.disabled, .button:disabled, button.disabled, button:disabled {
+  background-color: #cccccc;
+  border-color: #bfbfbf;
+  /* Experimental
+  &:active {
+      top: 0.05em;
+      border-bottom-width: $button-bottom-width - 0.05em;
+      margin-top: 0.05em;
+      margin-bottom: $button-margin-bottom + 0.05em;
+      line-height: $button-line-height - 0.03em;
+  }*/
+  color: #555555;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  cursor: default;
+  opacity: 0.6;
+}
+/* line 45, ../../sass/globals/_buttons.scss */
+.button.disabled:hover, .button.disabled:focus, .button:disabled:hover, .button:disabled:focus, button.disabled:hover, button.disabled:focus, button:disabled:hover, button:disabled:focus {
+  background-color: #bfbfbf;
+  border-bottom-color: #adadad;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+/* line 63, ../../sass/globals/_buttons.scss */
+.button.disabled:hover, .button.disabled:focus, .button:disabled:hover, .button:disabled:focus, button.disabled:hover, button.disabled:focus, button:disabled:hover, button:disabled:focus {
+  color: #555555;
+}
+/* line 72, ../../sass/globals/_buttons.scss */
+.button.disabled:hover, .button.disabled:focus, .button:disabled:hover, .button:disabled:focus, button.disabled:hover, button.disabled:focus, button:disabled:hover, button:disabled:focus {
+  background-color: #cccccc;
+}
+
+/*
+Loading Button
+
+Button to indicate loading, usually after a form submission or actions that requires instant feedback.
+
+Markup:
+<button class="button is_button_loading">
+    <canvas id="spinner"></canvas>
+    Button Element
+</button>
+
+.is_button_loading      - Button in loading state. Usually added via javascript.
+
+Styleguide 4.1
+*/
+/* line 151, ../../sass/globals/_buttons.scss */
+.is_button_loading {
+  position: relative;
+  color: #c8d400;
+  text-shadow: none;
+  cursor: default;
+}
+/* line 156, ../../sass/globals/_buttons.scss */
+.is_button_loading:hover, .is_button_loading:focus {
+  background-color: #c8d400;
+  color: #c8d400;
+}
+/* line 160, ../../sass/globals/_buttons.scss */
+.is_button_loading #spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.7em 0 0 -1.4em;
+  width: 2.8em;
+  height: 1.4em;
+  z-index: 10;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+/* line 171, ../../sass/globals/_buttons.scss */
+.is_button_loading.action {
+  color: #fbba00;
+}
+/* line 173, ../../sass/globals/_buttons.scss */
+.is_button_loading.action:hover, .is_button_loading.action:focus {
+  background-color: #fbba00;
+  color: #fbba00;
+}
+
+/*---------------------------------------------------------------- */
+/* @Mixin: Forms
+/*---------------------------------------------------------------- */
+/*
+ * Change the form input color based on the it's status
+ * 
+ * TODO: Pass the new color object
+ * @param {Color} $color  - Color to change.
+ */
+/*
+ * Change the form label color based on the input status
+ * 
+ * TODO: Pass the color object;
+ * @param {Object} $color  - Color to change.
+ */
+/*---------------------------------------------------------------- */
+/* @Variables: Forms
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Forms
+/*---------------------------------------------------------------- */
+/*
+Forms
+
+A typical form for user to send data to a server for processing.
+
+Markup:
+<form class="{$modifiers}">
+    <fieldset>
+        <legend>Form Title</legend>
+        <div class="form_group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter here" />
+        </div>
+        <div class="form_group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter here" />
+        </div>
+        <button type="submit">Submit</button>
+    </fieldset>
+</form>
+
+form        - A typical input form.
+.styled     - A styled input form.
+
+Styleguide 5
+*/
+/* line 131, ../../sass/globals/_forms.scss */
+form fieldset {
+  background-color: none;
+  margin: 0.08889em 0 0.06889em;
+  border: none;
+}
+/* line 136, ../../sass/globals/_forms.scss */
+form legend {
+  display: inline-block;
+  padding: 0.33333em 0 0.4em;
+  font-size: 1.46667em;
+  color: #222222;
+}
+/* line 144, ../../sass/globals/_forms.scss */
+form.styled fieldset {
+  background-color: #f7f7f7;
+  margin: 0.08889em 0 0.06889em;
+  padding: 3.66667em 1.33333em 1.33333em;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  position: relative;
+}
+/* line 153, ../../sass/globals/_forms.scss */
+form.styled legend {
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+  -webkit-box-shadow: 0 0.13333em 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0.13333em 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.13333em 0 rgba(0, 0, 0, 0.1);
+  background-color: #fbba00;
+  padding: 0.33333em 1em 0.4em;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  position: absolute;
+  top: 0.5em;
+  left: -0.5em;
+  z-index: 11;
+  font-size: 0.93333em;
+  text-transform: uppercase;
+  color: #222222;
+}
+/* line 172, ../../sass/globals/_forms.scss */
+form.styled legend:before {
+  background-color: #fbba00;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  position: absolute;
+  left: 0;
+  bottom: -0.3em;
+  content: " ";
+}
+/* line 182, ../../sass/globals/_forms.scss */
+form.styled legend:after {
+  -webkit-border-radius: 0.3em 0 0 0.3em;
+  -moz-border-radius: 0.3em 0 0 0.3em;
+  -ms-border-radius: 0.3em 0 0 0.3em;
+  -o-border-radius: 0.3em 0 0 0.3em;
+  border-radius: 0.3em 0 0 0.3em;
+  background-color: #7b5c00;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  position: absolute;
+  bottom: -0.5em;
+  left: 0;
+  content: " ";
+}
+
+/* line 197, ../../sass/globals/_forms.scss */
+label {
+  display: block;
+  margin-bottom: 0.38333em;
+  font-size: 1.06667em;
+  color: #222222;
+  cursor: pointer;
+}
+
+/* line 206, ../../sass/globals/_forms.scss */
+.form_group {
+  margin-bottom: 1.03333em;
+  width: 100%;
+}
+/* line 209, ../../sass/globals/_forms.scss */
+.form_group small {
+  display: block;
+  margin-top: 0.38333em;
+}
+
+/*
+Text Input
+
+Form inputs.
+
+Markup:
+<div class="form_group">
+    <label for="{$modifiers}">Label Text</label>
+    <input type="{$modifiers}" id="{$modifiers}" placeholder="Enter here" />
+</div>
+
+text             - Normal text input
+password         - Password input
+date             - Date input
+time             - Time input
+email            - Email input
+number           - Number input
+url              - URL input
+tel              - Tel input
+search           - Search input
+
+Styleguide 5.1
+*/
+/* line 242, ../../sass/globals/_forms.scss */
+input[type="text"], input[type="password"], input[type="date"],
+input[type="datetime"], input[type="datetime-local"], input[type="month"],
+input[type="week"], input[type="email"], input[type="number"],
+input[type="search"], input[type="tel"], input[type="time"],
+input[type="url"], input[type="file"], textarea, select {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: inset 0.06667em 0.06667em 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0.06667em 0.06667em 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0.06667em 0.06667em 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-box-shadow 0.25s, border-color 0.25s ease-in-out;
+  -moz-transition: -moz-box-shadow 0.25s, border-color 0.25s ease-in-out;
+  transition: box-shadow 0.25s, border-color 0.25s ease-in-out;
+  background-color: white;
+  display: block;
+  margin: 0;
+  padding: 0.46667em;
+  border: 0.26667em solid #ededed;
+  width: 100%;
+  font-size: 1.06667em;
+  color: #222222;
+}
+/* line 64, ../../sass/globals/_base.scss */
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus,
+input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus,
+input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus,
+input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus,
+input[type="url"]:focus, input[type="file"]:focus, textarea:focus, select:focus {
+  -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 0.5);
+  box-shadow: 0 0 5px rgba(81, 203, 238, 0.5);
+  border-color: rgba(81, 203, 238, 0.5);
+}
+/* line 255, ../../sass/globals/_forms.scss */
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus,
+input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus,
+input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus,
+input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus,
+input[type="url"]:focus, input[type="file"]:focus, textarea:focus, select:focus {
+  background: #fafafa;
+  border-color: rgba(81, 203, 238, 0.5);
+  -webkit-box-shadow: inset 0.06667em 0.06667em 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0.06667em 0.06667em 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0.06667em 0.06667em 0 rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+/* line 261, ../../sass/globals/_forms.scss */
+input[type="text"].disabled, input[type="text"][disabled="disabled"], input[type="text"]:disabled, input[type="password"].disabled, input[type="password"][disabled="disabled"], input[type="password"]:disabled, input[type="date"].disabled, input[type="date"][disabled="disabled"], input[type="date"]:disabled,
+input[type="datetime"].disabled,
+input[type="datetime"][disabled="disabled"],
+input[type="datetime"]:disabled, input[type="datetime-local"].disabled, input[type="datetime-local"][disabled="disabled"], input[type="datetime-local"]:disabled, input[type="month"].disabled, input[type="month"][disabled="disabled"], input[type="month"]:disabled,
+input[type="week"].disabled,
+input[type="week"][disabled="disabled"],
+input[type="week"]:disabled, input[type="email"].disabled, input[type="email"][disabled="disabled"], input[type="email"]:disabled, input[type="number"].disabled, input[type="number"][disabled="disabled"], input[type="number"]:disabled,
+input[type="search"].disabled,
+input[type="search"][disabled="disabled"],
+input[type="search"]:disabled, input[type="tel"].disabled, input[type="tel"][disabled="disabled"], input[type="tel"]:disabled, input[type="time"].disabled, input[type="time"][disabled="disabled"], input[type="time"]:disabled,
+input[type="url"].disabled,
+input[type="url"][disabled="disabled"],
+input[type="url"]:disabled, input[type="file"].disabled, input[type="file"][disabled="disabled"], input[type="file"]:disabled, textarea.disabled, textarea[disabled="disabled"], textarea:disabled, select.disabled, select[disabled="disabled"], select:disabled {
+  background-color: #cccccc;
+}
+
+/*
+Text Area
+
+Multi-line text input for long description.
+
+Markup:
+<div class="form_group">
+    <label for="element_id">Label Text</label>
+    <textarea placeholder="Enter here" id="element_id" cols="150"></textarea>
+</div>
+
+textarea             - Multi-line text input
+
+Styleguide 5.2
+*/
+/* line 281, ../../sass/globals/_forms.scss */
+textarea {
+  height: auto;
+  min-height: 8em;
+}
+
+/*
+Error Handling
+
+Input with error.
+
+Markup:
+<div class="form_group error">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" class="error" />
+    <small class="error">Error message to be shown here.</small>
+</div>
+
+.error      - You can attach a class of .error either to the elements (label, input, small) or their parent selector (form, fieldset, div).
+
+Styleguide 5.3
+*/
+/* line 304, ../../sass/globals/_forms.scss */
+.error label, label.error, small.error, .error small,
+input[type="checkbox"].error + label,
+input[type="radio"].error + label {
+  color: #f08372;
+}
+
+/* line 311, ../../sass/globals/_forms.scss */
+input.error, textarea.error, select.error,
+.error input, .error textarea, .error select,
+.error input[type="checkbox"] + label:before, input[type="checkbox"].error + label:before,
+.error input[type="radio"] + label:before, input[type="radio"].error + label:before {
+  background-color: rgba(240, 131, 114, 0.1);
+  border-color: #f08372;
+}
+
+/*
+AJAX Input
+
+Input that requires instant feedback such as autosave, AJAX loading, success states and errored states.
+
+Markup:
+<div class="form_group instant {$modifiers}">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" />
+</div>
+
+.success            - Return success.
+.failure            - Return error.
+.is_input_loading   - Sending a request, awaiting feedback.
+
+Styleguide 5.4
+*/
+/* line 332, ../../sass/globals/_forms.scss */
+.form_group.instant {
+  position: relative;
+}
+/* line 334, ../../sass/globals/_forms.scss */
+.form_group.instant:after {
+  display: block;
+  position: absolute;
+  top: 2em;
+  right: 0.5em;
+  font-size: 1.26667em;
+  font-weight: bold;
+}
+/* line 343, ../../sass/globals/_forms.scss */
+.form_group.instant.success input {
+  background-color: rgba(200, 212, 0, 0.1);
+  border-color: #c8d400;
+  cursor: default;
+}
+/* line 347, ../../sass/globals/_forms.scss */
+.form_group.instant.success:after {
+  color: #c8d400;
+  content: "\2714";
+}
+/* line 353, ../../sass/globals/_forms.scss */
+.form_group.instant.failure label, .form_group.instant.failure small {
+  color: #f08372;
+}
+/* line 356, ../../sass/globals/_forms.scss */
+.form_group.instant.failure input {
+  background-color: rgba(240, 131, 114, 0.1);
+  border-color: #f08372;
+}
+/* line 359, ../../sass/globals/_forms.scss */
+.form_group.instant.failure:after {
+  color: #f08372;
+  content: "\2718";
+}
+/* line 365, ../../sass/globals/_forms.scss */
+.form_group.instant.is_input_loading input {
+  background-color: rgba(237, 237, 237, 0.1);
+  border-color: #ededed;
+}
+/* line 368, ../../sass/globals/_forms.scss */
+.form_group.instant.is_input_loading:after {
+  background: url("/img/global/spinner_small.gif") no-repeat left 0.4em;
+  content: "\00A0\00A0";
+}
+
+/*
+Input with Help Text
+
+A block of small text related to the input.
+
+Markup:
+<div class="form_group">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" placeholder="Enter here" />
+    <small class="notes">Enter some notes here</small>
+</div>
+
+.notes   - A block of text helper.
+
+Styleguide 5.5
+*/
+/* line 392, ../../sass/globals/_forms.scss */
+.form_group .notes {
+  display: block;
+  color: #626262;
+}
+
+/*
+Select
+
+A typical drop-down list.
+
+Markup:
+<div class="form_group">
+    <label for="element_id">Label Text</label>
+    <select id="element_id">
+        <option value="val_1">Item 1</option>
+        <option value="val_2">Item 2</option>
+        <option value="val_3">Item 3</option>
+        <option value="val_4">Item 4</option>
+    </select>
+</div>
+
+select    - Drop-down list
+
+Styleguide 5.6
+*/
+/* line 418, ../../sass/globals/_forms.scss */
+select {
+  height: 2.86em;
+}
+
+/*
+Checkbox
+
+Checkboxes are used for selecting one or several options in a list. 
+
+Markup:
+<div class="form_group">
+    <input type="checkbox" id="checkbox_id_1" />
+    <label for="checkbox_id_1">Item 1</label>
+    <input type="checkbox" id="checkbox_id_2" />
+    <label for="checkbox_id_2">Item 2</label>
+    <input type="checkbox" id="checkbox_id_3" class="error" />
+    <label for="checkbox_id_3">Item 3</label>
+</div>
+
+checkbox    - Custom checkbox
+
+Styleguide 5.7
+*/
+/* line 442, ../../sass/globals/_forms.scss */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* line 446, ../../sass/globals/_forms.scss */
+input[type="checkbox"] + label:before {
+  -webkit-box-shadow: inset 0.06667em 0.1em 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0.06667em 0.1em 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0.06667em 0.1em 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: inline-block;
+  margin: 0 0.3em 0.33333em 0;
+  padding: 0.3em 0.03em 0.18em;
+  border: 0.2em solid #ededed;
+  width: 1em;
+  font-size: 1.2em;
+  line-height: 0.55em;
+  color: #21b6ea;
+  text-indent: 0.11em;
+  vertical-align: middle;
+  content: "\00A0";
+}
+
+/* line 463, ../../sass/globals/_forms.scss */
+input[type="checkbox"]:checked + label:before {
+  content: "\2714";
+}
+
+/*
+Radio
+
+Radio are used for selecting one option from many.
+
+Markup:
+<div class="form_group">
+    <input type="radio" id="radio_id_1" name="radio_group" />
+    <label for="radio_id_1">Item 1</label>
+    <input type="radio" id="radio_id_2" name="radio_group" />
+    <label for="radio_id_2">Item 2</label>
+    <input type="radio" id="radio_id_3" name="radio_group" />
+    <label for="radio_id_3">Item 3</label>    
+</div>
+
+radio    - Custom radios
+
+Styleguide 5.8
+*/
+/* line 487, ../../sass/globals/_forms.scss */
+input[type="radio"] {
+  display: none;
+}
+
+/* line 491, ../../sass/globals/_forms.scss */
+input[type="radio"] + label:before {
+  -webkit-box-shadow: inset 0.06667em 0.1em 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0.06667em 0.1em 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0.06667em 0.1em 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: inline-block;
+  margin: 0 0.3em 0 0;
+  padding: 0.15em 0 0.18em;
+  border: 0.2em solid #ededed;
+  -webkit-border-radius: 20em;
+  -moz-border-radius: 20em;
+  border-radius: 20em;
+  width: 0.89em;
+  font-size: 1.4em;
+  line-height: 0.55em;
+  color: #21b6ea;
+  text-indent: 0.18em;
+  vertical-align: middle;
+  content: "\00A0";
+}
+
+/* line 511, ../../sass/globals/_forms.scss */
+input[type="radio"]:checked + label:before {
+  content: "\25CF";
+}
+
+/*---------------------------------------------------------------- */
+/* @Mixin: Grids
+/*---------------------------------------------------------------- */
+/*
+ * For creating container, nested, and collapsed rows.
+ * 
+ * TODO: Pass in the use case of the containing row.
+ * @param {String} $behavior    - the grid style of the containing element.
+ */
+/*
+ * For creating columns - @include these inside a media query to control small vs. big grid layouts
+ * 
+ * TODO: Pass in the use case of the containing colum, this must be nested inside or a row.
+ * @param {Number} $columns         - number of columns
+ * @param {Boolean} $last-column    - if its the last column.
+ * @param {Boolean} $center         - centered columns are placed in the middle of the row.
+ * @param {Number} $offset          - additional space between columns in a row.
+ * @param {Boolean} $push           - source ordering for shifting colums around.
+ * @param {Boolean} $pull           - source ordering for shifting colums around.
+ * @param {Boolean} $collapse       - if you have a collapsed row, you need to set the columns to collapse as well. 
+ * @param {Boolean} $float          - source ordering for shifting colums around.
+ */
+/*---------------------------------------------------------------- */
+/* @Functions: Grids
+/*---------------------------------------------------------------- */
+/*
+ * Calculate the column width
+ * 
+ * TODO: Pass in the number of columns and total number of columns.
+ * @param {Number} $colNumber       - Number of columns.
+ * @param {Number} $totalColumns    - Total number of columns.
+ * @return {Number} $values         - the width value converted to a percentage 
+ */
+/*---------------------------------------------------------------- */
+/* @Variables: Grids
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Grids
+/*---------------------------------------------------------------- */
+/*
+Grids
+
+<a href="http://foundation.zurb.com/docs/components/grid.html">Foundation</a> 12-column grid system. Used this for prototyping only.
+<ul>
+    <li><strong>Small</strong> - Mobile first approach, default breakpoint for small screen devices</li>
+    <li><strong>Medium</strong> - Breakpoint for medium screen devices such as tablet</li>
+    <li><strong>Big</strong> - Breakpoint for large screen devices such as desktop</li>    
+</ul>
+
+Markup:
+<div class="row">
+    <div class="small-2 big-4 columns">4,2</div>
+    <div class="small-4 big-4 columns">4,4</div>
+    <div class="small-6 big-4 columns">4,6</div>
+</div>
+<div class="row">
+    <div class="big-3 columns">3,full</div>
+    <div class="big-6 columns">6,full</div>
+    <div class="big-3 columns">3,full</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-3 big-2 columns">2,3,6</div>
+    <div class="small-6 medium-6 big-8 columns">8,6.6</div>
+    <div class="small-12 medium-3 big-2 columns">2,3,12</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3,3</div>
+    <div class="small-9 columns">9,9</div>
+</div>
+<div class="row">
+    <div class="medium-1 big-4 columns">4,1,full</div>
+    <div class="medium-11 big-8 columns">8,11,full</div>
+</div>
+<div class="row">
+    <div class="small-6 big-5 columns">5,6</div>
+    <div class="small-6 big-7 columns">7,6</div>
+</div>
+
+Default   - Different grid layouts with breakpoint set at 768px. The layout changes based on viewport greater or smaller than 768px. First digit represent column width when viewed with viewport greater than 1024px. Second digit represent column width when viewed with viewport smaller than 1024px but greater than 768px; Third digit represent column width when viewed with viewport smaller than 768px;
+
+Styleguide 6
+*/
+/* line 187, ../../sass/globals/_grids.scss */
+.row {
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+/* line 19, ../../sass/globals/_base.scss */
+.row:before, .row:after {
+  display: table;
+  content: " ";
+}
+/* line 23, ../../sass/globals/_base.scss */
+.row:after {
+  clear: both;
+}
+/* line 191, ../../sass/globals/_grids.scss */
+.row.collapse .column,
+.row.collapse .columns,
+.row.collapse .l_header_nav {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+}
+
+/* line 195, ../../sass/globals/_grids.scss */
+.column, .columns, .l_header_nav {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 0.83333em;
+  padding-right: 0.83333em;
+  width: 100%;
+  float: left;
+}
+
+@media only screen {
+  /* line 201, ../../sass/globals/_grids.scss */
+  .column,
+  .columns,
+  .l_header_nav {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 0.83333em;
+    padding-right: 0.83333em;
+    float: left;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 8.33333%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 58.33333%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 83.33333%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 91.66667%;
+  }
+
+  /* line 205, ../../sass/globals/_grids.scss */
+  .small-12, .full .header, .app .header, .app .sidebar, .app .main {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* line 209, ../../sass/globals/_grids.scss */
+  [class*="column"] + [class*="column"]:last-child {
+    float: right;
+  }
+
+  /* line 212, ../../sass/globals/_grids.scss */
+  [class*="column"] + [class*="column"].end {
+    float: left;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 8.33333%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-2, .l_header_brand {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-3, .app .sidebar {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 58.33333%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-9, .app .main {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-10, .l_header_nav {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 83.33333%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 91.66667%;
+  }
+
+  /* line 220, ../../sass/globals/_grids.scss */
+  .medium-12, .full .header, .app .header {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 8.33333%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-2, .l_header_brand {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-3, .app .sidebar {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 41.66667%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 58.33333%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-9, .app .main {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-10, .l_header_nav {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 83.33333%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 91.66667%;
+  }
+
+  /* line 230, ../../sass/globals/_grids.scss */
+  .big-12, .full .header, .app .header {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/*
+Nesting Grid
+
+The grid allows for nesting down as far as you'd like. You can use this nesting to create quite complex layouts.
+
+Markup:
+<div class="row">
+    <div class="small-8 columns">8
+        <div class="row">
+            <div class="small-8 columns">8 Nested
+                <div class="row">
+                    <div class="small-8 columns">8 Nested Again</div>
+                    <div class="small-4 columns">4</div>
+                </div>
+            </div>
+            <div class="small-4 columns">4</div>
+        </div>
+    </div>
+    <div class="small-4 columns">4</div>
+</div>
+
+Default    - Nested layout.
+
+Styleguide 6.1
+*/
+/* line 262, ../../sass/globals/_grids.scss */
+.row .row {
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: -0.83333em;
+  width: auto;
+  max-width: none;
+}
+/* line 19, ../../sass/globals/_base.scss */
+.row .row:before, .row .row:after {
+  display: table;
+  content: " ";
+}
+/* line 23, ../../sass/globals/_base.scss */
+.row .row:after {
+  clear: both;
+}
+/* line 264, ../../sass/globals/_grids.scss */
+.row .row.collapse {
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  width: auto;
+  max-width: none;
+}
+/* line 19, ../../sass/globals/_base.scss */
+.row .row.collapse:before, .row .row.collapse:after {
+  display: table;
+  content: " ";
+}
+/* line 23, ../../sass/globals/_base.scss */
+.row .row.collapse:after {
+  clear: both;
+}
+
+/*
+Offsetting Grids
+
+Offsets allow you to create additional space between columns in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.big-offset-1</code> and <code>.small-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.
+
+Markup:
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-11 columns">11</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-10 big-offset-1 columns">10, offset 1</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-9 big-offset-2 columns">9, offset 2</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-8 big-offset-3 columns">8, offset 3</div>
+</div>
+
+Default    - Nested layout.
+
+Styleguide 6.2
+*/
+@media only screen {
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-0 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 0%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 8.33333%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 16.66667%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 25%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 33.33333%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 41.66667%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 50%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 58.33333%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 66.66667%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 75%;
+  }
+
+  /* line 299, ../../sass/globals/_grids.scss */
+  .small-offset-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 83.33333%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-0 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 0%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 8.33333%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 16.66667%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 25%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 33.33333%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 41.66667%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 50%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 58.33333%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 66.66667%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 75%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 83.33333%;
+  }
+
+  /* line 307, ../../sass/globals/_grids.scss */
+  .medium-offset-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 91.66667%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-0 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 0%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 8.33333%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 16.66667%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 25%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 33.33333%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 41.66667%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 50%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 58.33333%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 66.66667%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 75%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 83.33333%;
+  }
+
+  /* line 315, ../../sass/globals/_grids.scss */
+  .row .big-offset-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: 91.66667%;
+  }
+}
+/*
+Centered Columns
+
+Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>big-centered</code> or <code>small-centered</code> depending on which breakpoint you want the columns to center on.
+
+Markup:
+<div class="row">
+    <div class="small-3 small-centered columns">3 centered</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-centered big-centered columns">6 centered</div>
+</div>
+<div class="row">
+    <div class="small-9 small-centered big-uncentered columns">9 centered</div>
+</div>
+<div class="row">
+    <div class="small-11 small-centered columns">11 centered</div>
+</div>
+
+Default    - Small versions will carry through all breakpoints if not overridden by a big version. You can center any number of columns you have. To have a column not carry it's small-centered to big, add a class of big-uncentered.
+
+Styleguide 6.3
+*/
+@media only screen {
+  /* line 346, ../../sass/globals/_grids.scss */
+  .column.small-centered,
+  .columns.small-centered,
+  .small-centered.l_header_nav {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 353, ../../sass/globals/_grids.scss */
+  .column.medium-centered,
+  .columns.medium-centered,
+  .medium-centered.l_header_nav {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 357, ../../sass/globals/_grids.scss */
+  .column.medium-uncentered,
+  .columns.medium-uncentered,
+  .medium-uncentered.l_header_nav {
+    float: left !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  /* line 367, ../../sass/globals/_grids.scss */
+  .column.big-centered,
+  .columns.big-centered,
+  .big-centered.l_header_nav {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    float: none !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 371, ../../sass/globals/_grids.scss */
+  .column.big-uncentered,
+  .columns.big-uncentered,
+  .big-uncentered.l_header_nav {
+    float: left !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* line 377, ../../sass/globals/_grids.scss */
+  .column.big-uncentered.opposite,
+  .columns.big-uncentered.opposite,
+  .big-uncentered.opposite.l_header_nav {
+    float: right !important;
+  }
+}
+/*
+Source Ordering
+
+Using these source ordering classes, you can shift columns around between our breakpoints. <code>.push-#</code> is the syntax you'll use.
+
+Markup:
+<div class="row">
+    <div class="big-10 push-2 columns">10</div>
+    <div class="big-2 pull-10 columns">2, last</div>
+</div>
+<div class="row">
+    <div class="big-9 push-3 columns">9</div>
+    <div class="big-3 pull-9 columns">3, last</div>
+</div>
+<div class="row">
+    <div class="big-6 push-6 columns">6</div>
+    <div class="big-6 pull-6 columns">6, last</div>
+</div>
+
+Default    -  You can have a sub-nav on the left on big displays, but go below on small ones.
+
+Styleguide 6.4
+*/
+@media only screen and (min-width: 768px) {
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 8.33333%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 8.33333%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 16.66667%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 16.66667%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 25%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 25%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 33.33333%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 33.33333%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 41.66667%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 41.66667%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 50%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 50%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 58.33333%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 58.33333%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 66.66667%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 66.66667%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 75%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 75%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 83.33333%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 83.33333%;
+    left: auto;
+  }
+
+  /* line 407, ../../sass/globals/_grids.scss */
+  .medium-push-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 91.66667%;
+    right: auto;
+  }
+
+  /* line 410, ../../sass/globals/_grids.scss */
+  .medium-pull-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 91.66667%;
+    left: auto;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 8.33333%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-1 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 8.33333%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 16.66667%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-2 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 16.66667%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 25%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-3 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 25%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 33.33333%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-4 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 33.33333%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 41.66667%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-5 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 41.66667%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 50%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-6 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 50%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 58.33333%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-7 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 58.33333%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 66.66667%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-8 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 66.66667%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 75%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-9 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 75%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 83.33333%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-10 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 83.33333%;
+    left: auto;
+  }
+
+  /* line 418, ../../sass/globals/_grids.scss */
+  .big-push-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    left: 91.66667%;
+    right: auto;
+  }
+
+  /* line 421, ../../sass/globals/_grids.scss */
+  .large-pull-11 {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    right: 91.66667%;
+    left: auto;
+  }
+}
+/*
+Small Grid
+
+Use the small grid if you know that your grid structure will be the same for small devices as it will be on big devices. You can override your small grid classes by adding big grid classes to it.
+
+Markup:
+<div class="row">
+    <div class="small-2 columns">2</div>
+    <div class="small-10 columns">10, last</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3</div>
+    <div class="small-9 columns">9, last</div>
+</div>
+
+Default    -  As you've probably noticed in the examples above, you have access to a small and big grid. 
+
+Styleguide 6.5
+*/
+/*---------------------------------------------------------------- */
+/* @Header
+/*---------------------------------------------------------------- */
+/*
+Header Layout
+
+Layout for app header.
+
+Markup:
+<header class="header">
+    <div class="l_header_brand">Branding</div>
+    <div class="l_header_nav">
+        <nav>Navigation </nav>
+    </div>    
+</header>
+
+.header    - Used for LittleLives app header.
+
+Styleguide -
+*/
+/* line 21, ../../sass/layouts/_header.scss */
+.l_header_brand {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 0.83333em;
+  padding-right: 0.83333em;
+  float: left;
+  display: table;
+  padding-top: 0.66667em;
+  padding-bottom: 0.66667em;
+}
+/* line 28, ../../sass/layouts/_header.scss */
+.l_header_brand .logo {
+  display: none;
+}
+/* line 31, ../../sass/layouts/_header.scss */
+.l_header_brand h2 {
+  display: table-cell;
+  margin: 0;
+  color: #fff;
+  vertical-align: middle;
+}
+@media only screen and (min-width: 768px) {
+  /* line 38, ../../sass/layouts/_header.scss */
+  .l_header_brand .logo {
+    background: #fff;
+    display: block;
+    margin-right: 0.66667em;
+    border-radius: 60%;
+    width: 75px;
+    height: 75px;
+    position: relative;
+    overflow: hidden;
+  }
+  /* line 47, ../../sass/layouts/_header.scss */
+  .l_header_brand .logo img {
+    display: block;
+    margin: -8px 0 0 -35px;
+    position: absolute;
+    left: 53%;
+  }
+}
+
+/*---------------------------------------------------------------- */
+/* @Variables: Full   
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Full
+/*---------------------------------------------------------------- */
+/*
+Full Layout
+
+Template for 2 full page layout.
+
+Markup:
+<div class="page full">
+    <div class="header">Header</div>
+    <div class="main">Main</div>
+</div>
+
+.full    - Used for LittleLives website
+
+Styleguide 7.1
+*/
+/* line 24, ../../sass/layouts/_full.scss */
+.full .header {
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  background: #21b6ea;
+}
+/* line 19, ../../sass/globals/_base.scss */
+.full .header:before, .full .header:after {
+  display: table;
+  content: " ";
+}
+/* line 23, ../../sass/globals/_base.scss */
+.full .header:after {
+  clear: both;
+}
+/* line 31, ../../sass/layouts/_full.scss */
+.full .main {
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+}
+/* line 19, ../../sass/globals/_base.scss */
+.full .main:before, .full .main:after {
+  display: table;
+  content: " ";
+}
+/* line 23, ../../sass/globals/_base.scss */
+.full .main:after {
+  clear: both;
+}
+
+/*---------------------------------------------------------------- */
+/* @Variables: Layout App
+/*---------------------------------------------------------------- */
+/*---------------------------------------------------------------- */
+/* @Layout App
+/*---------------------------------------------------------------- */
+/*
+App Layout
+
+Template for LittleLives app page.
+
+Markup:
+<div class="page app">
+    <div class="header">Header
+    </div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main</div>
+</div>
+
+.app    - 2-column layout for large devices. Full page layout for small devices.
+
+Styleguide 7.2
+*/
+/* line 26, ../../sass/layouts/_layout-app.scss */
+.app .header {
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  background: #21b6ea;
+}
+/* line 19, ../../sass/globals/_base.scss */
+.app .header:before, .app .header:after {
+  display: table;
+  content: " ";
+}
+/* line 23, ../../sass/globals/_base.scss */
+.app .header:after {
+  clear: both;
+}
+/* line 33, ../../sass/layouts/_layout-app.scss */
+.app .sidebar {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+  background: #91989c;
+}
+@media only screen and (min-width: 768px) {
+  /* line 33, ../../sass/layouts/_layout-app.scss */
+  .app .sidebar {
+    min-height: 100%;
+  }
+}
+/* line 43, ../../sass/layouts/_layout-app.scss */
+.app .main {
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 0.83333em;
+  padding-right: 0.83333em;
+  float: left;
+  min-height: 100%;
+}
+
+/*---------------------------------------------------------------- */
+/* @Layouts
+/*---------------------------------------------------------------- */
+/*
+Layouts
+
+Styled margin and padding
+
+Markup:
+<div class="{$modifiers}"></div>
+
+.wrapper            - Wrapper with 20px margin and padding all round.
+.wrap_inner         - Wrapper with 20px padding all round.
+.wrap_outer         - Wrapper with 20px margin all round.
+.wrap_top           - Top margin of 20px.
+.wrap_bottom        - Bottom margin of 20px.
+.wrap_left          - left margin of 20px.
+.wrap_right         - right margin of 20px.
+
+Styleguide 7
+*/
+/* line 26, ../../sass/layouts/_layouts.scss */
+.page {
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+/* line 19, ../../sass/globals/_base.scss */
+.page:before, .page:after {
+  display: table;
+  content: " ";
+}
+/* line 23, ../../sass/globals/_base.scss */
+.page:after {
+  clear: both;
+}
+
+/* line 31, ../../sass/layouts/_layouts.scss */
+.wrapper {
+  margin: 1.33333em 1.33333em 1.33333em 1.33333em;
+  padding: 1.33333em 1.33333em 1.33333em 1.33333em;
+}
+
+/* line 36, ../../sass/layouts/_layouts.scss */
+.wrap_inner {
+  padding: 1.33333em 1.33333em 1.33333em 1.33333em;
+}
+
+/* line 40, ../../sass/layouts/_layouts.scss */
+.wrap_outer {
+  margin: 1.33333em 1.33333em 1.33333em 1.33333em;
+}
+
+/* line 44, ../../sass/layouts/_layouts.scss */
+.wrap_top {
+  margin-top: 1.33333em;
+}
+
+/* line 48, ../../sass/layouts/_layouts.scss */
+.wrap_bottom {
+  margin-bottom: 1.33333em;
+}
+
+/* line 52, ../../sass/layouts/_layouts.scss */
+.wrap_left {
+  margin-left: 1.33333em;
+}
+
+/* line 56, ../../sass/layouts/_layouts.scss */
+.wrap_right {
+  margin-right: 1.33333em;
+}
+
+/*---------------------------------------------------------------- */
+/* @Images
+/*---------------------------------------------------------------- */
+/*
+Images
+
+Responsive Images approach using <a href="https://github.com/scottjehl/picturefill">Picturefill</a>.
+The picturefill.js script needs to be included somewhere in the page.
+Picturefill also requires some special markup to represent the image variations, differentiated by data-media attributes that act just like media queries in CSS.<br /><br />
+You may also optionally put an image in conditional comments for browsers that don't support media queries, and a fallback in a <code>noscript</code> tag for browsers that don’t have JavaScript enabled.
+<ul>
+    <li><strong>small</strong> - for mobile devices, postfix small images with <em>'_small'</em></li>
+    <li><strong>medium</strong> - for tablet devices, postfix medium images with <em>'_med'</em></li>
+    <li><strong>big</strong> - for desktop devices, postfix big images with <em>'_big'</em></li> 
+</ul>
+
+Markup:
+<span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/{$modifiers}_small.png"></span>
+    <span data-src="/img/characters/{$modifiers}_med.png" data-media="(min-width: 768px)"></span>
+</span>
+
+twinkle       - Twinkle
+ethan         - Ethan
+faye          - Faye
+jenny         - Jenny
+leero         - Leero
+moss          - Moss
+dot           - Dot
+ranee         - Ranee
+fran         - Fran
+smoot         - Smoot
+nink          - Nink
+squilos       - squilos
+dot_dad       - Dot's Dad
+ethan_dad     - Ethan's Dad
+ethan_mum     - Ethan's Mum
+
+Styleguide 8
+*/
+/* line 41, ../../sass/globals/_images.scss */
+span[role="img"] {
+  max-width: 100%;
+}
+
+/*
+Retina Images
+
+Picturefill also supports HD(Retina) image replacement.
+<ul>
+    <li><strong>small HD</strong> - for mobile devices, postfix small retina images with <em>'_small@2x'</em></li>
+    <li><strong>medium HD</strong> - for tablet devices, postfix medium retina images with <em>'_med@2x'</em></li>
+    <li><strong>big HD</strong> - for desktop devices, postfix big retina images with <em>'_big@2x'</em></li> 
+</ul>
+
+Markup:
+<span role="img" data-picture data-alt="LittleLives character">
+    <span data-src="/img/characters-2x/twinkle_small@2x.png" data-media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2)"></span>
+    <span data-src="/img/characters-2x/twinkle_med@2x.png" data-media="(min-width: 768px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+    <span data-src="/img/characters-2x/twinkle_big@2x.png" data-media="(min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+</span>
+
+retina      - Images only show up in HD devices
+
+Styleguide 8.1
+*/
+/*
+Background Images
+
+Picturefill also supports HD(Retina) image replacement.
+
+Markup:
+<span role="img" aria-label="image description"></span>
+
+Default      - Images only show up in HD devices
+
+Styleguide 8.2
+*/
+/* line 80, ../../sass/globals/_images.scss */
+img[src*="small@2x"] {
+  height: 100px;
+}
+
+/*---------------------------------------------------------------- */
+/* @Organisation Hierarchy
+/*---------------------------------------------------------------- */
+/*
+Organisation Hierarchy
+
+Hierarchy tree for organisation
+
+Markup:
+<ul class="org-hierarchy unstyled">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+    <li><a href="#">Item 4</a></li>
+</ul>
+
+Default    - Tree structure.
+
+Styleguide -
+*/
+/* line 23, ../../sass/modules/_org-hierarchy.scss */
+.org-hierarchy li {
+  margin: 0;
+  border-top: 1px solid #acb1b4;
+  border-bottom: 1px solid #767f84;
+}
+/* line 27, ../../sass/modules/_org-hierarchy.scss */
+.org-hierarchy li a {
+  display: block;
+  padding: 0.66667em;
+  color: #fff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* line 34, ../../sass/modules/_org-hierarchy.scss */
+.org-hierarchy li a:hover {
+  background-color: #fbba00;
+  color: #fff;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}

@@ -1,0 +1,61 @@
+/*---------------------------------------------------------------- */
+/* @Header
+/*---------------------------------------------------------------- */
+/*
+Header Layout
+
+Layout for app header.
+
+Markup:
+<header class="header">
+    <div class="l_header_brand">Branding</div>
+    <div class="l_header_nav">
+        <nav>Navigation </nav>
+    </div>    
+</header>
+
+.header    - Used for LittleLives app header.
+
+Styleguide -
+*/
+.l_header_brand {
+    @include grid-column;
+    @extend .big-2;
+    @extend .medium-2;
+    display: table;
+    padding-top: emCalc(10);
+    padding-bottom: emCalc(10);
+	.logo {
+        display: none;
+	}
+    h2 {
+        display: table-cell;
+        margin: 0;
+        color: #fff;
+        vertical-align: middle;
+    }    
+    @media #{$medium} {
+        .logo {
+           background: #fff;
+           display: block;
+           margin-right: emCalc(10);
+           border-radius: 60%;
+           width: 75px;
+           height: 75px;
+           position: relative;
+           overflow: hidden;
+           img {
+               display: block;
+               margin: -8px 0 0 -35px;
+               position: absolute;
+               left: 53%;
+           }       
+        }
+    }
+}
+
+.l_header_nav {
+    @extend .columns;
+    @extend .big-10;
+    @extend .medium-10;   
+}

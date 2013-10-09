@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>KSS: Living Styleguide</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/kss.css">
+    <link rel="stylesheet" href="public/style.css">       
+</head>
+<body>
+    <div id="kss-wrapper">
+        <div id="kss-nav">
+            <header id="kss-header">
+                <span role="img" class="logo" data-picture data-alt="styleguide mascot">
+                    <span data-src="/img/characters/dot_small.png"></span>
+                </span>
+                <hgroup>
+                    <h2>Styleguide</h2>
+                </hgroup>
+            </header>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">0. Overview</a></li>
+                        
+                        <li><a href="section-1.html">1. Colors</a></li>
+                        
+                        <li><a href="section-2.html">2. Fonts</a></li>
+                        
+                        <li><a href="section-3.html">3. Typography</a></li>
+                        
+                        <li><a href="section-4.html">4. Buttons</a></li>
+                        
+                        <li><a href="section-5.html">5. Forms</a></li>
+                        
+                        <li><a href="section-6.html">6. Grids</a></li>
+                        
+                        <li><a href="section-7.html">7. Layouts</a></li>
+                        
+                        <li><a href="section-8.html">8. Images</a></li>
+                        
+                    </ul>
+                </nav>            
+            </aside>           
+        </div>
+        <div role="main" id="kss-main">
+            <article id="kss-content">
+            
+                
+                
+                
+                <section class="kss-wrapper kss-depth-1">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.0</span> - Forms
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>A typical form for user to send data to a server for processing.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><form class="{$modifiers}">
+    <fieldset>
+        <legend>Form Title</legend>
+        <div class="form_group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter here" />
+        </div>
+        <div class="form_group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter here" />
+        </div>
+        <button type="submit">Submit</button>
+    </fieldset>
+</form></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>A typical input form.</p>
+</td>
+                            <td class="kss-mod-name"><p>form</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><form class="form">
+    <fieldset>
+        <legend>Form Title</legend>
+        <div class="form_group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter here" />
+        </div>
+        <div class="form_group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter here" />
+        </div>
+        <button type="submit">Submit</button>
+    </fieldset>
+</form></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>A styled input form.</p>
+</td>
+                            <td class="kss-mod-name"><p>.styled</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><form class="styled">
+    <fieldset>
+        <legend>Form Title</legend>
+        <div class="form_group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter here" />
+        </div>
+        <div class="form_group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter here" />
+        </div>
+        <button type="submit">Submit</button>
+    </fieldset>
+</form></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;form class=&quot;{$modifiers}&quot;&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Form Title&lt;/legend&gt;
+        &lt;div class=&quot;form_group&quot;&gt;
+            &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;Enter here&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form_group&quot;&gt;
+            &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+            &lt;input type=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;Enter here&quot; /&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.1</span> - Text Input
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Form inputs.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="{$modifiers}">Label Text</label>
+    <input type="{$modifiers}" id="{$modifiers}" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Normal text input</p>
+</td>
+                            <td class="kss-mod-name"><p>text</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="text">Label Text</label>
+    <input type="text" id="text" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Password input</p>
+</td>
+                            <td class="kss-mod-name"><p>password</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="password">Label Text</label>
+    <input type="password" id="password" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Date input</p>
+</td>
+                            <td class="kss-mod-name"><p>date</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="date">Label Text</label>
+    <input type="date" id="date" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Time input</p>
+</td>
+                            <td class="kss-mod-name"><p>time</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="time">Label Text</label>
+    <input type="time" id="time" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Email input</p>
+</td>
+                            <td class="kss-mod-name"><p>email</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="email">Label Text</label>
+    <input type="email" id="email" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Number input</p>
+</td>
+                            <td class="kss-mod-name"><p>number</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="number">Label Text</label>
+    <input type="number" id="number" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>URL input</p>
+</td>
+                            <td class="kss-mod-name"><p>url</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="url">Label Text</label>
+    <input type="url" id="url" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Tel input</p>
+</td>
+                            <td class="kss-mod-name"><p>tel</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="tel">Label Text</label>
+    <input type="tel" id="tel" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Search input</p>
+</td>
+                            <td class="kss-mod-name"><p>search</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="search">Label Text</label>
+    <input type="search" id="search" placeholder="Enter here" />
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group&quot;&gt;
+    &lt;label for=&quot;{$modifiers}&quot;&gt;Label Text&lt;/label&gt;
+    &lt;input type=&quot;{$modifiers}&quot; id=&quot;{$modifiers}&quot; placeholder=&quot;Enter here&quot; /&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.2</span> - Text Area
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Multi-line text input for long description.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="element_id">Label Text</label>
+    <textarea placeholder="Enter here" id="element_id" cols="150"></textarea>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Multi-line text input</p>
+</td>
+                            <td class="kss-mod-name"><p>textarea</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="element_id">Label Text</label>
+    <textarea placeholder="Enter here" id="element_id" cols="150"></textarea>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group&quot;&gt;
+    &lt;label for=&quot;element_id&quot;&gt;Label Text&lt;/label&gt;
+    &lt;textarea placeholder=&quot;Enter here&quot; id=&quot;element_id&quot; cols=&quot;150&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.3</span> - Error Handling
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Input with error.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group error">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" class="error" />
+    <small class="error">Error message to be shown here.</small>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>You can attach a class of .error either to the elements (label, input, small) or their parent selector (form, fieldset, div).</p>
+</td>
+                            <td class="kss-mod-name"><p>.error</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group error">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" class="error" />
+    <small class="error">Error message to be shown here.</small>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group error&quot;&gt;
+    &lt;label for=&quot;element_id&quot;&gt;Label Text&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;element_id&quot; class=&quot;error&quot; /&gt;
+    &lt;small class=&quot;error&quot;&gt;Error message to be shown here.&lt;/small&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.4</span> - AJAX Input
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Input that requires instant feedback such as autosave, AJAX loading, success states and errored states.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group instant {$modifiers}">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" />
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Return success.</p>
+</td>
+                            <td class="kss-mod-name"><p>.success</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group instant success">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Return error.</p>
+</td>
+                            <td class="kss-mod-name"><p>.failure</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group instant failure">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" />
+</div></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Sending a request, awaiting feedback.</p>
+</td>
+                            <td class="kss-mod-name"><p>.is_input_loading</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group instant is_input_loading">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" />
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group instant {$modifiers}&quot;&gt;
+    &lt;label for=&quot;element_id&quot;&gt;Label Text&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;element_id&quot; /&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.5</span> - Input with Help Text
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>A block of small text related to the input.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" placeholder="Enter here" />
+    <small class="notes">Enter some notes here</small>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>A block of text helper.</p>
+</td>
+                            <td class="kss-mod-name"><p>.notes</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="element_id">Label Text</label>
+    <input type="text" id="element_id" placeholder="Enter here" />
+    <small class="notes">Enter some notes here</small>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group&quot;&gt;
+    &lt;label for=&quot;element_id&quot;&gt;Label Text&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;element_id&quot; placeholder=&quot;Enter here&quot; /&gt;
+    &lt;small class=&quot;notes&quot;&gt;Enter some notes here&lt;/small&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.6</span> - Select
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>A typical drop-down list.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="element_id">Label Text</label>
+    <select id="element_id">
+        <option value="val_1">Item 1</option>
+        <option value="val_2">Item 2</option>
+        <option value="val_3">Item 3</option>
+        <option value="val_4">Item 4</option>
+    </select>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Drop-down list</p>
+</td>
+                            <td class="kss-mod-name"><p>select</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <label for="element_id">Label Text</label>
+    <select id="element_id">
+        <option value="val_1">Item 1</option>
+        <option value="val_2">Item 2</option>
+        <option value="val_3">Item 3</option>
+        <option value="val_4">Item 4</option>
+    </select>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group&quot;&gt;
+    &lt;label for=&quot;element_id&quot;&gt;Label Text&lt;/label&gt;
+    &lt;select id=&quot;element_id&quot;&gt;
+        &lt;option value=&quot;val_1&quot;&gt;Item 1&lt;/option&gt;
+        &lt;option value=&quot;val_2&quot;&gt;Item 2&lt;/option&gt;
+        &lt;option value=&quot;val_3&quot;&gt;Item 3&lt;/option&gt;
+        &lt;option value=&quot;val_4&quot;&gt;Item 4&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.7</span> - Checkbox
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Checkboxes are used for selecting one or several options in a list. </p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <input type="checkbox" id="checkbox_id_1" />
+    <label for="checkbox_id_1">Item 1</label>
+    <input type="checkbox" id="checkbox_id_2" />
+    <label for="checkbox_id_2">Item 2</label>
+    <input type="checkbox" id="checkbox_id_3" class="error" />
+    <label for="checkbox_id_3">Item 3</label>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Custom checkbox</p>
+</td>
+                            <td class="kss-mod-name"><p>checkbox</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <input type="checkbox" id="checkbox_id_1" />
+    <label for="checkbox_id_1">Item 1</label>
+    <input type="checkbox" id="checkbox_id_2" />
+    <label for="checkbox_id_2">Item 2</label>
+    <input type="checkbox" id="checkbox_id_3" class="error" />
+    <label for="checkbox_id_3">Item 3</label>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox_id_1&quot; /&gt;
+    &lt;label for=&quot;checkbox_id_1&quot;&gt;Item 1&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox_id_2&quot; /&gt;
+    &lt;label for=&quot;checkbox_id_2&quot;&gt;Item 2&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;checkbox_id_3&quot; class=&quot;error&quot; /&gt;
+    &lt;label for=&quot;checkbox_id_3&quot;&gt;Item 3&lt;/label&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">5.8</span> - Radio
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Radio are used for selecting one option from many.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <input type="radio" id="radio_id_1" name="radio_group" />
+    <label for="radio_id_1">Item 1</label>
+    <input type="radio" id="radio_id_2" name="radio_group" />
+    <label for="radio_id_2">Item 2</label>
+    <input type="radio" id="radio_id_3" name="radio_group" />
+    <label for="radio_id_3">Item 3</label>    
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Custom radios</p>
+</td>
+                            <td class="kss-mod-name"><p>radio</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="form_group">
+    <input type="radio" id="radio_id_1" name="radio_group" />
+    <label for="radio_id_1">Item 1</label>
+    <input type="radio" id="radio_id_2" name="radio_group" />
+    <label for="radio_id_2">Item 2</label>
+    <input type="radio" id="radio_id_3" name="radio_group" />
+    <label for="radio_id_3">Item 3</label>    
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;form_group&quot;&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;radio_id_1&quot; name=&quot;radio_group&quot; /&gt;
+    &lt;label for=&quot;radio_id_1&quot;&gt;Item 1&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;radio_id_2&quot; name=&quot;radio_group&quot; /&gt;
+    &lt;label for=&quot;radio_id_2&quot;&gt;Item 2&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; id=&quot;radio_id_3&quot; name=&quot;radio_group&quot; /&gt;
+    &lt;label for=&quot;radio_id_3&quot;&gt;Item 3&lt;/label&gt;    
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+            
+            </article>
+        </div>
+        
+        <!-- SCRIPTS -->
+        <script src="public/kss.js"></script>
+        <script src="public/prettify.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            var sidebarAdjust = function() {
+                // Match footer/body height
+                var height = Math.max($(window).height(), $('#kss-main').height());
+                height = Math.round(height);
+    
+                if ($(window).width() <= 768) {
+                    $('#kss-main, #kss-nav').css('min-height', '100%');
+                    $('#kss-main, #kss-nav').height('auto');
+                } else {
+                    $('#kss-main, #kss-nav').css('min-height', height);
+                }
+            };
+
+            $(window).resize(sidebarAdjust);
+            $(window).scroll(sidebarAdjust);
+            sidebarAdjust();
+
+            // Ensure code blocks are highlighted properly...
+            $('pre > code').addClass('prettyprint');
+            prettyPrint();
+        });
+        </script>
+        <script src="/js/plugins/picturefill.js"></script>
+        <script src="/js/custom/global.js"></script> 
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1858720-4']);
+        _gaq.push(['_setDomainName', 'littlelives.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    </div>
+</body>
+</html>

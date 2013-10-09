@@ -1,0 +1,58 @@
+@import "header";
+@import "full";
+@import "layout-app";
+
+/*---------------------------------------------------------------- */
+/* @Layouts
+/*---------------------------------------------------------------- */
+/*
+Layouts
+
+Styled margin and padding
+
+Markup:
+<div class="{$modifiers}"></div>
+
+.wrapper            - Wrapper with 20px margin and padding all round.
+.wrap_inner         - Wrapper with 20px padding all round.
+.wrap_outer         - Wrapper with 20px margin all round.
+.wrap_top           - Top margin of 20px.
+.wrap_bottom        - Bottom margin of 20px.
+.wrap_left          - left margin of 20px.
+.wrap_right         - right margin of 20px.
+
+Styleguide 7
+*/
+.page {
+    @include grid-row;    
+    height: 100%;
+}
+
+.wrapper {
+    margin: $base-margin-top  $base-margin-right $base-margin-bottom $base-margin-left; 
+    padding: $base-margin-top  $base-margin-right $base-margin-bottom $base-margin-left; 
+}
+
+.wrap_inner {
+    padding: $base-margin-top $base-margin-right $base-margin-bottom $base-margin-left;
+}
+
+.wrap_outer {
+    margin: $base-margin-top $base-margin-right $base-margin-bottom $base-margin-left;
+}
+
+.wrap_top {
+    margin-top: $base-margin-top; 
+}
+
+.wrap_bottom {
+    margin-bottom: $base-margin-bottom; 
+}
+
+.wrap_left {
+   margin-left: $base-margin-left; 
+}
+
+.wrap_right {
+    margin-right: $base-margin-right;
+}

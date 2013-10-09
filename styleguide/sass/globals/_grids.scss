@@ -1,0 +1,452 @@
+/*---------------------------------------------------------------- */
+/* @Mixin: Grids
+/*---------------------------------------------------------------- */
+/*
+ * For creating container, nested, and collapsed rows.
+ * 
+ * TODO: Pass in the use case of the containing row.
+ * @param {String} $behavior    - the grid style of the containing element.
+ */
+@mixin grid-row($behavior:false) {
+    // Clearfix for all rows
+    @include clearfix();
+    @include box-sizing(border-box);    
+    
+    // Use @include grid-row(nest); to include a nested row
+    @if $behavior == nest {
+        margin: 0 -($column-gutter/2);
+        width: auto;
+        max-width: none;
+    }
+
+    // Use @include grid-row(collapse); to collapsed a container row margins
+    @else if $behavior == collapse {
+        margin: 0;
+        width: 100%;
+        max-width: $row-width;
+    }
+
+    // Use @include grid-row(nest-collapse); to collapse outer margins on a nested row
+    @else if $behavior == nest-collapse {
+        margin: 0;
+        width: auto;
+        max-width: none;
+    }
+
+    // Use @include grid-row; to use as a default container row
+    @else {
+        margin: 0 auto;
+        width: 100%;
+        max-width: $row-width;
+    }
+}
+
+/*
+ * For creating columns - @include these inside a media query to control small vs. big grid layouts
+ * 
+ * TODO: Pass in the use case of the containing colum, this must be nested inside or a row.
+ * @param {Number} $columns         - number of columns
+ * @param {Boolean} $last-column    - if its the last column.
+ * @param {Boolean} $center         - centered columns are placed in the middle of the row.
+ * @param {Number} $offset          - additional space between columns in a row.
+ * @param {Boolean} $push           - source ordering for shifting colums around.
+ * @param {Boolean} $pull           - source ordering for shifting colums around.
+ * @param {Boolean} $collapse       - if you have a collapsed row, you need to set the columns to collapse as well. 
+ * @param {Boolean} $float          - source ordering for shifting colums around.
+ */
+@mixin grid-column($columns:false, $last-column:false, $center:false, $offset:false, $push:false, $pull:false, $collapse:false, $float:true) {
+    position: relative;
+    @include box-sizing(border-box);
+    
+    // If collapsed, get rid of gutter padding
+    @if $collapse {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    // Gutter padding whenever a column isn't set to collapse (use $collapse:null to do nothing)
+    @else if $collapse == false {
+        padding-left: $column-gutter / 2;
+        padding-right: $column-gutter / 2;
+    }
+
+     // If a column number is given, calculate width
+    @if $columns {
+        width: gridCalc($columns, $total-columns);
+
+        // If last column, float naturally instead of to the right
+        @if $last-column {
+            float: $opposite-direction;
+        }
+    }
+
+    // If offset, calculate appropriate margins
+    @if $offset {
+        margin-#{$default-float}: gridCalc($offset, $total-columns);
+    }
+
+    // Source Ordering, adds left/right depending on which you use.
+    @if $push {
+        #{$default-float}: gridCalc($push, $total-columns);
+        #{$opposite-direction}: auto;
+    }
+    @if $pull {
+        #{$opposite-direction}: gridCalc($pull, $total-columns);
+        #{$default-float}: auto;
+    }
+
+    // If centered, get rid of float and add appropriate margins
+    @if $center {
+        float: none !important;
+        margin-#{$default-float}: auto;
+        margin-#{$opposite-direction}: auto;
+    }
+
+    @if $float {
+        @if $float == left or $float == true {
+            float: $default-float;
+        }
+        @else if $float == right {
+            float: $opposite-direction;
+        }
+        @else {
+            float: none;
+        }
+    }
+}
+
+/*---------------------------------------------------------------- */
+/* @Functions: Grids
+/*---------------------------------------------------------------- */
+/*
+ * Calculate the column width
+ * 
+ * TODO: Pass in the number of columns and total number of columns.
+ * @param {Number} $colNumber       - Number of columns.
+ * @param {Number} $totalColumns    - Total number of columns.
+ * @return {Number} $values         - the width value converted to a percentage 
+ */
+@function gridCalc($colNumber, $totalColumns) {
+    @return percentage(($colNumber / $totalColumns));
+}
+
+ 
+/*---------------------------------------------------------------- */
+/* @Variables: Grids
+/*---------------------------------------------------------------- */
+$row-width: 100% !default;
+$column-gutter: emCalc(25) !default;
+$total-columns: 12 !default;
+
+/*---------------------------------------------------------------- */
+/* @Grids
+/*---------------------------------------------------------------- */
+/*
+Grids
+
+<a href="http://foundation.zurb.com/docs/components/grid.html">Foundation</a> 12-column grid system. Used this for prototyping only.
+<ul>
+    <li><strong>Small</strong> - Mobile first approach, default breakpoint for small screen devices</li>
+    <li><strong>Medium</strong> - Breakpoint for medium screen devices such as tablet</li>
+    <li><strong>Big</strong> - Breakpoint for large screen devices such as desktop</li>    
+</ul>
+
+Markup:
+<div class="row">
+    <div class="small-2 big-4 columns">4,2</div>
+    <div class="small-4 big-4 columns">4,4</div>
+    <div class="small-6 big-4 columns">4,6</div>
+</div>
+<div class="row">
+    <div class="big-3 columns">3,full</div>
+    <div class="big-6 columns">6,full</div>
+    <div class="big-3 columns">3,full</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-3 big-2 columns">2,3,6</div>
+    <div class="small-6 medium-6 big-8 columns">8,6.6</div>
+    <div class="small-12 medium-3 big-2 columns">2,3,12</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3,3</div>
+    <div class="small-9 columns">9,9</div>
+</div>
+<div class="row">
+    <div class="medium-1 big-4 columns">4,1,full</div>
+    <div class="medium-11 big-8 columns">8,11,full</div>
+</div>
+<div class="row">
+    <div class="small-6 big-5 columns">5,6</div>
+    <div class="small-6 big-7 columns">7,6</div>
+</div>
+
+Default   - Different grid layouts with breakpoint set at 768px. The layout changes based on viewport greater or smaller than 768px. First digit represent column width when viewed with viewport greater than 1024px. Second digit represent column width when viewed with viewport smaller than 1024px but greater than 768px; Third digit represent column width when viewed with viewport smaller than 768px;
+
+Styleguide 6
+*/
+.row {
+    @include grid-row;
+    &.collapse {
+        .column,
+        .columns { @include grid-column($collapse:true); }
+    }
+}
+
+.column, .columns {
+    @include grid-column($columns:$total-columns);
+}
+
+@media only screen {
+    .column,
+    .columns {
+        @include grid-column($columns:false);
+    }
+    @for $i from 1 through $total-columns {
+        .small#{-$i} {
+            @include grid-column($columns:$i, $collapse:null, $float:false);
+        }
+    }
+    [class*="column"] + [class*="column"]:last-child {
+        float: $opposite-direction;
+    }
+    [class*="column"] + [class*="column"].end {
+        float: $default-float;
+    }
+}
+
+// Grid for medium viewports, in this case 768px.
+@media #{$medium} {
+    @for $i from 1 through $total-columns {
+        .medium#{-$i} {
+            @include grid-column($columns:$i,$collapse:null,$float:false);
+        }
+    }
+}
+
+
+// Grid for big viewports, in this case 1280px.
+@media #{$big} {
+    @for $i from 1 through $total-columns {
+        .big#{-$i} {
+            @include grid-column($columns:$i, $collapse:null, $float:false);
+        }
+    }    
+}
+
+/*
+Nesting Grid
+
+The grid allows for nesting down as far as you'd like. You can use this nesting to create quite complex layouts.
+
+Markup:
+<div class="row">
+    <div class="small-8 columns">8
+        <div class="row">
+            <div class="small-8 columns">8 Nested
+                <div class="row">
+                    <div class="small-8 columns">8 Nested Again</div>
+                    <div class="small-4 columns">4</div>
+                </div>
+            </div>
+            <div class="small-4 columns">4</div>
+        </div>
+    </div>
+    <div class="small-4 columns">4</div>
+</div>
+
+Default    - Nested layout.
+
+Styleguide 6.1
+*/
+.row {
+    .row {
+        @include grid-row($behavior:nest);
+        &.collapse {
+            @include grid-row($behavior:nest-collapse);
+        }
+    }
+}
+
+/*
+Offsetting Grids
+
+Offsets allow you to create additional space between columns in a row. Like the rest of the grid, they're nestable. You can use classes like <code>.big-offset-1</code> and <code>.small-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn't ever offset a full-width column.
+
+Markup:
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-11 columns">11</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-10 big-offset-1 columns">10, offset 1</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-9 big-offset-2 columns">9, offset 2</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-8 big-offset-3 columns">8, offset 3</div>
+</div>
+
+Default    - Nested layout.
+
+Styleguide 6.2
+*/
+@media only screen {
+    @for $i from 0 through $total-columns - 2 {
+        .small-offset-#{$i} {
+            @include grid-column($offset:$i, $collapse:null, $float:false);
+        }
+    }
+}
+
+@media #{$medium} {
+    @for $i from 0 through $total-columns - 1 {
+        .medium-offset-#{$i} {
+            @include grid-column($offset:$i, $collapse:null,$float:false);
+        }
+    }
+}
+
+@media #{$big} {
+    @for $i from 0 through $total-columns - 1 {
+        .row .big-offset-#{$i} {
+            @include grid-column($offset:$i, $collapse:null, $float:false);
+        }
+    }  
+}
+
+/*
+Centered Columns
+
+Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>big-centered</code> or <code>small-centered</code> depending on which breakpoint you want the columns to center on.
+
+Markup:
+<div class="row">
+    <div class="small-3 small-centered columns">3 centered</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-centered big-centered columns">6 centered</div>
+</div>
+<div class="row">
+    <div class="small-9 small-centered big-uncentered columns">9 centered</div>
+</div>
+<div class="row">
+    <div class="small-11 small-centered columns">11 centered</div>
+</div>
+
+Default    - Small versions will carry through all breakpoints if not overridden by a big version. You can center any number of columns you have. To have a column not carry it's small-centered to big, add a class of big-uncentered.
+
+Styleguide 6.3
+*/
+@media only screen {
+    .column.small-centered,
+    .columns.small-centered {
+        @include grid-column($center:true, $collapse:null, $float:false);
+    }
+}
+
+@media #{$medium} {
+    .column.medium-centered,
+    .columns.medium-centered {
+        @include grid-column($center:true, $collapse:null, $float:false);
+    }
+    .column.medium-uncentered,
+    .columns.medium-uncentered {
+        float: $default-float !important;
+        margin-#{$default-float}: 0;
+        margin-#{$opposite-direction}: 0;
+        
+    }
+}
+
+@media #{$big} {
+    .column.big-centered,
+    .columns.big-centered {
+        @include grid-column($center:true, $collapse:null, $float:false);
+    }
+    .column.big-uncentered,
+    .columns.big-uncentered {
+        float: $default-float !important;
+        margin-#{$default-float}: 0;
+        margin-#{$opposite-direction}: 0;
+    }
+    .column.big-uncentered.opposite,
+    .columns.big-uncentered.opposite {
+        float: $opposite-direction !important;
+    }
+}
+
+/*
+Source Ordering
+
+Using these source ordering classes, you can shift columns around between our breakpoints. <code>.push-#</code> is the syntax you'll use.
+
+Markup:
+<div class="row">
+    <div class="big-10 push-2 columns">10</div>
+    <div class="big-2 pull-10 columns">2, last</div>
+</div>
+<div class="row">
+    <div class="big-9 push-3 columns">9</div>
+    <div class="big-3 pull-9 columns">3, last</div>
+</div>
+<div class="row">
+    <div class="big-6 push-6 columns">6</div>
+    <div class="big-6 pull-6 columns">6, last</div>
+</div>
+
+Default    -  You can have a sub-nav on the left on big displays, but go below on small ones.
+
+Styleguide 6.4
+*/
+@media #{$medium} {
+    @for $i from 1 through $total-columns - 1 {
+        .medium-push#{-$i} {
+            @include grid-column($push:$i, $collapse:null, $float:false);
+        }
+        .medium-pull#{-$i} {
+            @include grid-column($pull:$i, $collapse:null, $float:false);
+        }
+    }
+}
+
+@media #{$big} {
+    @for $i from 1 through $total-columns - 1 {
+        .big-push#{-$i} {
+            @include grid-column($push:$i, $collapse:null, $float:false);
+        }
+        .large-pull#{-$i} {
+            @include grid-column($pull:$i, $collapse:null, $float:false);
+        }
+    }      
+}
+
+/*
+Small Grid
+
+Use the small grid if you know that your grid structure will be the same for small devices as it will be on big devices. You can override your small grid classes by adding big grid classes to it.
+
+Markup:
+<div class="row">
+    <div class="small-2 columns">2</div>
+    <div class="small-10 columns">10, last</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3</div>
+    <div class="small-9 columns">9, last</div>
+</div>
+
+Default    -  As you've probably noticed in the examples above, you have access to a small and big grid. 
+
+Styleguide 6.5
+*/
+
+
+
+
+
+
+

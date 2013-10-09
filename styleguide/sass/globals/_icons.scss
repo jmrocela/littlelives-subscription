@@ -1,0 +1,47 @@
+/*---------------------------------------------------------------- */
+/* @Variables: Icons
+/*---------------------------------------------------------------- */
+$icon: sprite-map("icons/bit64/*.png", $layout:vertical);
+$icon-2x: sprite-map("icons/bit64/*.png", $layout:vertical);
+
+
+@import "icons/bit64/*.png";
+//*---------------------------------------------------------------- */
+/* @Icons
+/*---------------------------------------------------------------- */
+/*
+Icons
+
+A list of LittleLives icons along with the classes needed to activate them.
+
+Markup:
+<span role="icon" class="{$modifiers}"></span>
+
+.email           - email
+.help            - Help
+.holiday         - Holiday
+.home            - Home
+.late            - Late
+.mc              - Medical Leave
+
+Styleguide 9
+*/
+span[role="icon"] {
+    display: inline-block;/*
+    height: 64px;
+    width: 64px;
+     &.email { @include bit64-sprite(icon_email_64x64); }
+     &.help {  @include bit64-sprite(icon_help_64x64); }
+      &.holiday{ @include bit64-sprite(icon_holiday_64x64); }
+     &.home { @include bit64-sprite(icon_home_64x64); }
+    &.late { @include bit64-sprite(icon_late_64x64); }
+    &.mc { @include bit64-sprite(icon_mc_64x64); }
+    */
+    &.email { @include HD-sprite(icon_email_64x64, $icon, $icon-2x); }
+    &.help { @include HD-sprite(icon_help_64x64, $icon, $icon-2x); }
+    &.holiday { @include HD-sprite(icon_holiday_64x64, $icon, $icon-2x); }
+    &.home { @include HD-sprite(icon_home_64x64, $icon, $icon-2x); }
+    &.late { @include HD-sprite(icon_late_64x64, $icon, $icon-2x); }
+    &.mc { @include HD-sprite(icon_mc_64x64, $icon, $icon-2x); }
+    
+}

@@ -1,0 +1,439 @@
+@import 'markdown';
+
+#kss-main, #kss-nav {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#kss-nav {
+	background-color: #5fc4e1;
+	padding-bottom: 2.5%;
+	width: 22.5%;
+	nav > ul {
+		margin: 2em 2em 2em 2em;
+		padding: 0;
+		list-style-type: none;
+		li {
+			margin: 0.15em 0;
+			a {
+				font-weight: bold;
+				color: #fff;
+			}
+			a:hover {
+				color: #111;
+			}
+		}
+	}
+}
+
+#kss-header {
+	h2 {
+		margin-top: 1em;
+		margin-left: 0.7em;
+		color: #fff;
+		opacity: 0.6;
+	}
+	.logo {
+	   background: #fff;
+	   display: block;
+	   margin: 30px 0 0 50px;
+	   border-radius: 60%;
+	   width: 95px;
+	   height: 95px;
+	   position: relative;
+	   overflow: hidden;
+	   img {
+		   display: block;
+		   margin: 15px 0 0 -35px;
+		   position: absolute;
+		   left: 50%;
+	   }
+	}
+}
+
+.kss-subheader {
+	margin-left: 1em;
+	color: #fff;
+	opacity: 0.6;	
+}
+
+#kss-main {
+	padding-left: 5%;
+	padding-top: 1.2%;
+	padding-bottom: 1%;
+	width: 77.5%;
+	max-width: 48em;
+	left: 20%;
+	code {
+		background: #fff;
+	}
+}
+
+.kss-wrapper {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 1);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+    margin: 15px auto;
+}
+
+.kss-title {
+    background: none repeat scroll 0 0 #333333;
+    margin: 0;
+    padding: 15px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	color: #fff;
+    text-transform: uppercase;
+}
+
+.kss-box {
+	background-color: #e4e4e4;
+    padding: 1.4em 1em;
+    overflow: hidden;
+	p {
+		margin-bottom: 0.8em;
+	}
+	ul {
+		margin: 15px 30px;
+		li {
+			margin-bottom: 2px;
+		}
+	}
+}
+
+.kss-mod-list {
+	width:100%;
+}
+
+.kss-mod-desc-group {
+	.kss-mod-desc {
+		border-top: 1px solid #eee;
+		width: 99%;
+		p {
+			margin: 0;
+			padding: 15px 20px;
+			color: #666;
+		}
+	}
+	.kss-mod-name {
+		border-top: 1px solid #eee;
+		p {
+			background: none repeat scroll 0 0 #333333;
+			margin: -1px 0 0 0;
+			padding: 5px 15px;
+			-webkit-border-bottom-left-radius: 5px;
+			-moz-border-radius-bottomleft: 5px;
+			border-bottom-left-radius: 5px;
+			color: #fff;
+			font-size: 0.75em;
+			text-align: right;
+			line-height: 1.2em;
+		}
+	}
+}
+
+.kss-mod-example {
+	display: block;
+	td {
+		display: block;
+		margin: 0;
+		padding: 0 18px 25px;
+		a {
+			display: inline-block;
+		}
+	}
+    p {
+		margin-bottom: 5px;
+		padding: 0.5em;
+		width: 100%;
+		overflow: auto;
+    }
+    pre {
+		background: #f8f8f8;
+		margin-bottom: 5px;
+        padding: 0.95em;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+		width: 100%;
+		word-break: break-all;
+		word-break: break-word;
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		hyphens: auto;
+		word-wrap: break-word;
+    } 	
+	blockquote {
+		p {
+			padding: 0;
+		}
+		a {
+			display: block;
+		}
+	}
+	ul, ol {
+		display: inline-block;
+		margin-top: 18px;
+		margin-right: 1.8em;
+	}
+	// Images
+	[aria-label="LittleLives character"] {
+		position: absolute;
+		margin-left: 40px;
+		margin-bottom: 0;
+	}
+	[src*="big@2x"] {
+		height: 400px;
+	}	
+    .primary_color, .secondary_color, .success_color, .alert_color, .disabled_color, .canvas_color {
+        margin-top: 0.3em;
+        padding: 1.2em;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        font-weight: bold;
+        color: #fff;
+    }
+	// Grid
+	.row {
+		margin: 0.3em 0.4em;
+	}
+	.column, .columns {
+		background: #91989c;
+		padding-top: 0.13em;
+		padding-bottom: 0.3em;
+		border: 1px solid #ccc;
+		font-size: 13px;
+		color: #fff;
+		line-height: 1.4em;
+	}
+	// Layout
+	.wrap_inner, .wrap_outer, .wrapper, .wrap_bottom, .wrap_top, .wrap_left, .wrap_right {
+		background: #91989c;
+		height: 40px;
+		position: relative;
+		&:before {
+			background-color: #fff;
+			display: block;
+			border: 1px dotted #ccc;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			text-indent: 0.4em;
+			line-height: 2em;
+			content: "content";
+		}
+	}
+	.wrap_top:before { border-top: 1px solid #333; }
+	.wrap_left:before { border-left: 1px solid #333; }
+	.wrap_right:before { border-right: 1px solid #333; }
+	.wrap_bottom:before { border-bottom: 1px solid #333; }
+	.page {
+		div {
+			padding-top: 0.13em;
+			padding-bottom: 0.3em;
+			color: #fff;
+		}
+		.header {
+			background-color: #21b6ea;
+			height: 2.5em;
+		}
+		.sidebar {
+			background-color: #91989c;
+			height: 5em;
+		}
+		.main {
+			background-color: #fbba00;
+			height: 5em;
+		}    
+	}	
+}
+
+.kss-markup {
+	background-color: #d7f0f5;
+	padding: 1.4em;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;	
+	overflow: auto;
+	.prettyprint {
+		margin-bottom: 0;
+		padding: 0;
+	}	
+}
+
+#kss-cover {
+	padding-bottom: 50px;
+	h2 {
+		margin-top: 1.6em;
+		padding-bottom: 0.2em;
+		border-bottom: 1px solid #ddd;
+	}
+	h3 {
+		margin-top: 1.4em;
+	}
+}
+
+/*---------------------------------------------------------------- */
+/* @group prettyprint.js styling
+/*---------------------------------------------------------------- */
+/* Pretty printing styles. Used with prettify.js. */
+
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { color: #000 }  /* plain text */
+
+@media screen {
+	.str { color: #080 }  /* string content */
+	.kwd { color: #008 }  /* a keyword */
+	.com { color: #800 }  /* a comment */
+	.typ { color: #606 }  /* a type name */
+	.lit { color: #066 }  /* a literal value */
+	/* punctuation, lisp open bracket, lisp close bracket */
+	.pun, .opn, .clo { color: #660 }
+	.tag { color: #008 }  /* a markup tag name */
+	.atn { color: #606 }  /* a markup attribute name */
+	.atv { color: #080 }  /* a markup attribute value */
+	.dec, .var { color: #606 }  /* a declaration; a variable name */
+	.fun { color: red }  /* a function name */
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+	.str { color: #060 }
+	.kwd { color: #006; font-weight: bold }
+	.com { color: #600; font-style: italic }
+	.typ { color: #404; font-weight: bold }
+	.lit { color: #044 }
+	.pun, .opn, .clo { color: #440 }
+	.tag { color: #006; font-weight: bold }
+	.atn { color: #404 }
+	.atv { color: #060 }
+}
+
+/* Put a border around prettyprinted code snippets. */
+/*pre.prettyprint { padding: 2px; border: 1px solid #888 }*/
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 { background: #eee }
+
+.prettyprint {
+	display: block;
+	margin-bottom: 1.2em;
+	padding: 1em 1.2em;
+}
+
+/*---------------------------------------------------------------- */
+/* @group Mobile/Tablet Styling
+/*---------------------------------------------------------------- */
+
+@media screen and (max-width: 1280px) {
+	// Constrain height to mimic retina display
+	.kss-mod-example {	
+		[src*="med@2x"] {
+			height: 200px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#kss-main {
+		margin: 0 auto;
+		padding-left: 0;
+		width: 100%;
+		position: static;
+		code {
+			background: #f8f8f8;
+		}		
+	}
+	#kss-nav {
+		background: 0;
+		display: block;
+		box-shadow: none;
+		margin: 0;
+		padding-bottom: 15px;
+		border-bottom: 1px solid #ddd;
+		width: auto;
+		position :static;
+		nav > ul {
+		  margin: 1.5em 0.5em 0.5em;
+		  & > li {
+			display: inline-block;
+			margin-top: 0;
+			padding-right: 1.5em;
+			a {
+				font-weight: normal;
+				color: #555;
+			}
+		  }
+		  
+		}
+	}
+	#kss-header .logo {
+		display: none;
+	}	
+	#kss-header > hgroup > h2 {
+		margin: 0 5px 20px;
+		color: #555;
+		opacity: 1;
+	}
+	#kss-cover {
+		background: #fff;
+		margin-top: 25px;
+		padding: 10px 20px 20px;
+		-webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+		h1 {
+			background: none repeat scroll 0 0 #333333;
+			margin: -20px -20px 20px;
+			padding: 15px;
+			-webkit-border-top-left-radius: 8px;
+			-webkit-border-top-right-radius: 8px;
+			-moz-border-radius-topleft: 8px;
+			-moz-border-radius-topright: 8px;
+			border-top-left-radius: 8px;
+			border-top-right-radius: 8px;
+			font-size: 17px;
+			color: #fff;
+			text-transform: uppercase;		
+		}
+	}
+	// Constrain height to mimic retina display
+	.kss-mod-example {
+		[src*="small@2x"] {
+			height: 100px;
+		}		
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#kss-github {
+		display: none;
+	}
+}

@@ -9,6 +9,7 @@
     echo $this->Html->meta('icon');
 
     echo $this->Html->css('foundation.min');
+    echo $this->Html->css('layout');
     echo $this->Html->css('main');
 
     echo $this->fetch('meta');

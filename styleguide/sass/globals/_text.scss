@@ -1,0 +1,377 @@
+/*---------------------------------------------------------------- */
+/* @Variables: Headers
+/*---------------------------------------------------------------- */
+// Headers
+$header-color: $base-font-color !default;
+$header-line-height: $base-line-height - 0.35em !default;
+$header-top-margin: 0.2em !default;
+$header-bottom-margin: $base-margin-bottom - 0.8em  !default;
+$header-rendering: optimizeLegibility !default;
+$h1-size: $base-font-size + emCalc(24) !default;
+$h2-size: $base-font-size + emCalc(20) !default;
+$h3-size: $base-font-size + emCalc(14) !default;
+$h4-size: $base-font-size + emCalc(10) !default;
+$h5-size: $base-font-size + emCalc(6) !default;
+$h6-size: $base-font-size + emCalc(2) !default;
+
+// Paragraph
+$paragraph-size: $base-font-size !default;
+$paragraph-line-height: $base-line-height !default;
+$paragraph-color: $base-font-color !default;
+$paragraph-margin-bottom: $base-margin-bottom !default;
+$paragraph-rendering: optimizeLegibility !default;
+
+// Anchor
+$anchor-text-decoration: none !default;
+$anchor-font-color: $primary-color !default;
+$anchor-font-color-hover: darken($primary-color, 5%) !default;
+
+// Inline Elements
+$small-font-size: $paragraph-size - emCalc(4) !default;
+$big-font-size: $paragraph-size + emCalc(4) !default;
+$code-border: 1px solid #ddd !default;
+$code-font-family: Consolas, 'Liberation Mono', Courier, monospace !default;
+$code-font-weight: bold !default;
+$code-color: darken($paragraph-color, 15%) !default;
+$inline-padding: 0 0.1em 0.08em !default;
+$inline-radius: emCalc($base-radius - 2) !default;
+$acronym-underline: 1px dotted #ddd !default;
+
+// List
+$list-unstyle-position: inside !default;
+$list-styled-position: outside !default;
+$list-side-margin: emCalc(20) !default;
+$list-nested-margin: emCalc(20) !default;
+$list-font-size: $paragraph-size !default;
+$list-line-height: $paragraph-line-height !default;
+$list-margin-bottom: $paragraph-margin-bottom - 1.1em !default;
+$list-unstyled-type: none !default;
+$ordered-list-type: none !default;
+$ordered-list-style-color: $primary-color !default;
+$ordered-list-style-radius: $base-rounded !default;
+$ordered-list-style-size: $paragraph-size - 0.2em !default;
+
+// Block Quote
+$blockquote-font-color: lighten($paragraph-color, 20%) !default;
+$blockquote-padding: emCalc(10, 0, 10, 65) !default;
+$blockquote-border-color: lighten(#000, 95%) !default;
+$blockquote-border-style: dashed !default;
+$blockquote-border-width: 0 !default;
+$blockquote-cite-font-color: lighten($paragraph-color, 5%) !default;
+$blockquote-cite-link-color: $blockquote-cite-font-color !default;
+$blockquote-cite-font-size: $paragraph-size - 0.2em !default;
+
+/*---------------------------------------------------------------- */
+/* @Typography
+/*---------------------------------------------------------------- */
+/*
+Typography
+
+Headers to show the document structure. Don't use headings to make text <strong>BIG</strong> or <strong>bold</strong>.
+
+Markup:
+<h1>h1. This is a very large header.</h1>
+<h2>h2. This is a large header.</h2>
+<h3>h3. This is a medium header.</h3>
+<h4>h4. This is a moderate header.</h4>
+<h5>h5. This is a small header.</h5>
+<h6>h6. This is a tiny header.</h6>
+
+h1-h6   - Used for title or document header. h1 defines the most important heading. h6 defines the least important heading.
+
+Styleguide 3
+*/
+h1, h2, h3, h4, h5, h6 {
+    @extend .font_header;
+    margin-top: $header-top-margin;
+    margin-bottom: $header-bottom-margin;
+    color: $header-color;
+    line-height: $header-line-height;
+    text-rendering: $header-rendering;
+}
+
+h1 { font-size: $h1-size; }
+h2 { font-size: $h2-size; }
+h3 { font-size: $h3-size; }
+h4 { font-size: $h4-size; }
+h5 { font-size: $h5-size; }
+h6 { font-size: $h6-size; }
+
+/*
+Paragraph
+
+Defines a paragraph of text
+
+Markup:
+<p>Happy teachers make happy students. Fun and simple to use technology that excites and delights users. Technology that is useful and efficient, it gets out of the way and puts the users first, every single time.</p>
+
+p   - Body text.
+
+Styleguide 3.1
+*/
+p {
+    @extend .font_reg;
+    margin-bottom: $paragraph-margin-bottom;
+    font-size: $paragraph-size;
+    color: $paragraph-color;
+    line-height: $paragraph-line-height;
+    text-rendering: $paragraph-rendering;
+    &:last-child {
+        margin-bottom: 0;
+    }    
+}
+
+/*
+Anchor
+
+A hyperlink, which is used to link from one page to another.
+
+Markup:
+<p><a href="#">This is a link.</a></p>
+
+a           - For text with naivgational purpose, do not use a text link as a button.
+
+Styleguide 3.2
+*/
+a {
+    color: $anchor-font-color;
+    text-decoration: $anchor-text-decoration;
+    line-height: inherit;
+    &:visited {
+        color: $anchor-font-color-hover;
+    }
+    &:hover {
+        color: $anchor-font-color-hover;
+        outline: 0;
+    }
+    &:active {
+        color: $anchor-font-color-hover;
+        outline: 0;
+    }
+    &:focus {
+        color: $anchor-font-color-hover;
+        outline: thin dotted;
+    }
+
+    img { border:none; }
+}
+
+/*
+Inline Elements
+
+Format text in a document.
+
+Markup:
+<p>This is a <{$modifiers}>line of text</{$modifiers}> with inline style set.</p>
+
+em                  - Emphasize text.
+strong              - Indicate strong importance.
+del                 - Delete text. New text can be inserted.
+ins                 - Insert new text, usually to replace deleted text.
+small               - For fine print.
+big                 - Large text
+mark                - Highlight text to indicate its relevance to the user.
+code                - For a piece of computer code.
+abbr                - Indicates an abbreviation.
+acronym             - Indicates an acronym.
+sup                 - Define superscript text often used in mathematical expressions or foreign languages
+sub                 - Define subscript text often used in mathematical expressions or foreign languages
+
+Styleguide 3.3
+*/
+i, em {
+    @extend .font_italic; 
+    line-height: inherit;
+}
+
+bold, strong {
+    @extend .font_bold;    
+    line-height: inherit;
+}
+
+ins {
+    background-color: $secondary-color;
+    padding: $inline-padding;
+    -webkit-border-radius: $inline-radius;
+    -moz-border-radius: $inline-radius;
+    border-radius: $inline-radius;    
+}
+
+small {
+    font-size: $small-font-size;
+    line-height: inherit;
+}
+
+big {
+    font-size: $big-font-size;
+    line-height: inherit;
+}
+
+mark {
+    @extend .font_bold;
+    background-color: $primary-color;
+    padding: $inline-padding;
+    -webkit-border-radius: $inline-radius;
+    -moz-border-radius: $inline-radius;
+    border-radius: $inline-radius;   
+    color: #fff;
+}
+
+code {
+    background: #f8f8f8;
+    padding: $inline-padding;
+    border: $code-border;
+    -webkit-border-radius: $inline-radius;
+    -moz-border-radius: $inline-radius;
+    border-radius: $inline-radius;    
+    font-family: $code-font-family;
+    font-weight: $code-font-weight;
+}
+
+abbr, acronym {
+    border-bottom: $acronym-underline;
+    text-transform: uppercase;
+    cursor: help;
+}
+
+abbr {
+    text-transform: none;
+}
+
+/*
+Lists
+
+A list of items. Lists may contain:
+<ul>
+    <li><strong>Unordered List</strong>- A list of related items, in which their order does not matter nor do they have a numbered or alphabetical list element.</li>
+    <li><strong>Ordered List</strong>- A list of related items, in which their order matter. Their order can be presented by letters, Roman numberals, etc.</li>
+</ul>
+
+Markup:
+<ul class="{$modifiers}">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
+<ol class="{$modifiers}">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ol>
+
+.styled     - Lists with styling
+.unstyled   - Lists with no styling
+
+Styleguide 3.4
+*/
+
+ul, ol, dl {
+    @extend .font_reg;
+    font-size: $list-font-size;
+    line-height: $list-line-height;
+    list-style-position: $list-unstyle-position;
+    vertical-align: top;
+    &:last-child {
+        margin-bottom: 0;
+    }   
+}
+
+ul, ol {
+    li {
+        margin-bottom: $list-margin-bottom;
+    }
+}
+
+ul.styled {
+    margin-left: $list-side-margin;
+    margin-bottom: $paragraph-margin-bottom;
+    list-style-position: $list-styled-position;
+}
+
+ol.styled {
+    list-style-type: $ordered-list-type;
+    margin-left: 0;
+    margin-bottom: $paragraph-margin-bottom;
+    li {
+        padding-left: 2.2em;
+        counter-increment: list;  
+    }
+		li:before {
+        @extend .font_header;
+        background: $ordered-list-style-color;
+        float: left;
+        margin-left: -2.2em;
+        padding: 0em 0.55em;
+        -webkit-border-radius: $ordered-list-style-radius;
+        -moz-border-radius: $ordered-list-style-radius;
+        border-radius: $ordered-list-style-radius;   
+        font-size: $ordered-list-style-size;
+        color: #fff;
+    		content: counter(list, decimal);
+		}
+    li:first-child:before {
+        padding: 0em 0.62em;
+    }   
+}
+
+ul.unstyled, ol.unstyled {
+    list-style-type: none;
+}
+
+/*
+Block Quote
+
+A section that is quoted from another source. The following selectors can be use within a blockquote:
+<ul>
+    <li><strong>p</strong>- For longer block quote</li>
+    <li><strong>cite</strong>- To identify the contained text as a reference to another source, be that a book, a play, a periodical publication, or even another web page or site.</li>
+    <li><strong>a</strong>- A link to the reference material or site.</li>
+</ul>
+
+Markup:
+<blockquote>
+    <p>LittleLives has won my confidence due to their continuous effort to research and upgrade with meaningful enhanced features and services.</p>
+    <cite>Mrs Serene Leong <a href="http://www.mmmw.com.sg/">My Montessori My World Kindergarten</a></cite>  
+</blockquote>
+
+blockquote     - Default blockquote.
+
+Styleguide 3.5
+*/
+blockquote  {
+    margin: 0 0 $paragraph-margin-bottom;
+    padding: $blockquote-padding;
+    border-color: $blockquote-border-color;
+    border-width: $blockquote-border-width;
+    border-style: $blockquote-border-style;
+    position: relative;
+    color: $blockquote-font-color;
+    &:after {
+        background: $primary-color; 
+        padding: 0.6em 0.285em 0.19em;
+        -webkit-border-radius: $base-rounded;
+        -moz-border-radius: $base-rounded;
+        border-radius: $base-rounded;
+        position: absolute;
+        top: 0.33em;
+        left: 0;
+        font-family: "Georgia", verdana, arial, sans-serif;
+        font-size: $blockquote-cite-font-size + emCalc(35);
+        font-weight: bold;
+        line-height: 0.3em;
+        color: #fff;
+        content: "\201C";
+    } 
+    cite {
+        @extend .font_bold;
+        display: block;
+        margin-top: 1.5em;
+        font-size: $blockquote-cite-font-size;
+        color: $blockquote-cite-font-color;
+        line-height: $paragraph-line-height;
+    }
+    a {
+        @extend .font_reg;
+        display: block;
+    }
+}

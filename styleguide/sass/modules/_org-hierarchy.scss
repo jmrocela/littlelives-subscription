@@ -1,0 +1,42 @@
+
+/*---------------------------------------------------------------- */
+/* @Organisation Hierarchy
+/*---------------------------------------------------------------- */
+/*
+Organisation Hierarchy
+
+Hierarchy tree for organisation
+
+Markup:
+<ul class="org-hierarchy unstyled">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+    <li><a href="#">Item 4</a></li>
+</ul>
+
+Default    - Tree structure.
+
+Styleguide -
+*/
+.org-hierarchy {
+    li {
+        margin: 0;
+        border-top: 1px solid lighten($sidebar-color, 10%) ;
+        border-bottom: 1px solid darken($sidebar-color, 10%) ;
+        a {
+            display: block;
+            padding: emCalc(10);
+            color: #fff;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            &:hover {
+                background-color: $secondary-color;
+                color: #fff;
+                @include single-transition(all);
+            }
+        }
+
+    }
+}

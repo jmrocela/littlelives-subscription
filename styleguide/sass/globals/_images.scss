@@ -1,0 +1,82 @@
+/*---------------------------------------------------------------- */
+/* @Images
+/*---------------------------------------------------------------- */
+/*
+Images
+
+Responsive Images approach using <a href="https://github.com/scottjehl/picturefill">Picturefill</a>.
+The picturefill.js script needs to be included somewhere in the page.
+Picturefill also requires some special markup to represent the image variations, differentiated by data-media attributes that act just like media queries in CSS.<br /><br />
+You may also optionally put an image in conditional comments for browsers that don't support media queries, and a fallback in a <code>noscript</code> tag for browsers that don’t have JavaScript enabled.
+<ul>
+    <li><strong>small</strong> - for mobile devices, postfix small images with <em>'_small'</em></li>
+    <li><strong>medium</strong> - for tablet devices, postfix medium images with <em>'_med'</em></li>
+    <li><strong>big</strong> - for desktop devices, postfix big images with <em>'_big'</em></li> 
+</ul>
+
+Markup:
+<span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/{$modifiers}_small.png"></span>
+    <span data-src="/img/characters/{$modifiers}_med.png" data-media="(min-width: 768px)"></span>
+</span>
+
+twinkle       - Twinkle
+ethan         - Ethan
+faye          - Faye
+jenny         - Jenny
+leero         - Leero
+moss          - Moss
+dot           - Dot
+ranee         - Ranee
+fran         - Fran
+smoot         - Smoot
+nink          - Nink
+squilos       - squilos
+dot_dad       - Dot's Dad
+ethan_dad     - Ethan's Dad
+ethan_mum     - Ethan's Mum
+
+Styleguide 8
+*/
+span[role="img"] {
+    max-width: 100%;
+}
+
+/*
+Retina Images
+
+Picturefill also supports HD(Retina) image replacement.
+<ul>
+    <li><strong>small HD</strong> - for mobile devices, postfix small retina images with <em>'_small@2x'</em></li>
+    <li><strong>medium HD</strong> - for tablet devices, postfix medium retina images with <em>'_med@2x'</em></li>
+    <li><strong>big HD</strong> - for desktop devices, postfix big retina images with <em>'_big@2x'</em></li> 
+</ul>
+
+Markup:
+<span role="img" data-picture data-alt="LittleLives character">
+    <span data-src="/img/characters-2x/twinkle_small@2x.png" data-media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2)"></span>
+    <span data-src="/img/characters-2x/twinkle_med@2x.png" data-media="(min-width: 768px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+    <span data-src="/img/characters-2x/twinkle_big@2x.png" data-media="(min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+</span>
+
+retina      - Images only show up in HD devices
+
+Styleguide 8.1
+*/
+
+
+/*
+Background Images
+
+Picturefill also supports HD(Retina) image replacement.
+
+Markup:
+<span role="img" aria-label="image description"></span>
+
+Default      - Images only show up in HD devices
+
+Styleguide 8.2
+*/
+img[src*="small@2x"] {
+    height: 100px;
+}

@@ -1,0 +1,180 @@
+/*---------------------------------------------------------------- */
+/* @Variables: Buttons
+/*---------------------------------------------------------------- */
+// Small
+$button-font-sml: $base-font-size - emCalc(2) !default;
+// Medium
+$button-font-med: $base-font-size + emCalc(4) !default;
+// Big
+$button-font-big: $base-font-size + emCalc(10) !default;
+
+// Colors
+$button-default-color: $success-color !default;
+$button-disabled-color: $disabled-color !default;
+$button-action-color: $secondary-color !default;
+
+// Properties
+$button-font-size: $base-font-size + emCalc(2) !default; 
+$button-font-align: center !default;
+$button-font-color: #fff !default;
+$button-font-color-alt: #555 !default;
+$button-line-height: $base-line-height - 0.6em !default;
+$button-margin-bottom: $base-margin-bottom - 1em !default;
+$button-padding: emCalc(7) !default;
+$button-border-style: solid;
+$button-bottom-width: 0.21em !default;
+$button-radius: 0.24em !default;
+$button-function-factor: 5% !default;
+$button-disabled-opacity: 0.6 !default;
+
+/*---------------------------------------------------------------- */
+/* @Mixin: Buttons
+/*---------------------------------------------------------------- */
+/*
+ * Add color styling to button.
+ * 
+ * @param {Object} $bg         - Color scheme to be use for the button.
+ * @param {Boolean} $disabled  - Disable the state of a button
+ */
+@mixin button-style($bg:$button-default-color, $disabled:false) {
+    // Lightness percentage of the background color.
+    $bg-lightness: lightness($bg);
+    background-color: $bg;
+    border-color: darken($bg, $button-function-factor);    
+  
+    &:hover, &:focus {
+        background-color: darken($bg, $button-function-factor);
+        border-bottom-color: darken($bg, 12%);
+        @include single-transition(all);
+    }
+    /* Experimental
+    &:active {
+        top: 0.05em;
+        border-bottom-width: $button-bottom-width - 0.05em;
+        margin-top: 0.05em;
+        margin-bottom: $button-margin-bottom + 0.05em;
+        line-height: $button-line-height - 0.03em;
+    }*/
+    
+    // Change the text color based on the background color.
+    @if $bg-lightness > 70% {
+        color: $button-font-color-alt;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+        &:hover, &:focus { color: $button-font-color-alt; }
+    } @else {
+        color: $button-font-color;
+        &:hover, &:focus { color: $button-font-color; }
+    }
+    
+    @if $disabled {
+        cursor: default;
+        opacity: $button-disabled-opacity;
+        &:hover, &:focus { background-color: $bg; }
+    }    
+}
+/*---------------------------------------------------------------- */
+/* @Buttons
+/*---------------------------------------------------------------- */
+/*
+Buttons
+
+Buttons are action items.
+
+Markup:
+<button class="button {$modifiers}">Button Element</button>
+
+.button         - Default button
+.small          - Small button
+.med            - Medium button
+.big            - Big button
+.action         - Button that indicates suggested course of action
+.disabled       - Button in disable mode
+
+Styleguide 4
+*/
+.button, button {
+    @extend .font_header;
+    @include button-style($button-default-color);
+    margin-bottom: $button-margin-bottom;
+    padding-top: $button-padding;
+    padding-left: $button-padding * 2;
+    padding-bottom: $button-padding;
+    padding-right: $button-padding * 2;   
+    border-width: 0;
+    border-bottom-width: $button-bottom-width;
+    border-style: $button-border-style;
+    -webkit-border-radius: $button-radius;
+    -moz-border-radius: $button-radius;
+    border-radius: $button-radius;
+    position: relative;
+    top: 0;
+    font-size: $button-font-size;
+    line-height: $button-line-height;
+    text-align: $button-font-align;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    outline: 0;
+    cursor: pointer;
+    &.small {      
+        font-size: $button-font-sml;
+    } 
+    &.med {
+        font-size: $button-font-med;
+    }
+    &.big {     
+        font-size: $button-font-big;
+    }
+    &.action {
+        @include button-style($button-action-color);
+    }
+    &.disabled, &:disabled {
+        @include button-style($button-disabled-color, $disabled:true);
+    }
+}
+
+/*
+Loading Button
+
+Button to indicate loading, usually after a form submission or actions that requires instant feedback.
+
+Markup:
+<button class="button is_button_loading">
+    <canvas id="spinner"></canvas>
+    Button Element
+</button>
+
+.is_button_loading      - Button in loading state. Usually added via javascript.
+
+Styleguide 4.1
+*/
+
+.is_button_loading {
+    position: relative;
+    color: $button-default-color;
+    text-shadow: none;
+    cursor: default;
+    &:hover, &:focus {
+        background-color: $button-default-color;
+        color: $button-default-color;
+    }
+    #spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -0.7em 0 0 -1.4em;
+      width: 2.8em;
+      height: 1.4em;
+      z-index: 10;
+      opacity: 0.7;
+      filter: alpha(opacity = 70);	
+    }
+    &.action {
+        color: $button-action-color;
+        &:hover, &:focus {
+            background-color: $button-action-color;
+            color: $button-action-color;
+        }        
+    }
+}
+
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>KSS: Living Styleguide</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/kss.css">
+    <link rel="stylesheet" href="public/style.css">       
+</head>
+<body>
+    <div id="kss-wrapper">
+        <div id="kss-nav">
+            <header id="kss-header">
+                <span role="img" class="logo" data-picture data-alt="styleguide mascot">
+                    <span data-src="/img/characters/dot_small.png"></span>
+                </span>
+                <hgroup>
+                    <h2>Styleguide</h2>
+                </hgroup>
+            </header>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">0. Overview</a></li>
+                        
+                        <li><a href="section-1.html">1. Colors</a></li>
+                        
+                        <li><a href="section-2.html">2. Fonts</a></li>
+                        
+                        <li><a href="section-3.html">3. Typography</a></li>
+                        
+                        <li><a href="section-4.html">4. Buttons</a></li>
+                        
+                        <li><a href="section-5.html">5. Forms</a></li>
+                        
+                        <li><a href="section-6.html">6. Grids</a></li>
+                        
+                        <li><a href="section-7.html">7. Layouts</a></li>
+                        
+                        <li><a href="section-8.html">8. Images</a></li>
+                        
+                    </ul>
+                </nav>            
+            </aside>           
+        </div>
+        <div role="main" id="kss-main">
+            <article id="kss-content">
+            
+                
+                
+                
+                <section class="kss-wrapper kss-depth-1">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">4.0</span> - Buttons
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Buttons are action items.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button {$modifiers}">Button Element</button></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Default button</p>
+</td>
+                            <td class="kss-mod-name"><p>.button</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button button">Button Element</button></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Small button</p>
+</td>
+                            <td class="kss-mod-name"><p>.small</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button small">Button Element</button></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Medium button</p>
+</td>
+                            <td class="kss-mod-name"><p>.med</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button med">Button Element</button></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Big button</p>
+</td>
+                            <td class="kss-mod-name"><p>.big</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button big">Button Element</button></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Button that indicates suggested course of action</p>
+</td>
+                            <td class="kss-mod-name"><p>.action</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button action">Button Element</button></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Button in disable mode</p>
+</td>
+                            <td class="kss-mod-name"><p>.disabled</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button disabled">Button Element</button></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;button class=&quot;button {$modifiers}&quot;&gt;Button Element&lt;/button&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">4.1</span> - Loading Button
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Button to indicate loading, usually after a form submission or actions that requires instant feedback.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button is_button_loading">
+    <canvas id="spinner"></canvas>
+    Button Element
+</button></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Button in loading state. Usually added via javascript.</p>
+</td>
+                            <td class="kss-mod-name"><p>.is_button_loading</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><button class="button is_button_loading">
+    <canvas id="spinner"></canvas>
+    Button Element
+</button></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;button class=&quot;button is_button_loading&quot;&gt;
+    &lt;canvas id=&quot;spinner&quot;&gt;&lt;/canvas&gt;
+    Button Element
+&lt;/button&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+            
+            </article>
+        </div>
+        
+        <!-- SCRIPTS -->
+        <script src="public/kss.js"></script>
+        <script src="public/prettify.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            var sidebarAdjust = function() {
+                // Match footer/body height
+                var height = Math.max($(window).height(), $('#kss-main').height());
+                height = Math.round(height);
+    
+                if ($(window).width() <= 768) {
+                    $('#kss-main, #kss-nav').css('min-height', '100%');
+                    $('#kss-main, #kss-nav').height('auto');
+                } else {
+                    $('#kss-main, #kss-nav').css('min-height', height);
+                }
+            };
+
+            $(window).resize(sidebarAdjust);
+            $(window).scroll(sidebarAdjust);
+            sidebarAdjust();
+
+            // Ensure code blocks are highlighted properly...
+            $('pre > code').addClass('prettyprint');
+            prettyPrint();
+        });
+        </script>
+        <script src="/js/plugins/picturefill.js"></script>
+        <script src="/js/custom/global.js"></script> 
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1858720-4']);
+        _gaq.push(['_setDomainName', 'littlelives.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>KSS: Living Styleguide</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/kss.css">
+    <link rel="stylesheet" href="public/style.css">       
+</head>
+<body>
+    <div id="kss-wrapper">
+        <div id="kss-nav">
+            <header id="kss-header">
+                <span role="img" class="logo" data-picture data-alt="styleguide mascot">
+                    <span data-src="/img/characters/dot_small.png"></span>
+                </span>
+                <hgroup>
+                    <h2>Styleguide</h2>
+                </hgroup>
+            </header>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">0. Overview</a></li>
+                        
+                        <li><a href="section-1.html">1. Colors</a></li>
+                        
+                        <li><a href="section-2.html">2. Fonts</a></li>
+                        
+                        <li><a href="section-3.html">3. Typography</a></li>
+                        
+                        <li><a href="section-4.html">4. Buttons</a></li>
+                        
+                        <li><a href="section-5.html">5. Forms</a></li>
+                        
+                        <li><a href="section-6.html">6. Grids</a></li>
+                        
+                        <li><a href="section-7.html">7. Layouts</a></li>
+                        
+                        <li><a href="section-8.html">8. Images</a></li>
+                        
+                    </ul>
+                </nav>            
+            </aside>           
+        </div>
+        <div role="main" id="kss-main">
+            <article id="kss-content">
+            
+                
+                
+                
+                <section class="kss-wrapper kss-depth-1">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">8.0</span> - Images
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Responsive Images approach using <a href="https://github.com/scottjehl/picturefill">Picturefill</a>.
+The picturefill.js script needs to be included somewhere in the page.
+Picturefill also requires some special markup to represent the image variations, differentiated by data-media attributes that act just like media queries in CSS.<br /><br />
+You may also optionally put an image in conditional comments for browsers that don&apos;t support media queries, and a fallback in a <code>noscript</code> tag for browsers that don’t have JavaScript enabled.
+</p>
+<ul>
+    <li><strong>small</strong> - for mobile devices, postfix small images with <em>&apos;_small&apos;</em></li>
+    <li><strong>medium</strong> - for tablet devices, postfix medium images with <em>&apos;_med&apos;</em></li>
+    <li><strong>big</strong> - for desktop devices, postfix big images with <em>&apos;_big&apos;</em></li> 
+</ul></div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/{$modifiers}_small.png"></span>
+    <span data-src="/img/characters/{$modifiers}_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Twinkle</p>
+</td>
+                            <td class="kss-mod-name"><p>twinkle</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/twinkle_small.png"></span>
+    <span data-src="/img/characters/twinkle_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Ethan</p>
+</td>
+                            <td class="kss-mod-name"><p>ethan</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/ethan_small.png"></span>
+    <span data-src="/img/characters/ethan_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Faye</p>
+</td>
+                            <td class="kss-mod-name"><p>faye</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/faye_small.png"></span>
+    <span data-src="/img/characters/faye_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Jenny</p>
+</td>
+                            <td class="kss-mod-name"><p>jenny</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/jenny_small.png"></span>
+    <span data-src="/img/characters/jenny_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Leero</p>
+</td>
+                            <td class="kss-mod-name"><p>leero</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/leero_small.png"></span>
+    <span data-src="/img/characters/leero_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Moss</p>
+</td>
+                            <td class="kss-mod-name"><p>moss</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/moss_small.png"></span>
+    <span data-src="/img/characters/moss_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Dot</p>
+</td>
+                            <td class="kss-mod-name"><p>dot</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/dot_small.png"></span>
+    <span data-src="/img/characters/dot_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Ranee</p>
+</td>
+                            <td class="kss-mod-name"><p>ranee</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/ranee_small.png"></span>
+    <span data-src="/img/characters/ranee_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Fran</p>
+</td>
+                            <td class="kss-mod-name"><p>fran</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/fran_small.png"></span>
+    <span data-src="/img/characters/fran_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Smoot</p>
+</td>
+                            <td class="kss-mod-name"><p>smoot</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/smoot_small.png"></span>
+    <span data-src="/img/characters/smoot_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Nink</p>
+</td>
+                            <td class="kss-mod-name"><p>nink</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/nink_small.png"></span>
+    <span data-src="/img/characters/nink_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>squilos</p>
+</td>
+                            <td class="kss-mod-name"><p>squilos</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/squilos_small.png"></span>
+    <span data-src="/img/characters/squilos_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Dot&apos;s Dad</p>
+</td>
+                            <td class="kss-mod-name"><p>dot_dad</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/dot_dad_small.png"></span>
+    <span data-src="/img/characters/dot_dad_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Ethan&apos;s Dad</p>
+</td>
+                            <td class="kss-mod-name"><p>ethan_dad</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/ethan_dad_small.png"></span>
+    <span data-src="/img/characters/ethan_dad_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Ethan&apos;s Mum</p>
+</td>
+                            <td class="kss-mod-name"><p>ethan_mum</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="Enter the image description here">
+    <span data-src="/img/characters/ethan_mum_small.png"></span>
+    <span data-src="/img/characters/ethan_mum_med.png" data-media="(min-width: 768px)"></span>
+</span></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;span role=&quot;img&quot; data-picture data-alt=&quot;Enter the image description here&quot;&gt;
+    &lt;span data-src=&quot;/img/characters/{$modifiers}_small.png&quot;&gt;&lt;/span&gt;
+    &lt;span data-src=&quot;/img/characters/{$modifiers}_med.png&quot; data-media=&quot;(min-width: 768px)&quot;&gt;&lt;/span&gt;
+&lt;/span&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">8.1</span> - Retina Images
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Picturefill also supports HD(Retina) image replacement.
+</p>
+<ul>
+    <li><strong>small HD</strong> - for mobile devices, postfix small retina images with <em>&apos;_small@2x&apos;</em></li>
+    <li><strong>medium HD</strong> - for tablet devices, postfix medium retina images with <em>&apos;_med@2x&apos;</em></li>
+    <li><strong>big HD</strong> - for desktop devices, postfix big retina images with <em>&apos;_big@2x&apos;</em></li> 
+</ul></div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="LittleLives character">
+    <span data-src="/img/characters-2x/twinkle_small@2x.png" data-media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2)"></span>
+    <span data-src="/img/characters-2x/twinkle_med@2x.png" data-media="(min-width: 768px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+    <span data-src="/img/characters-2x/twinkle_big@2x.png" data-media="(min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+</span></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Images only show up in HD devices</p>
+</td>
+                            <td class="kss-mod-name"><p>retina</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" data-picture data-alt="LittleLives character">
+    <span data-src="/img/characters-2x/twinkle_small@2x.png" data-media="(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2)"></span>
+    <span data-src="/img/characters-2x/twinkle_med@2x.png" data-media="(min-width: 768px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+    <span data-src="/img/characters-2x/twinkle_big@2x.png" data-media="(min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2)"></span>   
+</span></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;span role=&quot;img&quot; data-picture data-alt=&quot;LittleLives character&quot;&gt;
+    &lt;span data-src=&quot;/img/characters-2x/twinkle_small@2x.png&quot; data-media=&quot;(min-width: 640px) and (-webkit-min-device-pixel-ratio: 2)&quot;&gt;&lt;/span&gt;
+    &lt;span data-src=&quot;/img/characters-2x/twinkle_med@2x.png&quot; data-media=&quot;(min-width: 768px) and (-webkit-min-device-pixel-ratio: 2)&quot;&gt;&lt;/span&gt;   
+    &lt;span data-src=&quot;/img/characters-2x/twinkle_big@2x.png&quot; data-media=&quot;(min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2)&quot;&gt;&lt;/span&gt;   
+&lt;/span&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">8.2</span> - Background Images
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Picturefill also supports HD(Retina) image replacement.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" aria-label="image description"></span></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Images only show up in HD devices</p>
+</td>
+                            <td class="kss-mod-name"><p>Default</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><span role="img" aria-label="image description"></span></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;span role=&quot;img&quot; aria-label=&quot;image description&quot;&gt;&lt;/span&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+            
+            </article>
+        </div>
+        
+        <!-- SCRIPTS -->
+        <script src="public/kss.js"></script>
+        <script src="public/prettify.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            var sidebarAdjust = function() {
+                // Match footer/body height
+                var height = Math.max($(window).height(), $('#kss-main').height());
+                height = Math.round(height);
+    
+                if ($(window).width() <= 768) {
+                    $('#kss-main, #kss-nav').css('min-height', '100%');
+                    $('#kss-main, #kss-nav').height('auto');
+                } else {
+                    $('#kss-main, #kss-nav').css('min-height', height);
+                }
+            };
+
+            $(window).resize(sidebarAdjust);
+            $(window).scroll(sidebarAdjust);
+            sidebarAdjust();
+
+            // Ensure code blocks are highlighted properly...
+            $('pre > code').addClass('prettyprint');
+            prettyPrint();
+        });
+        </script>
+        <script src="/js/plugins/picturefill.js"></script>
+        <script src="/js/custom/global.js"></script> 
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1858720-4']);
+        _gaq.push(['_setDomainName', 'littlelives.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>KSS: Living Styleguide</title>
+    <meta name="description" content="">
+    <meta name="generator" content="kss-node" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/kss.css">
+    <link rel="stylesheet" href="public/style.css">       
+</head>
+<body>
+    <div id="kss-wrapper">
+        <div id="kss-nav">
+            <header id="kss-header">
+                <span role="img" class="logo" data-picture data-alt="styleguide mascot">
+                    <span data-src="/img/characters/dot_small.png"></span>
+                </span>
+                <hgroup>
+                    <h2>Styleguide</h2>
+                </hgroup>
+            </header>
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">0. Overview</a></li>
+                        
+                        <li><a href="section-1.html">1. Colors</a></li>
+                        
+                        <li><a href="section-2.html">2. Fonts</a></li>
+                        
+                        <li><a href="section-3.html">3. Typography</a></li>
+                        
+                        <li><a href="section-4.html">4. Buttons</a></li>
+                        
+                        <li><a href="section-5.html">5. Forms</a></li>
+                        
+                        <li><a href="section-6.html">6. Grids</a></li>
+                        
+                        <li><a href="section-7.html">7. Layouts</a></li>
+                        
+                        <li><a href="section-8.html">8. Images</a></li>
+                        
+                    </ul>
+                </nav>            
+            </aside>           
+        </div>
+        <div role="main" id="kss-main">
+            <article id="kss-content">
+            
+                
+                
+                
+                <section class="kss-wrapper kss-depth-1">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">6.0</span> - Grids
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p><a href="http://foundation.zurb.com/docs/components/grid.html">Foundation</a> 12-column grid system. Used this for prototyping only.
+</p>
+<ul>
+    <li><strong>Small</strong> - Mobile first approach, default breakpoint for small screen devices</li>
+    <li><strong>Medium</strong> - Breakpoint for medium screen devices such as tablet</li>
+    <li><strong>Big</strong> - Breakpoint for large screen devices such as desktop</li><br></ul></div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-2 big-4 columns">4,2</div>
+    <div class="small-4 big-4 columns">4,4</div>
+    <div class="small-6 big-4 columns">4,6</div>
+</div>
+<div class="row">
+    <div class="big-3 columns">3,full</div>
+    <div class="big-6 columns">6,full</div>
+    <div class="big-3 columns">3,full</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-3 big-2 columns">2,3,6</div>
+    <div class="small-6 medium-6 big-8 columns">8,6.6</div>
+    <div class="small-12 medium-3 big-2 columns">2,3,12</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3,3</div>
+    <div class="small-9 columns">9,9</div>
+</div>
+<div class="row">
+    <div class="medium-1 big-4 columns">4,1,full</div>
+    <div class="medium-11 big-8 columns">8,11,full</div>
+</div>
+<div class="row">
+    <div class="small-6 big-5 columns">5,6</div>
+    <div class="small-6 big-7 columns">7,6</div>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Different grid layouts with breakpoint set at 768px. The layout changes based on viewport greater or smaller than 768px. First digit represent column width when viewed with viewport greater than 1024px. Second digit represent column width when viewed with viewport smaller than 1024px but greater than 768px; Third digit represent column width when viewed with viewport smaller than 768px;</p>
+</td>
+                            <td class="kss-mod-name"><p>Default</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-2 big-4 columns">4,2</div>
+    <div class="small-4 big-4 columns">4,4</div>
+    <div class="small-6 big-4 columns">4,6</div>
+</div>
+<div class="row">
+    <div class="big-3 columns">3,full</div>
+    <div class="big-6 columns">6,full</div>
+    <div class="big-3 columns">3,full</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-3 big-2 columns">2,3,6</div>
+    <div class="small-6 medium-6 big-8 columns">8,6.6</div>
+    <div class="small-12 medium-3 big-2 columns">2,3,12</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3,3</div>
+    <div class="small-9 columns">9,9</div>
+</div>
+<div class="row">
+    <div class="medium-1 big-4 columns">4,1,full</div>
+    <div class="medium-11 big-8 columns">8,11,full</div>
+</div>
+<div class="row">
+    <div class="small-6 big-5 columns">5,6</div>
+    <div class="small-6 big-7 columns">7,6</div>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-2 big-4 columns&quot;&gt;4,2&lt;/div&gt;
+    &lt;div class=&quot;small-4 big-4 columns&quot;&gt;4,4&lt;/div&gt;
+    &lt;div class=&quot;small-6 big-4 columns&quot;&gt;4,6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-3 columns&quot;&gt;3,full&lt;/div&gt;
+    &lt;div class=&quot;big-6 columns&quot;&gt;6,full&lt;/div&gt;
+    &lt;div class=&quot;big-3 columns&quot;&gt;3,full&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-6 medium-3 big-2 columns&quot;&gt;2,3,6&lt;/div&gt;
+    &lt;div class=&quot;small-6 medium-6 big-8 columns&quot;&gt;8,6.6&lt;/div&gt;
+    &lt;div class=&quot;small-12 medium-3 big-2 columns&quot;&gt;2,3,12&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-3 columns&quot;&gt;3,3&lt;/div&gt;
+    &lt;div class=&quot;small-9 columns&quot;&gt;9,9&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;medium-1 big-4 columns&quot;&gt;4,1,full&lt;/div&gt;
+    &lt;div class=&quot;medium-11 big-8 columns&quot;&gt;8,11,full&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-6 big-5 columns&quot;&gt;5,6&lt;/div&gt;
+    &lt;div class=&quot;small-6 big-7 columns&quot;&gt;7,6&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">6.1</span> - Nesting Grid
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>The grid allows for nesting down as far as you&apos;d like. You can use this nesting to create quite complex layouts.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-8 columns">8
+        <div class="row">
+            <div class="small-8 columns">8 Nested
+                <div class="row">
+                    <div class="small-8 columns">8 Nested Again</div>
+                    <div class="small-4 columns">4</div>
+                </div>
+            </div>
+            <div class="small-4 columns">4</div>
+        </div>
+    </div>
+    <div class="small-4 columns">4</div>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Nested layout.</p>
+</td>
+                            <td class="kss-mod-name"><p>Default</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-8 columns">8
+        <div class="row">
+            <div class="small-8 columns">8 Nested
+                <div class="row">
+                    <div class="small-8 columns">8 Nested Again</div>
+                    <div class="small-4 columns">4</div>
+                </div>
+            </div>
+            <div class="small-4 columns">4</div>
+        </div>
+    </div>
+    <div class="small-4 columns">4</div>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-8 columns&quot;&gt;8
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;small-8 columns&quot;&gt;8 Nested
+                &lt;div class=&quot;row&quot;&gt;
+                    &lt;div class=&quot;small-8 columns&quot;&gt;8 Nested Again&lt;/div&gt;
+                    &lt;div class=&quot;small-4 columns&quot;&gt;4&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;small-4 columns&quot;&gt;4&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;small-4 columns&quot;&gt;4&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">6.2</span> - Offsetting Grids
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Offsets allow you to create additional space between columns in a row. Like the rest of the grid, they&apos;re nestable. You can use classes like <code>.big-offset-1</code> and <code>.small-offset-3</code> to manipulate your column positions in different ways. You can offset up to 11 since you wouldn&apos;t ever offset a full-width column.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-11 columns">11</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-10 big-offset-1 columns">10, offset 1</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-9 big-offset-2 columns">9, offset 2</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-8 big-offset-3 columns">8, offset 3</div>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Nested layout.</p>
+</td>
+                            <td class="kss-mod-name"><p>Default</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-11 columns">11</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-10 big-offset-1 columns">10, offset 1</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-9 big-offset-2 columns">9, offset 2</div>
+</div>
+<div class="row">
+    <div class="big-1 columns">1</div>
+    <div class="big-8 big-offset-3 columns">8, offset 3</div>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-1 columns&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;big-11 columns&quot;&gt;11&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-1 columns&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;big-10 big-offset-1 columns&quot;&gt;10, offset 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-1 columns&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;big-9 big-offset-2 columns&quot;&gt;9, offset 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-1 columns&quot;&gt;1&lt;/div&gt;
+    &lt;div class=&quot;big-8 big-offset-3 columns&quot;&gt;8, offset 3&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">6.3</span> - Centered Columns
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Centered columns are placed in the middle of the row. This does not center their content, but centers the grid element, itself. This is accomplished by adding a class of <code>big-centered</code> or <code>small-centered</code> depending on which breakpoint you want the columns to center on.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-3 small-centered columns">3 centered</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-centered big-centered columns">6 centered</div>
+</div>
+<div class="row">
+    <div class="small-9 small-centered big-uncentered columns">9 centered</div>
+</div>
+<div class="row">
+    <div class="small-11 small-centered columns">11 centered</div>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>Small versions will carry through all breakpoints if not overridden by a big version. You can center any number of columns you have. To have a column not carry it&apos;s small-centered to big, add a class of big-uncentered.</p>
+</td>
+                            <td class="kss-mod-name"><p>Default</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-3 small-centered columns">3 centered</div>
+</div>
+<div class="row">
+    <div class="small-6 medium-centered big-centered columns">6 centered</div>
+</div>
+<div class="row">
+    <div class="small-9 small-centered big-uncentered columns">9 centered</div>
+</div>
+<div class="row">
+    <div class="small-11 small-centered columns">11 centered</div>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-3 small-centered columns&quot;&gt;3 centered&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-6 medium-centered big-centered columns&quot;&gt;6 centered&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-9 small-centered big-uncentered columns&quot;&gt;9 centered&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-11 small-centered columns&quot;&gt;11 centered&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">6.4</span> - Source Ordering
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Using these source ordering classes, you can shift columns around between our breakpoints. <code>.push-#</code> is the syntax you&apos;ll use.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="big-10 push-2 columns">10</div>
+    <div class="big-2 pull-10 columns">2, last</div>
+</div>
+<div class="row">
+    <div class="big-9 push-3 columns">9</div>
+    <div class="big-3 pull-9 columns">3, last</div>
+</div>
+<div class="row">
+    <div class="big-6 push-6 columns">6</div>
+    <div class="big-6 pull-6 columns">6, last</div>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>You can have a sub-nav on the left on big displays, but go below on small ones.</p>
+</td>
+                            <td class="kss-mod-name"><p>Default</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="big-10 push-2 columns">10</div>
+    <div class="big-2 pull-10 columns">2, last</div>
+</div>
+<div class="row">
+    <div class="big-9 push-3 columns">9</div>
+    <div class="big-3 pull-9 columns">3, last</div>
+</div>
+<div class="row">
+    <div class="big-6 push-6 columns">6</div>
+    <div class="big-6 pull-6 columns">6, last</div>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-10 push-2 columns&quot;&gt;10&lt;/div&gt;
+    &lt;div class=&quot;big-2 pull-10 columns&quot;&gt;2, last&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-9 push-3 columns&quot;&gt;9&lt;/div&gt;
+    &lt;div class=&quot;big-3 pull-9 columns&quot;&gt;3, last&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;big-6 push-6 columns&quot;&gt;6&lt;/div&gt;
+    &lt;div class=&quot;big-6 pull-6 columns&quot;&gt;6, last&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+                
+                <section class="kss-wrapper kss-depth-2">
+                    <h6 class="kss-title">
+                        <span class="kss-ref">6.5</span> - Small Grid
+                    </h6>
+                
+                    
+                    <div class="kss-box"><p>Use the small grid if you know that your grid structure will be the same for small devices as it will be on big devices. You can override your small grid classes by adding big grid classes to it.</p>
+</div>
+                    <table class="kss-mod-list">
+                        <!-- Hide Default
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p></p></td>
+                            <td class="kss-mod-name"></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-2 columns">2</div>
+    <div class="small-10 columns">10, last</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3</div>
+    <div class="small-9 columns">9, last</div>
+</div></td>
+                        </tr>
+                        -->
+                        
+                        <tr class="kss-mod-desc-group">
+                            <td class="kss-mod-desc"><p>As you&apos;ve probably noticed in the examples above, you have access to a small and big grid. </p>
+</td>
+                            <td class="kss-mod-name"><p>Default</p></td>
+                        </tr>
+                        <tr class="kss-mod-example">
+                            <td colspan="2"><div class="row">
+    <div class="small-2 columns">2</div>
+    <div class="small-10 columns">10, last</div>
+</div>
+<div class="row">
+    <div class="small-3 columns">3</div>
+    <div class="small-9 columns">9, last</div>
+</div></td>
+                        </tr>
+                        
+                    </table>
+                    <div class="kss-markup">
+                        <pre class="prettyprint lang-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-2 columns&quot;&gt;2&lt;/div&gt;
+    &lt;div class=&quot;small-10 columns&quot;&gt;10, last&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;small-3 columns&quot;&gt;3&lt;/div&gt;
+    &lt;div class=&quot;small-9 columns&quot;&gt;9, last&lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                    
+                
+                </section>
+                
+                
+            
+            </article>
+        </div>
+        
+        <!-- SCRIPTS -->
+        <script src="public/kss.js"></script>
+        <script src="public/prettify.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            var sidebarAdjust = function() {
+                // Match footer/body height
+                var height = Math.max($(window).height(), $('#kss-main').height());
+                height = Math.round(height);
+    
+                if ($(window).width() <= 768) {
+                    $('#kss-main, #kss-nav').css('min-height', '100%');
+                    $('#kss-main, #kss-nav').height('auto');
+                } else {
+                    $('#kss-main, #kss-nav').css('min-height', height);
+                }
+            };
+
+            $(window).resize(sidebarAdjust);
+            $(window).scroll(sidebarAdjust);
+            sidebarAdjust();
+
+            // Ensure code blocks are highlighted properly...
+            $('pre > code').addClass('prettyprint');
+            prettyPrint();
+        });
+        </script>
+        <script src="/js/plugins/picturefill.js"></script>
+        <script src="/js/custom/global.js"></script> 
+        <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1858720-4']);
+        _gaq.push(['_setDomainName', 'littlelives.com']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    </div>
+</body>
+</html>

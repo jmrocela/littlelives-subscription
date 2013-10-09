@@ -1,0 +1,52 @@
+/*---------------------------------------------------------------- */
+/* @Variables: Layout App
+/*---------------------------------------------------------------- */
+
+/*---------------------------------------------------------------- */
+/* @Layout App
+/*---------------------------------------------------------------- */
+/*
+App Layout
+
+Template for LittleLives app page.
+
+Markup:
+<div class="page app">
+    <div class="header">Header
+    </div>
+    <div class="sidebar">Sidebar</div>
+    <div class="main">Main</div>
+</div>
+
+.app    - 2-column layout for large devices. Full page layout for small devices.
+
+Styleguide 7.2
+*/
+.app {
+    .header {
+        @include grid-row;
+        @extend .big-12;
+        @extend .medium-12;
+        @extend .small-12;
+        background: $primary_color;
+    }
+    .sidebar {
+        @include grid-column($collapse:true);
+        @extend .big-3;
+        @extend .medium-3;
+        @extend .small-12;
+        background: $sidebar-color;
+        @media #{$medium} {
+            min-height: 100%;
+        }
+    }
+    .main {
+        @include grid-column;
+        @extend .big-9;
+        @extend .medium-9;
+        @extend .small-12;
+        min-height: 100%;
+    }  
+}
+
+

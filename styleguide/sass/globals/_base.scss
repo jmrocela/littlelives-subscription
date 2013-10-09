@@ -1,0 +1,220 @@
+/*---------------------------------------------------------------- */
+/* Reset: Base
+/*---------------------------------------------------------------- */
+div, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre,
+form, p, blockquote, th, td {
+    margin:0;
+    padding:0;
+}
+
+/*---------------------------------------------------------------- */
+/* @Mixins: Base
+/*---------------------------------------------------------------- */
+/*
+ * Used to clear floats without structural markup.
+ */
+@mixin clearfix() {
+    *zoom:1;
+    &:before, &:after {
+        display: table; 
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/*
+ * Add transitions effect to element.
+ * 
+ * @param {Object} $property      - element property to be animated.
+ * @param {String} $speed         - speed of transition.
+ * @param {String} $ease          - easing function to use for the transition.
+ */
+@mixin single-transition($property:all, $speed:300ms, $ease:ease-out) {
+    -webkit-transition: $property $speed $ease;
+    -moz-transition: $property $speed $ease;
+    transition: $property $speed $ease;
+}
+
+/*
+ * Add box-sizing across browser prefixes to fix border and padding issues in form elements
+ * 
+ * @param {Object} $type - element property to be size.
+ */
+@mixin box-sizing($type:border-box) {
+    -moz-box-sizing: $type;
+    -webkit-box-sizing: $type;
+    box-sizing: $type;
+}
+
+/*
+ * Add glowing effect to block elements
+ * 
+ * @param {Object} $selector  - selector state to be animated.
+ * @param {Time}   $fade-time - duration of animation.
+ * @param {Color}  $type      - element property to be size.
+ */
+@mixin block-glowing-effect($selector:focus, $fade-time:300ms, $glowing-color:fade-out($primary-color, .25)) {
+    -webkit-transition: -webkit-box-shadow $fade-time, border-color $fade-time ease-in-out;
+    -moz-transition: -moz-box-shadow $fade-time, border-color $fade-time ease-in-out;
+    transition: box-shadow $fade-time, border-color $fade-time ease-in-out;
+    
+    &:#{$selector} {
+        -webkit-box-shadow: 0 0 5px $glowing-color;
+        -moz-box-shadow: 0 0 5px $glowing-color;
+        box-shadow: 0 0 5px $glowing-color;
+        border-color: $glowing-color;
+    }
+}
+
+/*
+ * Add drop and/or inset shadow for box model.
+ * 
+ * @param {Object} $style  - drop/inset shadow for box model.
+ */
+@mixin box-shadow($style:inset 1px 2px 0 rgba(0,0,0,0.2)) {
+    -webkit-box-shadow: $style;
+    -moz-box-shadow: $style;
+    box-shadow: $style;
+}
+
+/*
+ * Sprite images for high resolution devices
+ *
+ * TODO: Enter the filename and path to the sprite map.
+ * @param {String} $sprite      - the filename of the image to be converted to sprite.
+ * @param {Object} $file        - normal sprite propertes, pathname, spacing, layout etc.
+ * @param {Object} $file-2x     - HD sprite propertes, pathname, spacing, layout etc.
+ */
+@mixin HD-sprite($sprite, $file, $file-2x) {
+    background-image: sprite-url($file);
+    background-position: sprite-position($file, $sprite);
+    background-repeat: no-repeat;
+    display: block;
+	width: image-width(sprite-file($file, $sprite));
+    height: image-height(sprite-file($file, $sprite));
+	overflow: hidden;
+	/* Fall back  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) { */
+	@media (min--moz-device-pixel-ratio: 1.3),(-o-min-device-pixel-ratio: 2.6/2), (-webkit-min-device-pixel-ratio: 1.3),(min-device-pixel-ratio: 1.3),(min-resolution: 1.3dppx) {
+        background-image: sprite-url($file-2x);
+        background-size: (image-width("sprites/" + sprite-path($file-2x)) / 2) (image-height("sprites/" + sprite-path($file-2x)) / 2);
+        background-position: round(nth(sprite-position($file-2x, $sprite), 1) / 2) round(nth(sprite-position($file-2x, $sprite), 2) / 2);
+        height: image-height(sprite-file($file-2x, $sprite)) / 2;
+        width: image-width(sprite-file($file-2x, $sprite)) / 2;
+    }
+}
+
+/*---------------------------------------------------------------- */
+/* @Functions: Base
+/*---------------------------------------------------------------- */
+/*
+ * Calculate a list of em values.
+ * 
+ * TODO: Just enter the number, no need to mention "px".
+ * @param {Literal} $values..  - a list of pixel values.
+ * @return {Literal} $emValues - a list of converted ems value. 
+ */
+@function emCalc($values...) {
+    // Get the total number of parameters passed.
+    $max: length($values);
+
+    // If there is only 1 parameter, then return it as an integer.
+    // This is done because a list can't be multiplied or divided even if it contains a single value.
+    @if $max == 1 {
+        @return convert-to-em(nth($values, 1));
+    }
+
+    // This will eventually store the converted $values in a list.
+    $emValues: (); 
+    @for $i from 1 through $max {
+        $emValues: append($emValues, convert-to-em(nth($values, $i)));
+    }
+    @return $emValues;
+}
+
+/*
+ * Converts "px" to "em" using the ($)em-base.
+ * 
+ * TODO: Just enter the number, no need to mention "px".
+ * @param {Number} $values - pixel value.
+ * @return {Number} $values - converted em value. 
+ */
+@function convert-to-em($value)  {
+    $value: strip-unit($value) / strip-unit($base-em) * 1em;
+    
+    @if ($value == 0em) {
+        $value: 0;
+    }
+    @return $value;
+}
+
+/*
+ * Strips the unit of measure and returns it.
+ * 
+ * TODO: Enter the unit of measure.
+ * @param {String} $num - unit of measure, e.g px, ems.
+ * @return {Number} $nums - number only.
+ */
+// It strips the unit of measure and returns it
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+/*---------------------------------------------------------------- */
+/* @Variables: Base
+/*---------------------------------------------------------------- */
+// Fonts
+$base-font-color: #222 !default;
+$base-line-height: 1.5em !default;
+$base-em: 15 !default;
+$base-font-size: emCalc(16) !default;
+
+// Box model
+$base-margin-top: emCalc(20) !default;
+$base-margin-right: emCalc(20) !default;
+$base-margin-left: emCalc(20) !default;
+$base-margin-bottom: emCalc(20) !default;
+$base-radius: 6px !default;
+$base-rounded: emCalc(300) !default;
+
+// NOTE: No need to change this conditional statement, $text-direction variable controls it all.
+$default-float: left !default;
+$opposite-direction: right !default;
+
+/*---------------------------------------------------------------- */
+/* @Media Enquiries: Base
+/*---------------------------------------------------------------- */
+
+// Media Queries
+// small devices (phones, up to 480px), no media query since this is the default.
+$small-screen: 480px;
+$medium-screen: 768px;
+$big-screen: 1280px;
+
+$small: "only screen and (min-width: #{$small-screen})";
+$medium: "only screen and (min-width: #{$medium-screen})";
+$big: "only screen and (min-width: #{$big-screen})";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+@media #{$medium} {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media #{$big} {
+    body {
+        font-size: 17px;
+    }
+}
+
+/*---------------------------------------------------------------- */
+/* @Media: Base
+/*---------------------------------------------------------------- */
+
+html, body {
+	height: 100%;
+}

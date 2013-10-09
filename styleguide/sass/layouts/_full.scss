@@ -1,0 +1,35 @@
+/*---------------------------------------------------------------- */
+/* @Variables: Full   
+/*---------------------------------------------------------------- */
+
+/*---------------------------------------------------------------- */
+/* @Full
+/*---------------------------------------------------------------- */
+/*
+Full Layout
+
+Template for 2 full page layout.
+
+Markup:
+<div class="page full">
+    <div class="header">Header</div>
+    <div class="main">Main</div>
+</div>
+
+.full    - Used for LittleLives website
+
+Styleguide 7.1
+*/
+.full {
+    .header {
+        @include grid-row;
+        @extend .big-12;
+        @extend .medium-12;
+        @extend .small-12;
+        background: $primary_color;       
+    }
+    .main {
+        @include grid-row;
+        min-height: 100%;
+    } 
+}

@@ -1,0 +1,122 @@
+/*---------------------------------------------------------------- */
+/* @Global: Fonts
+/*---------------------------------------------------------------- */
+/*
+Fonts
+
+A list of font types used in LittleLives.
+<ul>
+    <li><strong>VAGRundschriftD</strong></li>
+    <li><strong>Noto Sans</strong></li> 
+</ul>
+
+Markup:
+<pre class="{$modifiers}">
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz
+!@#$%^&*()_+-=,./?<>[]\{}|~`
+1234567890
+</pre>
+
+.font_header       - VAGRundschriftD
+.font_reg          - Noto Sans
+.font_italic       - Noto Sans Italic
+.font_bold         - Noto Sans Bold
+.font_bold_italic  - Noto Sans Bold Italic
+
+Styleguide 2
+*/
+@font-face {
+    font-family: 'VAGRundschriftD';
+    src: url('/fonts/VAGRundschriftD/vagrundschriftd.eot');
+    src: url('/fonts/VAGRundschriftD/vagrundschriftd.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/VAGRundschriftD/vagrundschriftd.woff') format('woff'),
+         url('/fonts/VAGRundschriftD/vagrundschriftd.ttf') format('truetype'),
+         url('/fonts/VAGRundschriftD/vagrundschriftd.svg#vagrundschriftd-reg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'Noto-Sans';
+    src: url('/fonts/NotoSans/NotoSans-Regular.eot');
+    src: url('/fonts/NotoSans/NotoSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/NotoSans/NotoSans-Regular.woff') format('woff'),
+         url('/fonts/NotoSans/NotoSans-Regular.ttf') format('truetype'),
+         url('/fonts/NotoSans/NotoSans-Regular.svg#notosans-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'Noto-Sans-Italic';
+    src: url('/fonts/NotoSans/NotoSans-Italic.eot');
+    src: url('/fonts/NotoSans/NotoSans-Italic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/NotoSans/NotoSans-Italic.woff') format('woff'),
+         url('/fonts/NotoSans/NotoSans-Italic.ttf') format('truetype'),
+         url('/fonts/NotoSans/NotoSans-Italic.svg#notosans-italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'Noto-Sans-Bold';
+    src: url('/fonts/NotoSans/NotoSans-Bold.eot');
+    src: url('/fonts/NotoSans/NotoSans-Bold.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/NotoSans/NotoSans-Bold.woff') format('woff'),
+         url('/fonts/NotoSans/NotoSans-Bold.ttf') format('truetype'),
+         url('/fonts/NotoSans/NotoSans-Bold.svg#notosans-bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+@font-face {
+    font-family: 'Noto-Sans-Bold-Italic';
+    src: url('/fonts/NotoSans/NotoSans-BoldItalic.eot');
+    src: url('/fonts/NotoSans/NotoSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/NotoSans/NotoSans-BoldItalic.woff') format('woff'),
+         url('/fonts/NotoSans/NotoSans-BoldItalic.ttf') format('truetype'),
+         url('/fonts/NotoSans/NotoSans-BoldItalic.svg#notosans-bolditalic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+%vagd, .font_header {
+    font-family: 'VAGRundschriftD', verdana, arial, sans-serif;
+    font-weight: normal;
+    font-style: normal; 
+}
+
+%ns400, .font_reg {
+    font-family: 'Noto-Sans', verdana, arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;    
+}
+
+%ns400i, .font_italic {
+    font-family: 'Noto-Sans-Italic', verdana, arial, sans-serif;
+    font-weight: normal;
+    font-style: italic;    
+}
+
+%ns700, .font_bold {
+    font-family: 'Noto-Sans-Bold', verdana, arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;   
+}
+
+%ns700i, .font_bold_italic {
+    font-family: 'Noto-Sans-Bold-Italic', verdana, arial, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
