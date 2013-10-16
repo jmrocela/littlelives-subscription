@@ -1,11 +1,12 @@
 <?php
+
 App::uses('AppController', 'SubscriptionAppController');
 
 class PaymentController extends SubscriptionAppController {
 
 	public $components = array('Subscription.PaypalWPP');
 
-	public $uses = array('Subscription.Catalog', 'Subscription.MarketingPackage', 'Subscription.MarketingPackageItem', 'Subscription.Organisation', 'Subscription.Subscription');
+	public $uses = array('Subscription.Catalog', 'Subscription.MarketingPackage', 'Subscription.MarketingPackageItem', 'Subscription.Organisation', 'Subscription.Subscription', 'Subscription.Transaction');
 
 	public $loggedInAs = 2;
 
@@ -37,53 +38,80 @@ class PaymentController extends SubscriptionAppController {
 
 		if ($catalogs) {
 			$datas = array();
+			$txns = array();
+
+			$proceed = true;
+
 			foreach ($catalogs as $catalog) {
 				$find = $this->Subscription->find('all', array('recursive' => -1, 'conditions' => array('Subscription.catalogs_id' => $catalog, 'Subscription.organisations_id' => $this->loggedInAs)));
-				if (empty($find)) {
-			        $firstName = urlencode($data['Sale']['first_name']);
-			        $lastName = urlencode($data['Sale']['last_name']);
-			        $creditCardType = urlencode($data['Sale']['card_type']);
-			        $creditCardNumber = urlencode($data['Sale']['card_number']);
-			        $expDateMonth = $data['Sale']['exp']['month'];
-			        $padDateMonth = urlencode(str_pad($expDateMonth, 2, '0', STR_PAD_LEFT));
-			        $expDateYear = urlencode($data['Sale']['exp']['year']);
-			        $cvv2Number = urlencode($data['Sale']['cvv2']);
-			        $amount = urlencode($data['Sale']['amount']);
+				if (!empty($find)) {
+					$this->redirect($data['error_url'] . '&subscribed');
+					return false;
+				}
+			}
 
-			        $nvp = '&PAYMENTACTION=Sale';
-			        $nvp .= '&AMT='.$amount;
-			        $nvp .= '&CREDITCARDTYPE='.$creditCardType;
-			        $nvp .= '&ACCT='.$creditCardNumber;
-			        $nvp .= '&CVV2='.$cvv2Number;
-			        $nvp .= '&EXPDATE='.$padDateMonth.$expDateYear;
-			        $nvp .= '&FIRSTNAME='.$firstName;
-			        $nvp .= '&LASTNAME='.$lastName;
-			        $nvp .= '&COUNTRYCODE=SG&CURRENCYCODE=USD';
+			if ($proceed) {
 
-			        $response = $this->PaypalWPP->wpp_hash('DoDirectPayment', $nvp);
+		        $firstName = urlencode($data['Sale']['first_name']);
+		        $lastName = urlencode($data['Sale']['last_name']);
+		        $creditCardType = urlencode($data['Sale']['card_type']);
+		        $creditCardNumber = urlencode($data['Sale']['card_number']);
+		        $expDateMonth = $data['Sale']['exp']['month'];
+		        $padDateMonth = urlencode(str_pad($expDateMonth, 2, '0', STR_PAD_LEFT));
+		        $expDateYear = urlencode($data['Sale']['exp']['year']);
+		        $cvv2Number = urlencode($data['Sale']['cvv2']);
+		        $amount = urlencode($data['Sale']['amount']);
 
-			        // need to log $response somewhere
+		        $nvp = '&PAYMENTACTION=Sale';
+		        $nvp .= '&AMT='.$amount;
+		        $nvp .= '&CREDITCARDTYPE='.$creditCardType;
+		        $nvp .= '&ACCT='.$creditCardNumber;
+		        $nvp .= '&CVV2='.$cvv2Number;
+		        $nvp .= '&EXPDATE='.$padDateMonth.$expDateYear;
+		        $nvp .= '&FIRSTNAME='.$firstName;
+		        $nvp .= '&LASTNAME='.$lastName;
+		        $nvp .= '&COUNTRYCODE=SG&CURRENCYCODE=USD';
 
-			        if ($response['ACK'] == 'Success') {
+		        $response = $this->PaypalWPP->wpp_hash('DoDirectPayment', $nvp);
 
+		        if ($response['ACK'] != 'Success') {
+		        	$proceed = false;
+	        	}
+	        }
+
+	        if ($proceed) {
+	        	$cancellation = (isset($data['cancellation_allowed'])) ? $data['cancellation_allowed']: 0;
+
+				foreach ($catalogs as $catalog) {
+					$find = $this->Subscription->find('all', array('recursive' => -1, 'conditions' => array('Subscription.catalogs_id' => $catalog, 'Subscription.organisations_id' => $this->loggedInAs)));
+					if (empty($find)) {
 						$datas[] = array(
 							'Subscription' => array(
 								'catalogs_id' => $catalog,
 								'organisations_id' => $this->loggedInAs,
-								'effective_date' => time()
+								'effective_date' => time(),
+								'duration' => '+' . str_replace('+', '', $data['duration']),
+								'cancellation_allowed' => $cancellation
 							)
 						);
-						$this->Subscription->saveMany($datas);	
 
-			        } else {
-						$this->redirect($data['error_url']);
-						return false;
+				    	$txns[] = array(
+				    		'Transaction' => array(
+					    		'organisations_id' => $this->loggedInAs,
+					    		'catalogs_id' => $catalog,
+					    		'txn' => $response['TRANSACTIONID'],
+					    		'timestamp' => time()
+				    		)
+		    			);
 					}
-
-				} else {
-					$this->redirect($data['error_url']);
-					return false;
 				}
+
+				$this->Subscription->saveMany($datas);	
+				$this->Transaction->saveMany($txns);
+
+	        } else {
+				$this->redirect($data['error_url']);
+				return false;
 			}
 
 			$this->redirect($data['return_url']);

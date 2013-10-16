@@ -1,6 +1,11 @@
 <?php
-
 /*
+1. add prefix
+2. paypal express payment
+3. [DONE] subscription expiration/duration
+4. [DONE] cancellation. cancellation allowed
+5. [DONE] transaction audit log
+
 CREATE VIEW organisation_subscriptions
 AS
   SELECT O.id, O.name, S.effective_date, S.catalogs_id

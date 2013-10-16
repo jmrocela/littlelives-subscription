@@ -34,12 +34,16 @@
         <input type="text" name="Sale[amount]" value="<?php echo $price; ?>" />
         <input type="text" name="Sale[card_number]" value="4813058277337777" />
 
+        <input type="text" name="duration" value="6 Months" />
+
         <input type="text" name="return_url" value="<?php echo $return_url; ?>" />
         <input type="text" name="error_url" value="<?php echo $error_url; ?>" />
 
         <input type="hidden" value="<?php echo $store_id; ?>" name="store_id">
         <input type="hidden" value="<?php echo $store_type; ?>" name="store_type">
         <input type="hidden" value="<?php echo $price; ?>" name="price">
+
+        <p><input type="checkbox" name="cancellation_allowed" value="1" /> Allow Cancellation?</p>
         <button type="submit">Confirm Subscription</button>
     </form>
 
