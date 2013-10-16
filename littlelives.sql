@@ -29,6 +29,7 @@ CREATE TABLE `catalogs` (
   `type` char(15) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `price` float DEFAULT NULL,
+  `duration` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,7 +40,7 @@ CREATE TABLE `catalogs` (
 
 LOCK TABLES `catalogs` WRITE;
 /*!40000 ALTER TABLE `catalogs` DISABLE KEYS */;
-INSERT INTO `catalogs` VALUES (1,'BASIC','LittleLives',3500),(2,'ATTEND','Attendance Monitoring',500),(3,'HEALTH','Health Check Monitoring',500),(4,'PORTFOLIO','Portfolios Package',350),(5,'FEE','Fee Management Module',1000),(6,'RESOURCE','Resource Management Module',1000),(7,'LITTLESCH','Little Schools',1500),(8,'PARENTSCOMM','Parent\'s Communication',500),(9,'PARENTSLOG','Parent\'s Login',500),(10,'EVENTCAL','Event Calendar',150);
+INSERT INTO `catalogs` VALUES (1,'BASIC','LittleLives',3500,'1 Year'),(2,'ATTEND','Attendance Monitoring',500,'1 Year'),(3,'HEALTH','Health Check Monitoring',500,'1 Year'),(4,'PORTFOLIO','Portfolios Package',350,'1 Year'),(5,'FEE','Fee Management Module',1000,'6 Months'),(6,'RESOURCE','Resource Management Module',1000,'6 Months'),(7,'LITTLESCH','Little Schools',1500,'1 Month'),(8,'PARENTSCOMM','Parent\'s Communication',500,'1 Year'),(9,'PARENTSLOG','Parent\'s Login',500,'1 Year'),(10,'EVENTCAL','Event Calendar',150,'1 Year');
 /*!40000 ALTER TABLE `catalogs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,6 +82,7 @@ CREATE TABLE `marketing_packages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `price` float DEFAULT NULL,
+  `duration` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -91,9 +93,25 @@ CREATE TABLE `marketing_packages` (
 
 LOCK TABLES `marketing_packages` WRITE;
 /*!40000 ALTER TABLE `marketing_packages` DISABLE KEYS */;
-INSERT INTO `marketing_packages` VALUES (1,'Basic LittleLives Package',3500),(2,'Basic+',1500),(3,'Management Package',2000),(4,'Little Schools',1000),(5,'Parental Access',1000);
+INSERT INTO `marketing_packages` VALUES (1,'Basic LittleLives Package',3500,'3 years'),(2,'Basic+',1500,'3 years'),(3,'Management Package',2000,'3 years'),(4,'Little Schools',1000,'1 year'),(5,'Parental Access',1000,'1 year');
 /*!40000 ALTER TABLE `marketing_packages` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `organisation_subscriptions`
+--
+
+DROP TABLE IF EXISTS `organisation_subscriptions`;
+/*!50001 DROP VIEW IF EXISTS `organisation_subscriptions`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE TABLE `organisation_subscriptions` (
+  `id` tinyint NOT NULL,
+  `name` tinyint NOT NULL,
+  `effective_date` tinyint NOT NULL,
+  `catalogs_id` tinyint NOT NULL
+) ENGINE=MyISAM */;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `organisations`
@@ -193,10 +211,12 @@ CREATE TABLE `subscriptions` (
   `organisations_id` int(11) NOT NULL,
   `catalogs_id` int(11) NOT NULL,
   `effective_date` varchar(45) NOT NULL,
+  `duration` varchar(45) DEFAULT NULL,
+  `cancellation_allowed` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `fk_subscriptions_organizations1_idx1` (`organisations_id`),
   KEY `fk_subscriptions_catalogs1_idx1` (`catalogs_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -205,7 +225,7 @@ CREATE TABLE `subscriptions` (
 
 LOCK TABLES `subscriptions` WRITE;
 /*!40000 ALTER TABLE `subscriptions` DISABLE KEYS */;
-INSERT INTO `subscriptions` VALUES (25,2,4,'1381034550'),(24,2,3,'1381034548'),(23,2,2,'1381034546'),(22,2,4,'1381034550'),(21,2,3,'1381034548'),(20,2,2,'1381034546'),(19,2,3,'1381034548'),(18,2,2,'1381034546'),(17,2,2,'1381034546'),(16,2,1,'1381034538'),(26,2,10,'1381034553'),(27,2,5,'1381039269'),(28,2,5,'1381039269'),(29,2,6,'1381039271');
+INSERT INTO `subscriptions` VALUES (52,2,7,'1381933427','+3 Months',0),(51,2,10,'1381933412','+6 Months',1),(50,2,4,'1381933412','+6 Months',1),(49,2,3,'1381933412','+6 Months',1),(48,2,2,'1381933412','+6 Months',1),(47,2,1,'1381933402','+6 Months',0);
 /*!40000 ALTER TABLE `subscriptions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,11 +239,12 @@ DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `organisations_id` int(11) NOT NULL,
-  `ipn` varchar(255) DEFAULT NULL,
-  `data` varchar(12) DEFAULT NULL,
+  `catalogs_id` int(11) NOT NULL,
+  `txn` varchar(255) DEFAULT NULL,
+  `timestamp` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_transactions_organizations1_idx` (`organisations_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -232,6 +253,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (13,2,1,'1RU44793EV693551H','1381933402'),(14,2,2,'3A0487632A9800202','1381933412'),(15,2,3,'3A0487632A9800202','1381933412'),(16,2,4,'3A0487632A9800202','1381933412'),(17,2,10,'3A0487632A9800202','1381933412'),(18,2,7,'75U415900B6909114','1381933427');
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,11 +325,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-10-06 14:06:50
-
-
-CREATE VIEW organisation_subscriptions
-AS
-  SELECT O.id, O.name, S.effective_date, S.catalogs_id
-  FROM organisations as O, subscriptions as S
-  WHERE O.id=S.organisations_id;
+-- Dump completed on 2013-10-16 22:26:06
